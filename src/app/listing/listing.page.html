@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clickinn</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-grid>
+    <ion-row>
+    	<ion-col size-xs="0" size-lg="2">
+        </ion-col>
+      <ion-col size-xs="12" size-lg="8">
+
+        <ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide style="height: 100%" *ngFor="let s of sliderOne.slidesItems">
+            <img src="{{s.id}}" class="slide-img">
+            <!-- <div class="slide-text">Slide id </div> -->
+          </ion-slide>
+        </ion-slides>
+        <ion-grid>
+        	<ion-row>
+        		<ion-col size-xs="12" size-lg="8">
+			        <ion-card>
+			        	<ion-card-header>
+			    			<ion-card-title color="tertiary">R3000</ion-card-title>
+			    			<ion-card-title>Single Room to Rent in Brixton</ion-card-title>
+			    			<ion-card-subtitle>Brixton, Johannesburg</ion-card-subtitle>
+			  			</ion-card-header>
+			  			<ion-item>
+			    			<ion-icon name="walk" slot="start"></ion-icon>
+			    			<ion-icon name="warning" slot="start"></ion-icon>
+			    			<ion-icon name="wine" slot="start"></ion-icon>
+			  			</ion-item>
+			        </ion-card>
+			    </ion-col>
+			    <ion-col size-xs="12" size-lg="2">
+			    	<ion-button>call</ion-button>
+			    	<ion-button>WhatsApp</ion-button>
+			    	<ion-button>map</ion-button>
+			    	<ion-button>book now</ion-button>
+			    </ion-col>
+			</ion-row>
+		</ion-grid>
+        <ion-card>
+        	<ion-card-content>
+			    This is content, without any paragraph or header tags,
+			    within an ion-card-content element.
+			</ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size-xs="0" size-lg="2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

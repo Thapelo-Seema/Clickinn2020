@@ -37,6 +37,14 @@ const routes: Routes = [
   {
     path: 'results',
     loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
+  },
+  {
+    path: 'listing',
+    loadChildren: () => import('./listing/listing.module').then( m => m.ListingPageModule)
+  },
+  {
+    path: 'bursary-request',
+    loadChildren: () => import('./bursary-request/bursary-request.module').then( m => m.BursaryRequestPageModule)
   }
 ];
 @NgModule({

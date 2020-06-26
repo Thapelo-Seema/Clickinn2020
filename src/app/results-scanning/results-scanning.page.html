@@ -15,7 +15,7 @@
   		<div class="dot pos6"></div>
   		
   		<ion-card class="info-text ion-text-center">
-		 	<ion-card-header class="ion-text-center">
+		 	  <ion-card-header class="ion-text-center">
 		    	<ion-card-subtitle>Scanning rooms/apartments around</ion-card-subtitle>
 		    	<ion-card-title>UJ Kingsway</ion-card-title>
 		  	</ion-card-header>
@@ -30,7 +30,7 @@
   					<ion-label class="ion-text-wrap">Matched</ion-label>
   				</ion-item>
 		  	</ion-card-content>
-		  	<ion-button mode="ios">View matched</ion-button>
+		  	<ion-button mode="ios" [routerLink]="['/results']" >View matched</ion-button>
 		</ion-card>
 	</div>
 </ion-content>

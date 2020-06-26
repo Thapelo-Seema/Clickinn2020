@@ -12,43 +12,80 @@
       <ion-title size="large">Clickinn</ion-title>
     </ion-toolbar>
   </ion-header> -->
-  <ion-grid style="width: 100%; height: 100%; padding: 0px">
+  <ion-grid class="landlords_bg" style="width: 100%; height: 100%;  padding: 0px">
     <!-- Top row may be used as banner for announcements and marketing -->
     <!-- <ion-row>
       <ion-col>
       </ion-col>
     </ion-row> -->
 
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/imgs/logo.png" height="100">
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
     <!-- Middle row used for content -->
-    <ion-row class="landlords_bg" style="width: 100%; height: 100%; padding: 0px">
-      <div class="ion-text-center" style="background: rgba(0,0,0, 0.6); width: 100%; height: 100%;">
-        <ion-col class="ion-text-center">
-          <img src="../../assets/imgs/logo.png" height="100">
-          <h1 style="font-size: 35px; color: white">
-            Get the most out of your student accommodation business !
-          </h1>
-          <ion-list>
-            <ion-item lines="none" class="ion-text-center">
-              <ion-label class="ion-text-wrap" style="font-size: 20px;  color: white">
-                <b>Don't know where to start looking for tenants ?</b>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none" class="ion-text-center">
-              <ion-label class="ion-text-wrap" style="font-size: 20px;  color: white">
-                <b>Overwhelmed with the maintenance and admin work ?</b>
-              </ion-label>
-            </ion-item>
-            <ion-item lines="none" class="ion-text-center">
-              <ion-label class="ion-text-wrap" style="font-size: 20px;  color: white">
-                <b>Monthly operational expenses too high ?</b>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-          <ion-button [routerLink]="['/landlord-products']" style="margin-top: 15px" shape="round" size="large" mode="ios"> 
-             Find out how we can help
-          </ion-button>
+    <ion-row style="width: 100%; height: 100%; padding: 0px">
+        <ion-col size-xs="0" size-lg="3">
         </ion-col>
-      </div>
+        <ion-col size-xs="12" size-lg="6"  class="ion-text-center">
+          <ion-card>
+            <h1 style="font-size: 35px; color: #000070;">
+              <b>We Help Landlords Run Accommodations More Profitably</b>
+            </h1>
+            <ion-list>
+              <ion-item button color="medium">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="images"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap"><b>List Your Rooms For Free On Clickinn</b></h1>
+                  <h3 class="ion-text-wrap">Upload your rooms and start getting bookings immediately</h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="light">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="search"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap"><b>Let us Find You Tenants</b></h1>
+                  <h3 class="ion-text-wrap">
+                    Sign up for our placement service and we will bring you students, for a once-off referal fee
+                  </h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="medium">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="apps"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap"><b>Organize Your Business With Our Digital Tools</b></h1>
+                  <h3 class="ion-text-wrap">
+                    Avoid paper clutter by subscribing to our digital leases and placement tracking features
+                  </h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="light">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="construct"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap"><b>Sit Back and Let us Manage Your Property</b></h1>
+                  <h3 class="ion-text-wrap">Sign up for one of our management services which include tenant placement and rent collection amongst others...</h3>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+            <ion-button color="tertiary" [routerLink]="['/landlord-products']" style="margin-top: 20px; margin-bottom: 30px" size="large" mode="ios"> 
+              Get Started, It's Free !
+            </ion-button>
+          </ion-card>
+        </ion-col>
+        <ion-col size-xs="0" size-lg="3">
+        </ion-col>
     </ion-row>
 
     <!-- Bottom row used for footer -->
