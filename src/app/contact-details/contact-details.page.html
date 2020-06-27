@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content color="light">
 	<ion-grid>
 		<ion-row>
 			<ion-col size-xs="0" size-md="4">
@@ -6,10 +6,10 @@
 			<ion-col size-xs="12" size-md="4">
 				<div class="raisedbox">
 					<h1 class="ion-text-center">
-						Contact Details
+						<b>Contact Details</b>
 					</h1>
 					<p class="ion-text-center">
-						Please provide us with your contact details. Agents and landlords will need them so they can contact you.
+						<b>Please Provide Your Contact Details. Agents and Landlords Will Need Them So They Can Contact You.</b>
 					</p>
 
 					<ion-item>
@@ -17,11 +17,20 @@
 						<ion-input type="text" placeholder="e.g. Thapelo Seema"></ion-input>
 					</ion-item>
 					<ion-item>
+						<ion-label class="my-label ion-text-wrap" position="stacked" color="tertiary">
+							Gender (Helps us Find Appropriate Accommodation)
+						</ion-label>
+					    <ion-select value="male" okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="male">Male</ion-select-option>
+					      <ion-select-option value="female">Female</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">Contact Number</ion-label>
 					  	<ion-input type="tel" placeholder=" e.g. 0639131282"></ion-input>
 					</ion-item>
 					<ion-item>
-						<ion-label class="my-label" position="stacked" color="tertiary">
+						<ion-label class="my-label ion-text-wrap" position="stacked" color="tertiary">
 							Is This Number On WhatsApp ?
 						</ion-label>
 					    <ion-select value="yes" okText="Okay" cancelText="Dismiss">
