@@ -45,6 +45,22 @@ const routes: Routes = [
   {
     path: 'bursary-request',
     loadChildren: () => import('./bursary-request/bursary-request.module').then( m => m.BursaryRequestPageModule)
+  },
+  {
+    path: 'free-sign-up',
+    loadChildren: () => import('./free-sign-up/free-sign-up.module').then( m => m.FreeSignUpPageModule)
+  },
+  {
+    path: 'placement-sign-up',
+    loadChildren: () => import('./placement-sign-up/placement-sign-up.module').then( m => m.PlacementSignUpPageModule)
+  },
+  {
+    path: 'tools-sign-up',
+    loadChildren: () => import('./tools-sign-up/tools-sign-up.module').then( m => m.ToolsSignUpPageModule)
+  },
+  {
+    path: 'management-sign-up',
+    loadChildren: () => import('./management-sign-up/management-sign-up.module').then( m => m.ManagementSignUpPageModule)
   }
 ];
 @NgModule({

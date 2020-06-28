@@ -1,3 +1,114 @@
-<ion-content>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <img src="../../assets/imgs/logo.png" height="80">
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
 
+<ion-content>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Clickinn</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-grid class="landlords_bg" style="width: 100%; height: 100%;  padding: 0px">
+    <!-- Top row may be used as banner for announcements and marketing -->
+    <!-- <ion-row>
+      <ion-col>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/imgs/logo.png" height="100">
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+    <!-- Middle row used for content -->
+    <ion-row style="width: 100%; height: 100%; padding: 0px">
+        <ion-col size-xs="0" size-lg="3">
+        </ion-col>
+        <ion-col size-xs="12" size-lg="6"  class="ion-text-center">
+          <ion-card>
+            <h1 style="font-size: 2.5em; color: #000070;">
+              <b>Kick-Start Your Business</b>
+            </h1>
+            <p style="margin-bottom: 3em">
+            	<b>
+            	Choose Any of The Offers Below and Make Your Student Accommodation Business a SUCCESS
+            	</b>
+        	</p> 
+            <ion-list>
+              <ion-item button color="medium" [routerLink]="['/free-sign-up']">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="images"></ion-icon>
+                </ion-avatar>
+                <ion-label>
+                  <h1 class="ion-text-wrap ion-text-center">
+                  	<b>List Your Rooms For Free On Clickinn</b> - (Free)
+                  </h1>
+                  <h3 class="ion-text-wrap ion-text-center">
+                  	Upload your rooms and start getting bookings immediately
+                  </h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="light" [routerLink]="['/placement-sign-up']">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="search"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap ion-text-center">
+                  	<b>Let us Find You Tenants</b> - (Referral Fee)
+                  </h1>
+                  <h3 class="ion-text-wrap ion-text-center">
+                    Sign up for our placement service and we will bring you students, for a <b>once-off</b> referral fee (This service includes the free listing offer)
+                  </h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="medium" [routerLink]="['/tools-sign-up']">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="apps"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap ion-text-center">
+                  	<b>Organize Your Business With Our Digital Tools</b> - (Subscription)
+                  </h1>
+                  <h3 class="ion-text-wrap ion-text-center">
+                    Avoid paper clutter by subscribing to our digital leases and placement tracking features (Includes Free Listing offer, you can also add placement service later)
+                  </h3>
+                </ion-label>
+              </ion-item>
+              <ion-item button color="light" [routerLink]="['/management-sign-up']">
+                <ion-avatar class="my-label" slot="start">
+                  <ion-icon name="construct"></ion-icon>
+                </ion-avatar>
+                <ion-label >
+                  <h1 class="ion-text-wrap ion-text-center">
+                  	<b>Sit Back and Let us Manage Your Property</b> - (Subscription)
+                  </h1>
+                  <h3 class="ion-text-wrap ion-text-center">
+                  	Sign up for one of our management services which include tenant placement and rent collection amongst others... (Inludes all the above offers)
+                  </h3>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+            <ion-button color="tertiary" [routerLink]="['/landlord-products']" style="margin-top: 20px; margin-bottom: 30px" size="large" mode="ios"> 
+              Get Started, It's Free !
+            </ion-button>
+          </ion-card>
+        </ion-col>
+        <ion-col size-xs="0" size-lg="3">
+        </ion-col>
+    </ion-row>
+
+    <!-- Bottom row used for footer -->
+    <ion-row>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
