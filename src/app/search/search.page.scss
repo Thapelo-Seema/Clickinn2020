@@ -1,3 +1,9 @@
+.content-bg{
+  background-color: #fff;
+  background: url('../../assets/imgs/bg.jpg') no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 600px) {
 	
 	.raisedbox {
@@ -39,4 +45,17 @@
 
 .my-label {
   font-size: 1.2em;
+}
+
+.my-icons{
+	font-size: 2.5em;
+}
+
+ion-item ion-label .my-icons{
+	font-size: 2.5em;
+}
+
+.bottom-grd{
+	border-top: 0.5px solid lightgray;
+	padding-top: 10px;
 }

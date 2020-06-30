@@ -1,9 +1,83 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-grid class="content-bg">
+    <ion-row>
+      <ion-col size-xs="0" size-md="3" size-lg="4">
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4">
+        <div class="raisedbox">
+          <div class="ion-text-center">
+            <img src="../../assets/imgs/logo.png" style="height: 6em">
+            <ion-text>
+              <p>Sign Up and Join The Accommodation Revolution</p>
+            </ion-text>
+          </div>
+          <ion-item>
+            <ion-label class="my-label" position="floating" color="tertiary">
+              <ion-icon name="person" slot="start" ></ion-icon>
+              <ion-text> Name and Surname</ion-text>
+            </ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="my-label" position="floating" color="tertiary">
+              <ion-icon name="call" slot="start" ></ion-icon> Contact Number
+            </ion-label>
+              <ion-input type="tel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="my-label ion-text-wrap" position="stacked" color="tertiary">
+              Is This Number On WhatsApp ?
+            </ion-label>
+              <ion-select value="yes" okText="Okay" cancelText="Dismiss">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label class="my-label" position="floating" color="tertiary">
+              <ion-icon name="mail" slot="start" ></ion-icon> Email
+            </ion-label>
+              <ion-input type="mail"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="my-label" position="floating" color="tertiary">
+              <ion-icon name="lock" slot="start" ></ion-icon>
+              Password
+            </ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>I accept the <ion-text>Terms of Service</ion-text></ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+          </ion-item>
+        </div>
+        <div class="ion-text-center" style="margin-top: 20px;">
+          <ion-button expand="block" [routerLink]="['/search-feed']" >Register</ion-button>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <ion-button expand="block">
+                <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block">
+                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block">
+                <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col size-xs="0" size-md="3" size-lg="4">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+    
+

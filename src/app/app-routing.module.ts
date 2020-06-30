@@ -61,6 +61,10 @@ const routes: Routes = [
   {
     path: 'management-sign-up',
     loadChildren: () => import('./management-sign-up/management-sign-up.module').then( m => m.ManagementSignUpPageModule)
+  },
+  {
+    path: 'upload-listing',
+    loadChildren: () => import('./upload-listing/upload-listing.module').then( m => m.UploadListingPageModule)
   }
 ];
 @NgModule({

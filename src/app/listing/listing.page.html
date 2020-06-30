@@ -26,25 +26,59 @@
 			    			<ion-card-title>Single Room to Rent in Brixton</ion-card-title>
 			    			<ion-card-subtitle>Brixton, Johannesburg</ion-card-subtitle>
 			  			</ion-card-header>
-			  			<ion-item>
-			    			<ion-icon name="walk" slot="start"></ion-icon>
-			    			<ion-icon name="warning" slot="start"></ion-icon>
-			    			<ion-icon name="wine" slot="start"></ion-icon>
-			  			</ion-item>
+			  			<ion-grid>
+			  				<ion-row>
+			  					<ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+						  			<ion-grid>
+						  				<ion-row>
+						  					<ion-col class="ion-text-center">
+							  					<ion-icon class="my-icons" name="wifi-outline"></ion-icon>
+							  				</ion-col>
+							  				<ion-col class="ion-text-center">
+							    				<ion-icon class="my-icons" name="barbell-outline"></ion-icon>
+							    			</ion-col>
+							    			<ion-col class="ion-text-center">
+							    				<ion-icon class="my-icons" name="car-sport-outline"></ion-icon>
+							    			</ion-col>
+							    		</ion-row>
+						  			</ion-grid>
+						  		</ion-col>
+						  		<ion-col size-xs="0" size-sm="0" size-md="6" size-lg="8">
+						  		</ion-col>
+						  	</ion-row>
+						  </ion-grid>
 			        </ion-card>
 			    </ion-col>
 			    <ion-col size-xs="12" size-lg="2">
-			    	<ion-button mode="ios">call</ion-button>
-			    	<ion-button mode="ios">WhatsApp</ion-button>
-			    	<ion-button mode="ios">map</ion-button>
-			    	<ion-button mode="ios">book now</ion-button>
+			    	<ion-button mode="ios">
+			    		<ion-icon name="call-outline"></ion-icon>
+			    		 Call
+			    	</ion-button>
+			    	<ion-button mode="ios">
+			    		<ion-icon name="logo-whatsapp"></ion-icon>
+			    		 WhatsApp
+			    	</ion-button>
+			    	<ion-button mode="ios">Map</ion-button>
+			    	<ion-button mode="ios">Book Now</ion-button>
 			    </ion-col>
 			</ion-row>
 		</ion-grid>
         <ion-card>
         	<ion-card-content>
-			    This is content, without any paragraph or header tags,
-			    within an ion-card-content element.
+			    <ion-text>
+			    	<p>
+			    	This will contain the written description of the room and property
+					</p>
+				</ion-text>
+			</ion-card-content>
+        </ion-card>
+        <ion-card>
+        	<ion-card-content>
+			    <ion-text>
+			    	<p>
+			    	This will contain a list of all the amenities and property facts
+					</p>
+				</ion-text>
 			</ion-card-content>
         </ion-card>
 

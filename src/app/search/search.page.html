@@ -1,21 +1,27 @@
-<ion-content color="light">
-	<ion-grid>
+<ion-content>
+	<ion-grid class="content-bg">
 		<ion-row>
 			<ion-col size-xs="0" size-md="3" size-lg="4">
 			</ion-col>
 			<ion-col size-xs="12" size-md="6" size-lg="4">
 				<div class="raisedbox">
-					<h1 class="ion-text-center">
-						<b>Search Details</b>
-					</h1>
+					<div class="ion-text-center">
+						<img src="../../assets/imgs/logo.png" style="height: 6em">
+						<ion-text>
+							<p>
+								Describe the Accommodation You Are Looking For and We Will Find it For You
+							</p>
+						</ion-text>
+					</div>
 					<p class="ion-text-center">
-						<b>Please Provide a Description of the Accommodation You Are Looking For and We Will Find it For You</b>
+						<b></b>
 					</p>
-					<ion-item lines="none" style="width: 100%">
+					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
-							Institution and Campus
+							<ion-icon name="search" slot="start" ></ion-icon>
+							<ion-text> Institution and Campus</ion-text>
 						</ion-label>
-						<ion-searchbar placeholder="e.g. UJ Kingsway Campus"></ion-searchbar>
+						<ion-input></ion-input>
 					</ion-item>
 					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
@@ -41,19 +47,26 @@
 					</ion-item>
 					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
-							Maximum Rent
+							
+							<ion-text> Maximum Rent</ion-text>
 						</ion-label>
 					  	<ion-input type="number" placeholder="e.g. R3000"></ion-input>
 					</ion-item>
 					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
-							Need Parking ?
+							<ion-text> Need Parking ?</ion-text>
 						</ion-label>
 					    <ion-select value="no" okText="Okay" cancelText="Dismiss">
 					      <ion-select-option value="yes">Yes</ion-select-option>
 					      <ion-select-option value="no">No</ion-select-option>
 					    </ion-select>
 					</ion-item>
+					<ion-item>
+			            <ion-label class="my-label" position="stacked" color="tertiary">
+			            	Any Special Needs
+			            </ion-label>
+			            <ion-textarea></ion-textarea>
+			        </ion-item>
 				</div>
 				<div class="ion-text-center" style="margin-top: 20px">
 					<ion-button (click)="back()">Back</ion-button>

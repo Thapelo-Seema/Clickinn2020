@@ -2,6 +2,11 @@ ion-item {
 --ion-background-color: transparent !important;
 }
 
+.map-bg{
+  background: url('../../assets/imgs/map.png') no-repeat;
+  background-size: cover;
+}
+
 .razar {
   position: fixed;
   top: 50%;
