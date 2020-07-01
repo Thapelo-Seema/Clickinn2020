@@ -1,9 +1,248 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>upload-listing</ion-title>
+    <ion-button fill="clear" color="dark" size="small" mode="ios">Clickinn</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<ion-grid>
+		<ion-row>
+			<ion-col size-xs="0" size-md="3" size-lg="4">
+			</ion-col>
+			<ion-col size-xs="12" size-md="6" size-lg="4">
+				<h1 class="ion-text-center">Create a Listing</h1>
+				<ion-card>
+					<ion-card-header>
+						<ion-card-title>
+							Room Details
+						</ion-card-title>
+					</ion-card-header>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							Room Type
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="single">Single Room</ion-select-option>
+					      <ion-select-option value="ensuite">Ensuite</ion-select-option>
+					      <ion-select-option value="cottage">Cottage</ion-select-option>
+					      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+					      <ion-select-option value="sharing">Sharing Room</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text>Furnished</ion-text>
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="yes">Yes</ion-select-option>
+					      <ion-select-option value="no">No</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+			            <ion-label position="stacked" color="tertiary">
+			            	Description
+			            </ion-label>
+			            <ion-textarea></ion-textarea>
+			        </ion-item>
+				</ion-card>
+				<ion-card>
+					<ion-card-header>
+						<ion-card-title>
+							Location
+						</ion-card-title>
+					</ion-card-header>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							Province
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="GP">GP</ion-select-option>
+					      <ion-select-option value="KZN">KZN</ion-select-option>
+					      <ion-select-option value="L">L</ion-select-option>
+					      <ion-select-option value="MP">MP</ion-select-option>
+					      <ion-select-option value="NW">NW</ion-select-option>
+					      <ion-select-option value="WC">WC</ion-select-option>
+					      <ion-select-option value="EC">EC</ion-select-option>
+					      <ion-select-option value="NC">NC</ion-select-option>
+					      <ion-select-option value="FS">FS</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							City
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="single">Tshwane</ion-select-option>
+					      <ion-select-option value="ensuite">Johannesburg</ion-select-option>
+					      <ion-select-option value="bachelor">Akasia</ion-select-option>
+					      <ion-select-option value="sharing">Alberton</ion-select-option>
+					      <ion-select-option value="sharing">Bedfordview</ion-select-option>
+					      <ion-select-option value="sharing">Benoni</ion-select-option>
+					      <ion-select-option value="sharing">Boksburg</ion-select-option>
+					      <ion-select-option value="sharing">Brakpan</ion-select-option>
+					      <ion-select-option value="sharing">Bronkhorspruit</ion-select-option>
+					      <ion-select-option value="cottage">Carletonville</ion-select-option>
+					      <ion-select-option value="sharing">Centurion</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							Neighbourhood
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="single">Auckland Park</ion-select-option>
+					      <ion-select-option value="ensuite">Melville</ion-select-option>
+					      <ion-select-option value="bachelor">Brixton</ion-select-option>
+					      <ion-select-option value="sharing">Westdene</ion-select-option>
+					      <ion-select-option value="sharing">Hursthill</ion-select-option>
+					      <ion-select-option value="sharing">Rosmoore</ion-select-option>
+					      <ion-select-option value="sharing">Cottesloe</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							Nearby Places
+						</ion-label>
+					    <ion-select multiple="true" okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="single">UJ Kingsway</ion-select-option>
+					      <ion-select-option value="ensuite">UJ Bunting</ion-select-option>
+					      <ion-select-option value="bachelor">Campus Square</ion-select-option>
+					      <ion-select-option value="sharing">MacDonalds Melvile</ion-select-option>
+					      <ion-select-option value="sharing">Brixton Mall</ion-select-option>
+					      <ion-select-option value="sharing">Shosholoza</ion-select-option>
+					      <ion-select-option value="sharing">Clickinn HQ</ion-select-option>
+					    </ion-select>
+					</ion-item>
+				</ion-card>
+				<ion-card>
+					<ion-card-header>
+						<ion-card-title>
+							Payments
+						</ion-card-title>
+					</ion-card-header>
+					<ion-item lines="none">
+			            <ion-label>NSFAS ACREDITED</ion-label>
+			            <ion-checkbox slot="start"></ion-checkbox>
+			        </ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text> Monthly Rent</ion-text>
+						</ion-label>
+					  	<ion-input type="number" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text>Requires Deposit</ion-text>
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="yes">Yes</ion-select-option>
+					      <ion-select-option value="no">No</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text>Deposit Refundable</ion-text>
+						</ion-label>
+					    <ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="yes">Yes</ion-select-option>
+					      <ion-select-option value="no">No</ion-select-option>
+					    </ion-select>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text>Deposit Amount</ion-text>
+						</ion-label>
+					  	<ion-input type="number" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label position="stacked" color="tertiary">
+							<ion-text>Amount Refundable</ion-text>
+						</ion-label>
+					  	<ion-input type="number" ></ion-input>
+					</ion-item>
+				</ion-card>
+				<ion-card>
+					<ion-card-header>
+						<ion-card-title>
+							Amenities
+						</ion-card-title>
+					</ion-card-header>
+					<ion-list>
+						<ion-item lines="none">
+				            <ion-label>Wi-Fi</ion-label>
+				            <ion-checkbox slot="start"></ion-checkbox>
+				        </ion-item>
+				        <ion-item lines="none">
+				            <ion-label>Laundry Facilities</ion-label>
+				            <ion-checkbox slot="start"></ion-checkbox>
+				        </ion-item>
+				        <ion-item lines="none">
+				            <ion-label>Parking</ion-label>
+				            <ion-checkbox slot="start"></ion-checkbox>
+				        </ion-item>
+					</ion-list>
+				</ion-card>
+				<ion-card>
+					<ion-card-header>
+						<ion-card-title>
+							Pictures
+						</ion-card-title>
+					</ion-card-header>
+					<ion-grid>
+						<ion-row>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Image 1</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Image 2</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				        </ion-row>
+				        <ion-row>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Image 3</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Bathroom</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				        </ion-row>
+				        <ion-row>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Kitchen</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				            <ion-col>
+				            	<ion-button expand="block" color="light" mode="ios">
+				            		<ion-icon slot="start" name="images-outline">
+				            		</ion-icon>
+				            		<ion-label> Lounge</ion-label>
+				            	</ion-button>
+				            </ion-col>
+				        </ion-row>
+					</ion-grid>
+				</ion-card>
+				<ion-button>Upload</ion-button>
+			</ion-col>
+			<ion-col size-xs="0" size-md="3" size-lg="4">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
