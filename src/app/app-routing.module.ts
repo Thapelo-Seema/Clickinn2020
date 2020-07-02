@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'upload-listing',
     loadChildren: () => import('./upload-listing/upload-listing.module').then( m => m.UploadListingPageModule)
+  },
+  {
+    path: 'landlord-home',
+    loadChildren: () => import('./landlord-home/landlord-home.module').then( m => m.LandlordHomePageModule)
   }
 ];
 @NgModule({
