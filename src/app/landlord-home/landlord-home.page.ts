@@ -22,15 +22,15 @@ export class LandlordHomePage implements OnInit {
   }
 
   gotoListings(){
-  	//this.router.navigate(['/my-listings']);
+  	this.router.navigate(['/my-listings']);
   }
 
   gotoLeases(){
-  	//this.router.navigate(['/my-leases']);
+  	this.router.navigate(['/customize-lease']);
   }
 
   gotoTracking(){
-  	//this.router.navigate(['/placement-tracking']);
+  	this.router.navigate(['/placement-tracking']);
   }
 
 }

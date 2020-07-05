@@ -69,6 +69,34 @@ const routes: Routes = [
   {
     path: 'landlord-home',
     loadChildren: () => import('./landlord-home/landlord-home.module').then( m => m.LandlordHomePageModule)
+  },
+  {
+    path: 'my-listings',
+    loadChildren: () => import('./my-listings/my-listings.module').then( m => m.MyListingsPageModule)
+  },
+  {
+    path: 'edit-listing',
+    loadChildren: () => import('./edit-listing/edit-listing.module').then( m => m.EditListingPageModule)
+  },
+  {
+    path: 'customize-lease',
+    loadChildren: () => import('./customize-lease/customize-lease.module').then( m => m.CustomizeLeasePageModule)
+  },
+  {
+    path: 'placement-tracking',
+    loadChildren: () => import('./placement-tracking/placement-tracking.module').then( m => m.PlacementTrackingPageModule)
+  },
+  {
+    path: 'student-profile',
+    loadChildren: () => import('./student-profile/student-profile.module').then( m => m.StudentProfilePageModule)
+  },
+  {
+    path: 'landlord-profile',
+    loadChildren: () => import('./landlord-profile/landlord-profile.module').then( m => m.LandlordProfilePageModule)
+  },
+  {
+    path: 'terms',
+    loadChildren: () => import('./terms/terms.module').then( m => m.TermsPageModule)
   }
 ];
 @NgModule({
