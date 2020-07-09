@@ -97,6 +97,22 @@ const routes: Routes = [
   {
     path: 'terms',
     loadChildren: () => import('./terms/terms.module').then( m => m.TermsPageModule)
+  },
+  {
+    path: 'metrics',
+    loadChildren: () => import('./metrics/metrics.module').then( m => m.MetricsPageModule)
+  },
+  {
+    path: 'financial-admin',
+    loadChildren: () => import('./financial-admin/financial-admin.module').then( m => m.FinancialAdminPageModule)
+  },
+  {
+    path: 'agent-admin',
+    loadChildren: () => import('./agent-admin/agent-admin.module').then( m => m.AgentAdminPageModule)
+  },
+  {
+    path: 'management-admin',
+    loadChildren: () => import('./management-admin/management-admin.module').then( m => m.ManagementAdminPageModule)
   }
 ];
 @NgModule({
