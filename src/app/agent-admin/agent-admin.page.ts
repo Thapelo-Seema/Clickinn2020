@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agent-admin',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentAdminPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  gotoSearch(){
+  	this.router.navigate(['/search']);
+  }
+
+  gotoUploadListing(){
+  	this.router.navigate(['/upload-listing']);
+  }
+
+  gotoListings(){
+  	this.router.navigate(['/my-listings']);
+  }
+
+  gotoLeases(){
+  	this.router.navigate(['/customize-lease']);
+  }
+
+  gotoTracking(){
+  	this.router.navigate(['/placement-tracking']);
   }
 
 }

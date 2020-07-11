@@ -12,44 +12,45 @@
 			<ion-col size-xs="12" size-md="8" size-lg="6">
 				<div class="ion-text-center">
 					<img src="../../assets/imgs/logo.png" style="height: 6em">
-					<ion-text>
-						<h2>Landlord Home</h2>
+					<ion-text color="tertiary">
+						<h2><b>Business Dash</b></h2>
 					</ion-text>
 				</div>
-				<ion-item color="light" button lines="none">
-					<ion-label>
-						<ion-icon slot="start" name="person-circle-outline"></ion-icon>
-						<ion-text> Thapelo Seema</ion-text>
-					</ion-label>
-				</ion-item>
+				<ion-chip (click)="gotoProfile()">
+				  <ion-icon name="person-circle-outline"></ion-icon>
+				  <ion-label>Thapelo Seema</ion-label>
+				</ion-chip>
+				<ion-chip color="tertiary">
+				  <ion-label>Notifications</ion-label>
+				</ion-chip>
 				<ion-list>
 					<ion-item button color="secondary" (click)="gotoSearchFeed()">
 						<ion-label>
-							<ion-text class="label-text"><p> SEE STUDENT SEARCHES</p> </ion-text>
+							<ion-text class="label-text"><h2><b>SEE RELEVANT SEARCHES</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="search-outline"></ion-icon>
 					</ion-item>
 					<ion-item button color="primary" (click)="gotoUploadListing()">
 						<ion-label>
-							<ion-text class="label-text"><p> UPLOAD A ROOM ADVERT</p> </ion-text>
+							<ion-text class="label-text"><h2><b>UPLOAD A ROOM ADVERT</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="cloud-upload-outline"></ion-icon>
 					</ion-item>
 					<ion-item button color="tertiary" (click)="gotoListings()">
 						<ion-label>
-							<ion-text class="label-text"><p> MY ROOM ADVERTS </p></ion-text>
+							<ion-text class="label-text"><h2><b>MY ROOM ADVERTS</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="list-outline"></ion-icon>
 					</ion-item>
 					<ion-item button color="success" (click)="gotoLeases()">
 						<ion-label>
-							<ion-text class="label-text"><p> LEASE AGREEMENTS</p> </ion-text>
+							<ion-text class="label-text"><h2><b>LEASE AGREEMENTS</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="reader-outline"></ion-icon>
 					</ion-item>
 					<ion-item button color="warning" (click)="gotoTracking()">
 						<ion-label>
-							<ion-text class="label-text"><p> VIEW CONFIRMED TENANTS</p> </ion-text>
+							<ion-text class="label-text"><h2><b>PLACEMENT TRACKING</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="trending-up-outline"></ion-icon>
 					</ion-item>

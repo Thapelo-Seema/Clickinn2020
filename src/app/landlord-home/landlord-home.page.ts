@@ -13,6 +13,10 @@ export class LandlordHomePage implements OnInit {
   ngOnInit() {
   }
 
+  gotoProfile(){
+    this.router.navigate(['/landlord-profile']);
+  }
+
   gotoSearchFeed(){
   	this.router.navigate(['/search-feed']);
   }

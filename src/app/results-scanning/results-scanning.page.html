@@ -1,5 +1,9 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
     <ion-title>Scanning rooms around</ion-title>
     <ion-title>UJ Kingsway</ion-title>
   </ion-toolbar>
@@ -22,17 +26,37 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-item class="ion-text-wrap">
-      <ion-label class="ion-text-wrap" color="tertiary">
-        <ion-text><b>3000</b></ion-text></ion-label>
-      <ion-label class="ion-text-wrap"><ion-text><b>Scanned</b></ion-text></ion-label>
-    </ion-item>
-    <ion-item  class="ion-text-wrap">
-      <ion-label class="ion-text-wrap"  color="success"><ion-text><b>250</b></ion-text></ion-label>
-      <ion-label class="ion-text-wrap"><ion-text><b>Matched</b></ion-text></ion-label>
-    </ion-item>
-    <div class="ion-text-center">
-      <ion-button mode="ios" [routerLink]="['/results']" expand="block" >View matched</ion-button>
-    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
+        </ion-col>
+        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <div class="ion-text-center">
+                  <h5><b>Scanned</b></h5>
+                  <h5><ion-text color="tertiary"><b>3000</b></ion-text></h5>
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div class="ion-text-center">
+                  <h5><b>Matched</b></h5>
+                  <h5><ion-text color="success"><b>245</b></ion-text></h5>
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button mode="ios" [routerLink]="['/results']">
+                  <b>Matched</b>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-col>
+      <ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   </ion-toolbar>
 </ion-footer>
+

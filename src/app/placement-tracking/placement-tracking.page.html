@@ -1,9 +1,133 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>placement-tracking</ion-title>
+  	<ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Clickinn</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="light">
+	<ion-grid>
+		<ion-row>
+			<ion-col size-xs="0" size-sm="1" size-md="2" size-lg="3">
+			</ion-col>
+			<ion-col size-xs="12" size-sm="10" size-md="8" size-lg="6">
+				<ion-chip color="success">
+				  <ion-icon name="analytics-outline"></ion-icon>
+				  <ion-label>40% Occupancy</ion-label>
+				</ion-chip>
+				<ion-card class="ion-text-center">
+					<ion-card-header>
+            			<ion-card-title>
+	            			<h2>Add Your Rooms And Keep Track Of Their Status</h2>
+	            		</ion-card-title>
+          			</ion-card-header>
+          			<ion-grid>
+        				<ion-row>
+        					<ion-col>
+        						<ion-card color="light">
+            						<ion-item lines="none" color="light" button>
+                    					<ion-label>
+                    						<ion-icon class="my-icon" name="pricetag-outline">
+                    						</ion-icon>
+                      						<h1 class="ion-text-wrap ion-text-center">
+                         						<b>Room 1</b>
+                      						</h1>
+					                    </ion-label>
+             						</ion-item>
+             					</ion-card>
+        					</ion-col>
+        					<ion-col>
+        						<ion-card>
+            						<ion-item lines="none" color="light" button>
+                    					<ion-label>
+                    						<ion-icon class="my-icon" name="pricetag-outline">
+                    						</ion-icon>
+                      						<h1 class="ion-text-wrap ion-text-center">
+                         						<b>Room 2</b>
+                      						</h1>
+					                    </ion-label>
+             						</ion-item>
+             					</ion-card>
+        					</ion-col>
+        				</ion-row>
+        				<ion-row>
+        					<ion-col>
+        						<ion-card>
+            						<ion-item lines="none" color="light" button>
+                    					<ion-label>
+                    						<ion-icon class="my-icon" name="pricetag-outline">
+                    						</ion-icon>
+                      						<h1 class="ion-text-wrap ion-text-center">
+                         						<b>Room 3</b>
+                      						</h1>
+					                    </ion-label>
+             						</ion-item>
+             					</ion-card>
+        					</ion-col>
+        					<ion-col>
+        						<ion-card>
+            						<ion-item lines="none" color="light" button>
+                    					<ion-label>
+                    						<ion-icon class="my-icon" name="pricetag-outline">
+                    						</ion-icon>
+                      						<h1 class="ion-text-wrap ion-text-center">
+                         						<b>Room 4</b>
+                      						</h1>
+					                    </ion-label>
+             						</ion-item>
+             					</ion-card>
+        					</ion-col>
+        				</ion-row>
+        			</ion-grid>
+        			<ion-button mode="ios" style="margin-bottom: 30px;">
+        				<ion-icon name="add-outline"></ion-icon>
+        				Property
+        			</ion-button>
+        			<ion-button mode="ios" style="margin-bottom: 30px;">
+        				<ion-icon name="add-outline"></ion-icon>
+        				Room
+        			</ion-button>
+        			
+				</ion-card>
+			</ion-col>
+			<ion-col size-xs="0" size-sm="1" size-md="2" size-lg="3">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+  	<ion-grid>
+  		<ion-row>
+  			<ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
+  			</ion-col>
+  			<ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4">
+			  	<ion-grid>
+			      <ion-row>
+			        <ion-col size="4">
+			          <ion-button fill="clear">
+			            <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+			          </ion-button>
+			        </ion-col>
+			        <ion-col size="4">
+			          <ion-button fill="clear">
+			            <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+			          </ion-button>
+			        </ion-col>
+			        <ion-col size="4">
+			          <ion-button fill="clear">
+			            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+			          </ion-button>
+			        </ion-col>
+			      </ion-row>
+			    </ion-grid>
+			</ion-col>
+			<ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+  </ion-toolbar>
+</ion-footer>

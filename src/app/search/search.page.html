@@ -18,10 +18,16 @@
 					</p>
 					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
-							<ion-icon name="search" slot="start" ></ion-icon>
+							<ion-icon color="danger" name="location-outline" slot="start" ></ion-icon>
 							<ion-text> Institution and Campus</ion-text>
 						</ion-label>
-						<ion-input></ion-input>
+						<ion-select okText="Okay" cancelText="Dismiss">
+					      <ion-select-option value="other">Other</ion-select-option>
+					      <ion-select-option value="uj apk">UJ Kingsway</ion-select-option>
+					      <ion-select-option value="uj apb">UJ Bunting</ion-select-option>
+					      <ion-select-option value="uj dfc">UJ Doornfontein</ion-select-option>
+					      <ion-select-option value="uj swc">UJ Soweto</ion-select-option>
+					    </ion-select>
 					</ion-item>
 					<ion-item>
 						<ion-label class="my-label" position="stacked" color="tertiary">
@@ -39,15 +45,14 @@
 						<ion-label class="my-label" position="stacked" color="tertiary">
 							Funding Type
 						</ion-label>
-					    <ion-select value="nsfas" okText="Okay" cancelText="Dismiss">
+					    <ion-select [(ngModel)]="funding" okText="Okay" cancelText="Dismiss">
 					      <ion-select-option value="nsfas">NSFAS</ion-select-option>
 					      <ion-select-option value="bursary">Bursary</ion-select-option>
 					      <ion-select-option value="self">Self-Funded</ion-select-option>
 					    </ion-select>
 					</ion-item>
-					<ion-item>
+					<ion-item *ngIf="funding != 'nsfas' " >
 						<ion-label class="my-label" position="stacked" color="tertiary">
-							
 							<ion-text> Maximum Rent</ion-text>
 						</ion-label>
 					  	<ion-input type="number" placeholder="e.g. R3000"></ion-input>
@@ -68,9 +73,12 @@
 			            <ion-textarea></ion-textarea>
 			        </ion-item>
 				</div>
-				<div class="ion-text-center" style="margin-top: 20px">
+				<div *ngIf="!agentMode" class="ion-text-center" style="margin-top: 20px">
 					<ion-button (click)="back()">Back</ion-button>
 					<ion-button [routerLink]="['/contact-details']">Next</ion-button>
+				</div>
+				<div  class="ion-text-center" style="margin-top: 20px">
+					<ion-button [routerLink]="['/results']">Agent Search</ion-button>
 				</div>
 			</ion-col>
 			<ion-col size-xs="0" size-md="3" size-lg="4">
