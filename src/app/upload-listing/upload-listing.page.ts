@@ -54,8 +54,14 @@ export class UploadListingPage implements OnInit {
   }
 
   addPropertyRoom(){
-  	this.uploadingProperty = true;
+  	this.uploadingProperty = false;
   	this.addRoom = true;
+  }
+
+  editProperty(){
+    this.uploadingProperty = true;
+    this.addRoom = false;
+    this.propertyCaptured = false;
   }
 
   saveAndUpload(){

@@ -1,0 +1,67 @@
+<ion-content>
+	<div class="ion-padding">
+		<ion-text class="heading-text">
+			<h2 *ngIf="filterType == 'all'">
+				See Specific Searches By Adding Filters
+			</h2>
+			<h2 *ngIf="filterType == 'location'">
+				See Searches Near a Specific Campus
+			</h2>
+		</ion-text>
+		<ion-item>
+			<ion-label class="my-label" position="stacked" color="tertiary">
+				<ion-icon color="danger" name="location-outline" slot="start" ></ion-icon>
+				<ion-text> Institution and Campus</ion-text>
+			</ion-label>
+			<ion-select okText="Okay" cancelText="Dismiss">
+		      <ion-select-option value="other">Other</ion-select-option>
+		      <ion-select-option value="uj apk">UJ Kingsway</ion-select-option>
+		      <ion-select-option value="uj apb">UJ Bunting</ion-select-option>
+		      <ion-select-option value="uj dfc">UJ Doornfontein</ion-select-option>
+		      <ion-select-option value="uj swc">UJ Soweto</ion-select-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item *ngIf="filterType == 'all'">
+			<ion-label class="my-label" position="stacked" color="tertiary">
+				Preffered Room Type
+			</ion-label>
+		    <ion-select value="single" okText="Okay" cancelText="Dismiss">
+		      <ion-select-option value="backroom">BackRoom</ion-select-option>
+		      <ion-select-option value="single">Single Room</ion-select-option>
+		      <ion-select-option value="ensuite">Ensuite</ion-select-option>
+		      <ion-select-option value="cottage">Cottage</ion-select-option>
+		      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+		      <ion-select-option value="sharing">Sharing Room</ion-select-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item *ngIf="filterType == 'all'">
+			<ion-label class="my-label" position="stacked" color="tertiary">
+				Funding Type
+			</ion-label>
+		    <ion-select [(ngModel)]="funding" okText="Okay" cancelText="Dismiss">
+		      <ion-select-option value="nsfas">NSFAS</ion-select-option>
+		      <ion-select-option value="bursary">Bursary</ion-select-option>
+		      <ion-select-option value="self">Self-Funded</ion-select-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item *ngIf="(funding != 'nsfas') && (filterType == 'all') " >
+			<ion-label class="my-label" position="stacked" color="tertiary">
+				<ion-text> Maximum Rent</ion-text>
+			</ion-label>
+		  	<ion-input type="number" placeholder="e.g. R3000"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="filterType == 'all'">
+			<ion-label class="my-label" position="stacked" color="tertiary">
+				<ion-text> Need Parking ?</ion-text>
+			</ion-label>
+		    <ion-select value="no" okText="Okay" cancelText="Dismiss">
+		      <ion-select-option value="yes">Yes</ion-select-option>
+		      <ion-select-option value="no">No</ion-select-option>
+		    </ion-select>
+		</ion-item>
+		<div class="ion-text-center" style="margin-top: 20px; margin-bottom: 30px;">
+			<ion-button color="danger" (click)="dismiss()" >Close</ion-button>
+			<ion-button *ngIf="filterType == 'all'" (click)="dismiss()">Apply Filters</ion-button>
+		</div>
+	</div>
+</ion-content>

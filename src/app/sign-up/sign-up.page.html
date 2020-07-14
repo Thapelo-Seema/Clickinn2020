@@ -12,14 +12,14 @@
             </ion-text>
           </div>
           <ion-item>
-            <ion-label class="my-label" position="floating" color="tertiary">
+            <ion-label class="my-label" position="stacked" color="tertiary">
               <ion-icon name="person" slot="start" ></ion-icon>
               <ion-text> Name and Surname</ion-text>
             </ion-label>
             <ion-input type="text"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label class="my-label" position="floating" color="tertiary">
+            <ion-label class="my-label" position="stacked" color="tertiary">
               <ion-icon name="call" slot="start" ></ion-icon> Contact Number
             </ion-label>
               <ion-input type="tel"></ion-input>
@@ -34,13 +34,24 @@
               </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label class="my-label" position="floating" color="tertiary">
+            <ion-label class="my-label" position="stacked" color="tertiary">
               <ion-icon name="mail" slot="start" ></ion-icon> Email
             </ion-label>
               <ion-input type="mail"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label class="my-label" position="floating" color="tertiary">
+            <ion-label class="my-label ion-text-wrap" position="stacked" color="tertiary">
+              Your role
+            </ion-label>
+              <ion-select value="student" okText="Okay" cancelText="Dismiss">
+                <ion-select-option value="student">Student</ion-select-option>
+                <ion-select-option value="agent">Agent</ion-select-option>
+                <ion-select-option value="caretaker">Caretaker</ion-select-option>
+                <ion-select-option value="landlord">Landlord</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label class="my-label" position="stacked" color="tertiary">
               <ion-icon name="lock" slot="start" ></ion-icon>
               Password
             </ion-label>

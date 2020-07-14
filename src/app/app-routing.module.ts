@@ -113,6 +113,14 @@ const routes: Routes = [
   {
     path: 'management-admin',
     loadChildren: () => import('./management-admin/management-admin.module').then( m => m.ManagementAdminPageModule)
+  },
+  {
+    path: 'searchfeed-filtering',
+    loadChildren: () => import('./modals/searchfeed-filtering/searchfeed-filtering.module').then( m => m.SearchfeedFilteringPageModule)
+  },
+  {
+    path: 'listing-filtering',
+    loadChildren: () => import('./modals/listing-filtering/listing-filtering.module').then( m => m.ListingFilteringPageModule)
   }
 ];
 @NgModule({

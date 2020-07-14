@@ -14,15 +14,27 @@
 			<ion-col size-xs="0" size-md="3" size-lg="4">
 			</ion-col>
 			<ion-col size-xs="12" size-md="6" size-lg="4">
-				<ion-item>
-				    <ion-label>Upload A Whole Property</ion-label>
-				    <ion-toggle [(ngModel)]="uploadingProperty"></ion-toggle>
+				<ion-item lines="none">
+				    <ion-label>Upload A Whole Building</ion-label>
+				    <ion-toggle color="danger" [(ngModel)]="uploadingProperty"></ion-toggle>
 				</ion-item>
 				<ion-card *ngIf="propertyCaptured && (propertyCaptured != addRoom)">
 					<ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav2
 		          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav2)">
 		          <ion-slide style="height: 100%" *ngFor="let s of sliderOne.slidesItems">
-		            <img src="{{s.id}}" class="slide-img">
+		            <ion-card class="slide-img">
+	          			<img src="../../assets/imgs/SA_Landlords.jpg" 
+	          			style="max-height: 200px; position: relative; 
+	          			top: 0; left: 50%; transform: translateX(-50%);" />
+	          			<ion-card-header>
+	            				<ion-card-subtitle>Single room, R3000</ion-card-subtitle>
+	          			</ion-card-header>
+	          			<ion-card-content>
+	            			<ion-button (click)="addPropertyRoom()" >
+								<ion-icon slot="icon-only" name="brush-outline"></ion-icon>
+							</ion-button>
+	          			</ion-card-content>
+        			</ion-card>
 		          </ion-slide>
 		        </ion-slides>
           			<ion-card-header>
@@ -33,7 +45,7 @@
             			<ion-button (click)="addPropertyRoom()" >
 							Add Room <ion-icon slot="end" name="add-circle-outline"></ion-icon>
 						</ion-button>
-						<ion-button >
+						<ion-button (click)="editProperty()" >
 							Edit <ion-icon slot="end" name="brush-outline"></ion-icon>
 						</ion-button>	
           			</ion-card-content>
@@ -55,11 +67,12 @@
 							Room Type
 						</ion-label>
 					    <ion-select okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="single">Single Room</ion-select-option>
-					      <ion-select-option value="ensuite">Ensuite</ion-select-option>
-					      <ion-select-option value="cottage">Cottage</ion-select-option>
-					      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
-					      <ion-select-option value="sharing">Sharing Room</ion-select-option>
+					    	<ion-select-option value="backroom">Backroom</ion-select-option>
+					      	<ion-select-option value="single">Single Room</ion-select-option>
+					      	<ion-select-option value="ensuite">Ensuite</ion-select-option>
+					      	<ion-select-option value="cottage">Cottage</ion-select-option>
+					      	<ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+					      	<ion-select-option value="sharing">Sharing Room</ion-select-option>
 					    </ion-select>
 					</ion-item>
 					<ion-item>
