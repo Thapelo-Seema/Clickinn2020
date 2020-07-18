@@ -9,22 +9,106 @@
 </ion-header>
 
 <ion-content>
-	<ion-grid style="height: 100%; width: 100%;">
+	<ion-grid class="content-bg" style="height: 100%; width: 100%;">
 		<ion-row style="height: 100%; width: 100%;">
 			<ion-col size-xs="0" size-lg="2">
 			</ion-col>
 			<ion-col size-xs="12" size-lg="8" style="height: 100%; width: 100%;">
-				<ion-grid>
+				<div class="ion-text-center">
+					<ion-button (click)="uploadOwnLease()" mode="ios" size="small">
+						Upload Own Leases
+					</ion-button>
+					<ion-button mode="ios" size="small">Customize Clickinn Lease</ion-button>	
+				</div>
+				<ion-grid *ngIf="ownLease">
 					<ion-row>
-						<ion-col>
-							<ion-button mode="ios" size="small">Upload Own Lease</ion-button>
+						<ion-col size-xs="0" size-md="1" size-lg="2">
 						</ion-col>
-						<ion-col>
-							<ion-button mode="ios" size="small">Customize Clickinn Lease</ion-button>
+						<ion-col size-xs="12" size-md="10" size-lg="8">
+							<ion-card>
+								<ion-card-header class="ion-text-center">
+									<ion-card-title>
+										<h1>Upload Your Own Lease/s</h1>
+									</ion-card-title>
+								</ion-card-header>
+								<ion-card-content>
+									<ion-item>
+										<ion-label position="stacked" color="tertiary">
+											Scope Of Lease
+										</ion-label>
+										<ion-select [(ngModel)]="scope" okText="Okay" cancelText="Dismiss">
+											<ion-select-option value="allRooms">For All Rooms</ion-select-option>
+								      		<ion-select-option value="allProperties">
+								      			For All Properties
+								      		</ion-select-option>
+											<ion-select-option value="property">
+												For A Property
+											</ion-select-option>
+								      		<ion-select-option value="room">For A Room</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<ion-item *ngIf="scope == 'room'">
+										<ion-label position="stacked" color="tertiary">
+											Select Room
+										</ion-label>
+										<ion-select okText="Done" cancelText="Cancel">
+											<ion-select-option value="1">
+												Single Room, R3000, 73 Caroline
+											</ion-select-option>
+								      		<ion-select-option value="2">
+												Sharing Room, R2000, 73 Caroline
+											</ion-select-option>
+											<ion-select-option value="3">
+												Cottage, R3500, 73 Caroline
+											</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<ion-item *ngIf="scope == 'property'">
+										<ion-label position="stacked" color="tertiary">
+											Select Property
+										</ion-label>
+										<ion-select okText="Done" cancelText="Cancel">
+											<ion-select-option value="1">
+												73 Caroline
+											</ion-select-option>
+								      		<ion-select-option value="2">
+												17A 3rd Avenue
+											</ion-select-option>
+											<ion-select-option value="3">
+												42 Caroline
+											</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<div class="ion-text-center ion-padding">
+										<ion-button mode="ios" expand="block" (click)="chooseLease()">
+											Attach Lease
+											<ion-icon slot="end" name="attach-outline"></ion-icon>
+										</ion-button>
+									</div>
+									<ion-button *ngIf=" documentName != ''" color="light">
+										{{documentName}}
+										<ion-icon slot="end" name="close-outline"></ion-icon>
+									</ion-button>
+									<div class="ion-text-center ion-padding-vertical">
+										<ion-button mode="ios" color="danger" (click)="cancelOwn()" >
+											Cancel
+											<ion-icon slot="end" name="close-outline"></ion-icon>
+										</ion-button>
+										<ion-button mode="ios">
+											Upload
+											<ion-icon slot="end" name="paper-plane-outline"></ion-icon>
+										</ion-button>
+									</div>
+								</ion-card-content>
+							</ion-card>
+							<input type="file" accept="application/pdf" hidden="hidden" #customLeaseInput
+							 (change)="leaseDocumentSelected($event)" />
+						</ion-col>
+						<ion-col size-xs="0" size-md="1" size-lg="2">
 						</ion-col>
 					</ion-row>
 				</ion-grid> 
-				<iframe src="https://19of32x2yl33s8o4xza0gf14-wpengine.netdna-ssl.com/wp-content/uploads/Exhibit-A-SAMPLE-CONTRACT.pdf" 
+				<iframe *ngIf="!customizeTemplate && !ownLease" src="https://19of32x2yl33s8o4xza0gf14-wpengine.netdna-ssl.com/wp-content/uploads/Exhibit-A-SAMPLE-CONTRACT.pdf" 
 				title="Lease agreement" height="90%" width="100%"></iframe>
 			</ion-col>
 			<ion-col size-xs="0" size-lg="2">
