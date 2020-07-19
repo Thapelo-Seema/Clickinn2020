@@ -18,7 +18,13 @@ export class CustomizeLeasePage implements OnInit {
   }
 
   uploadOwnLease(){
+    this.customizeTemplate = false;
   	this.ownLease = true;
+  }
+
+  customizeClickinnTemplate(){
+    this.ownLease = false;
+    this.customizeTemplate = true;
   }
 
   cancelOwn(){

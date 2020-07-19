@@ -1,21 +1,13 @@
-<ion-header>
-  <ion-toolbar class="ion-text-center">
-    <ion-buttons slot="start">
-      <ion-back-button>
-      </ion-back-button>
-    </ion-buttons>
-    <ion-title>Scanning rooms around</ion-title>
-    <ion-title>UJ Kingsway</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content color="light">
-	<div class="razar map-bg">
+<ion-content>
+  <div class="gmap" #map id="map">
+  </div>
+	<div class="razar">
   		<div class="ringbase ring1"></div>
   		<div class="ringbase ring2"></div>
   		<div class="pulse"></div>
-  		<div class="pointer">
+  		<!-- <div class="pointer">
     		<div></div>
-  		</div>
+  		</div> -->
   		<div class="dot pos1"></div>
   		<div class="dot pos2"></div>
   		<div class="dot pos3"></div>
@@ -24,39 +16,5 @@
   		<div class="dot pos6"></div>
 	</div>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
-        </ion-col>
-        <ion-col size-xs="12" size-sm="10" size-md="6" size-lg="4">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="4">
-                <div class="ion-text-center">
-                  <h5><b>Scanned</b></h5>
-                  <h5><ion-text color="tertiary"><b>3000</b></ion-text></h5>
-                </div>
-              </ion-col>
-              <ion-col size="4">
-                <div class="ion-text-center">
-                  <h5><b>Matched</b></h5>
-                  <h5><ion-text color="success"><b>245</b></ion-text></h5>
-                </div>
-              </ion-col>
-              <ion-col size="4">
-                <ion-button mode="ios" [routerLink]="['/results']">
-                  <b>Matched</b>
-                </ion-button>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-      </ion-col>
-      <ion-col size-xs="0" size-sm="1" size-md="3" size-lg="4">
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  </ion-toolbar>
-</ion-footer>
+
 
