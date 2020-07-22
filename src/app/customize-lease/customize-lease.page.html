@@ -8,8 +8,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-	<ion-grid class="content-bg" style="height: 100%; width: 100%;">
+<ion-content color="light">
+	<ion-grid style="height: 100%; width: 100%;">
 		<ion-row style="height: 100%; width: 100%;">
 			<ion-col size-xs="0" size-lg="2">
 			</ion-col>
@@ -147,1273 +147,514 @@
 						</ion-col>
 					</ion-row>
 				</ion-grid> 
-				<ion-grid *ngIf="customizeTemplate">
-					<ion-row>
-						<ion-col size-xs="0" size-md="1" size-lg="2">
-						</ion-col>
-						<ion-col size-xs="12" size-md="10" size-lg="8">
-							<div class="ion-text-center ion-padding-vertical">
-								<ion-button mode="ios" fill="clear" color="danger" (click)="cancelOwn()">
-									Cancel
-									<ion-icon slot="end" name="close-outline"></ion-icon>
-								</ion-button>
-								<ion-button mode="ios" color="success">
-									Save Changes
-									<ion-icon slot="end" name="paper-plane-outline"></ion-icon>
-								</ion-button>
+				<div *ngIf="customizeTemplate">
+					<div class="ion-text-center ion-padding-vertical">
+						<ion-button mode="ios" fill="clear" color="danger" (click)="cancelOwn()">
+							Cancel
+							<ion-icon slot="end" name="close-outline"></ion-icon>
+						</ion-button>
+						<ion-button mode="ios" color="success">
+							Save Changes
+							<ion-icon slot="end" name="paper-plane-outline"></ion-icon>
+						</ion-button>
+					</div>
+
+					<ion-card class="ion-text-center ion-padding">
+						<ion-card-header class="ion-text-center">
+							<ion-card-title class="ion-text-center">
+								<h1>
+									LEASE AGREEMENT
+								</h1>
+							</ion-card-title>
+						</ion-card-header>
+						<ion-card-content>
+							<p>entered into and between</p>
+							<ion-item>
+								<ion-label class="ion-text-center" position="floating">
+									("Lessor")
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<p>and</p>
+							<ion-item style="margin-bottom: 250px;">
+								<ion-label class="ion-text-center" position="floating">
+									("Lessee")
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-text-end">page 1 of 12</div>
+						</ion-card-content>
+					</ion-card>
+
+					<ion-card class="ion-text-center ion-padding">
+						<ion-card-header class="ion-text-center">
+							<ion-card-title class="ion-text-center">
+								<h1>
+									LEASE INFORMATION
+								</h1>
+							</ion-card-title>
+						</ion-card-header>
+						<ion-card-content>
+							<h2> - Lessee Information - </h2>
+							<ion-item>
+								<ion-label  position="stacked">
+									Full Name
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Identity/Passport Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Home Address
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Contact Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Email
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Next Of Kin
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Relationship
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Contact Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Address
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-margin-top">
+								<h2> - Lessor Information - </h2>
 							</div>
-							<ion-card class="ion-text-center ion-padding">
-								<ion-card-header class="ion-text-center">
-									<ion-card-title class="ion-text-center">
-										
-											<h1>
-												LEASE AGREEMENT
-											</h1>
-										
-									</ion-card-title>
-								</ion-card-header>
-								<p>entered into and between</p>
-								<ion-item>
-									<ion-label class="ion-text-center" position="floating">
-										("Lessor")
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<p>and</p>
-								<ion-item style="margin-bottom: 40px;">
-									<ion-label class="ion-text-center" position="floating">
-										("Lessee")
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-							</ion-card>
-							<ion-card class="ion-text-center ion-padding">
-								<ion-card-header class="ion-text-center">
-									<ion-card-title class="ion-text-center">
-										
-											<h1>
-												LEASE INFORMATION
-											</h1>
-									
-									</ion-card-title>
-								</ion-card-header>
-								<h2>Lessee Information</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Full Name
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Identity/Passport Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Home Address
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Contact Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Email
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Next Of Kin
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Relationship
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Contact Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Address
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<h2>Lessor Information</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Name
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Identity/Registration Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Address
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Contact Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Email
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<h2>Leased Premises</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Address
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<h2>Lease Period</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Commencement Date
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Expiry Date
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<h2>Rental Amounts</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Deposit
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Admin Fee
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Monthly Rent
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Annual Escalation (percentage)
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<h2>Banking Details</h2>
-								<ion-item>
-									<ion-label  position="floating">
-										Account Holder
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Bank
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Branch
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Account Number
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item>
-									<ion-label  position="floating">
-										Account Type
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-								<ion-item style="margin-bottom: 40px;">
-									<ion-label  position="floating">
-										Payment Refference
-									</ion-label>
-									<ion-input>
-									</ion-input>
-								</ion-item>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-							<ion-card>
-								<ion-grid>
-									<ion-row>
-										<ion-col size-xs="12" size-md="6">
-											<h2>1. PARTIES</h2>
-											<p>The Parties to this Agreement are</p>
-											<p>
-												1.1 the Party identified in the Lease Information as the Lessor <ion-text>("the Lessor");</ion-text> and 
-											</p>
-											<p>
-												1.2 the Party identified in the Lease Information as the Lessee <ion-text>("the Lessee");</ion-text> 
-											</p>
-											<h2>2. DEFINITIONS AND INTERPRETATION</h2>
-											<h3>2.1 Definitons</h3>
-											<p>
-												In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-										<ion-col size-xs="12" size-md="6">
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-											<p>
-												2.1.1 <ion-text>"Commencement Date"</ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
-											</p>
-										</ion-col>
-									</ion-row>
-									<ion-row>
-										<ion-col>
-											<ion-item>
-									            <ion-label>
-									            	I accept and understand the conents of this page
-									            </ion-label>
-									            <ion-checkbox slot="start"></ion-checkbox>
-									        </ion-item>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
-							</ion-card>
-						</ion-col>
-						<ion-col size-xs="0" size-md="1" size-lg="2">
-						</ion-col>
-					</ion-row>
-				</ion-grid>
+							<ion-item>
+								<ion-label  position="stacked">
+									Name
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Identity/Registration Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Address
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Contact Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Email
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-margin-top">
+								<h2> - Leased Premises - </h2>
+							</div>
+							<ion-item>
+								<ion-label  position="stacked">
+									Address
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-margin-top">
+								<h2> - Lease Period - </h2>
+							</div>
+							<ion-item>
+								<ion-label  position="stacked">
+									Commencement Date
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Expiry Date
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-margin-top">
+								<h2> - Rental Amounts - </h2>
+							</div>
+							<ion-item>
+								<ion-label  position="stacked">
+									Deposit
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Admin Fee
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Monthly Rent
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Annual Escalation (percentage)
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-margin-top">
+								<h2> - Banking Details - </h2>
+							</div>
+							<ion-item>
+								<ion-label  position="stacked">
+									Account Holder
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Bank
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Branch
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Account Number
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label  position="stacked">
+									Account Type
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<ion-item style="margin-bottom: 40px;">
+								<ion-label  position="stacked">
+									Payment Refference
+								</ion-label>
+								<ion-input>
+								</ion-input>
+							</ion-item>
+							<div class="ion-text-end">page 2 of 12</div>
+						</ion-card-content>
+					</ion-card>
+						
+					<ion-card>
+						<ion-card-content>
+							<ion-grid>
+								<ion-row>
+									<ion-col size-xs="12" size-md="6">
+										<h2>1. PARTIES</h2>
+										<p>The Parties to this Agreement are</p>
+										<p>
+											1.1 the Party identified in the Lease Information as the Lessor 
+											<ion-text>("the Lessor");</ion-text> and 
+										</p>
+										<p>
+											1.2 the Party identified in the Lease Information as the Lessee 
+											<ion-text>("the Lessee");</ion-text> 
+										</p>
+										<h2>2. DEFINITIONS AND INTERPRETATION</h2>
+										<h3>2.1 Definitons</h3>
+										<p>
+											In this agreement, unless the context requires otherwise, the following capitalized terms shall have the meanings assigned to them below and cognate expressions shall have corresponding meanings:
+										</p>
+										<p>
+											2.1.1 <ion-text><b>"Commencement Date"</b></ion-text> means the date identified in the Lease Information, notwithstanding the Signature Date;
+										</p>
+										<p>
+											2.1.2 <ion-text><b>"Consumer Protection Act"</b></ion-text> means the Consumer Protection Act 68 of 2008 and its accompanying regulations;
+										</p>
+										<p>
+											2.1.3 <ion-text><b>"Deposit"</b></ion-text> means the deposit described in the Lease Information (if applicable);
+										</p>
+										<p>
+											2.1.4 <ion-text><b>"Expiry Date"</b></ion-text> means the date identified in the Lease Information, unless such a date has by mutual agreement between the Parties been extended to a later date;
+										</p>
+										<p>
+											2.1.5 <ion-text><b>"Lease Information"</b></ion-text> means the schedule at the front of this Agreement containing key reference information regarding this Agreement and which forms an integral part of this agreement;
+										</p>
+										<p>
+											2.1.6 <ion-text><b>"Lease Period"</b></ion-text> means the period for which this lease continues as from the Commencement Date and subsisting for an indefinite period until terminated in accordance with the provisions of this Agreement;
+										</p>
+										<p>
+											2.1.7 <ion-text><b>"Parties"</b></ion-text> means the 
+											<ion-text><b>Lessor</b></ion-text> and <ion-text><b>Lessee</b></ion-text>, and any reference to a "Party" shall refer to one of the relevant Parties as required by the context;
+										</p>
+										<p>
+											2.1.8 <ion-text><b>"Parking Bays"</b></ion-text> means the number of parking bays and/or garages as indicated in the Lease Information available for use by the Lessee at the Leased Premises, if any;
+										</p>
+										<p>
+											2.1.9 <ion-text><b>"Rates and Taxes"</b></ion-text> means those charges levied by a competent local authority or body, upon and in respect of the Leased Premises at any time during the currency of this lease, including any increase in those charges or any new tax, levy or impost that may be imposed in respect of the Leased Premises;
+										</p>
+									</ion-col>
+									<ion-col size-xs="12" size-md="6">
+										<p>
+											2.1.10 <ion-text><b>"Rental"</b></ion-text> means the monthly rental amount as indicated in the Lease Information (but excluding the utilities contemplated in clause 14 (Utilities) that may be payable, but including Parking Bays) for the rental of the Leased Premises, with any part of the monthly rental calculated on a pro-rata basis for any part of the month;
+										</p>
+										<p>
+											2.1.11 <ion-text><b>"Signature Date"</b></ion-text> means the date of last signature of this Agreement by the Parties hereto;
+										</p>
+										<p>
+											2.1.12 <ion-text><b>"Termination Date"</b></ion-text> means the date on which this Agreement is terminated in accordance with its terms other than by way of effluxion of time;
+										</p>
+										<p>
+											2.1.13 <ion-text><b>"the/this Agreement"</b></ion-text> means this lease agreement between the Parties;
+										</p>
+										<p>
+											and 
+										</p>
+										<p>
+											2.1.1 <ion-text><b>"VAT"</b></ion-text> means the value-added tax in terms of the Value Added Tax Act 89 of 1991, or any similar tax which is imposed in place of or in addition to such tax.
+										</p>
+										<h3>2.2 Interpretation</h3>
+										<p>
+											This Agreement shall be interpreted according to the following provisions, unless the context requires otherwise:
+										</p>
+										<p>
+											2.2.1 References to <b>"clauses"</b> and <b>"sub-clauses"</b> are references to the clauses and sub-clauses of this Agreement.
+										</p>
+										<p>
+											2.2.2 The headings of clauses and subclauses are included for convenience only and shall not affect the interpretation of this Agreement.
+										</p>
+										<p>
+											2.2.3 References to a <b>“person”</b> shall include an individual, firm, company, corporation, juristic person, and any trust, organisation, association or partnership, whether or not having separate legal personality.
+										</p>
+										<p>
+											2.2.4 Words importing the singular number shall include the plural and vice versa, and words importing either gender or the neuter shall include both genders and the neuter.
+										</p>
+										<p>
+											2.2.5 Unless specifically otherwise provided, the number of days indicated to commit an act or indicated for any other purpose, is calculated by excluding the first day and including the last day.
+										</p>
+										<p>
+											2.2.6 Reference to <b>"days"</b> shall be construed as calendar days unless qualified by the word <b>"business"</b>, in which instance a <b>"business day"</b> will be any day other than a Saturday, Sunday or public holiday as gazetted by the government of the Republic of South Africa from time to time. References to <b>“months”</b> shall be construed as calendar months.
+										</p>
+									</ion-col>
+								</ion-row>
+								<ion-row>
+									<ion-col>
+										<ion-item>
+								            <ion-label>
+								            	I accept and understand the contents of this page
+								            </ion-label>
+								            <ion-checkbox slot="start"></ion-checkbox>
+								        </ion-item>
+									</ion-col>
+								</ion-row>
+								<ion-row>
+									<ion-col>
+										<div class="ion-text-end">page 3 of 12</div>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+
+					
+					<ion-card>
+						<ion-card-content>
+							<ion-grid>
+								<ion-row>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												Thus done and signed at
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												On the following date
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+							<div class="ion-padding">
+								<h5>As witnesses:</h5>
+							</div>
+							<ion-grid>
+								<ion-row>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												Witness 1
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+										<ion-item>
+											<ion-label  position="stacked">
+												Witness 2
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label class="ion-text-wrap ion-margin-vertical" position="stacked">
+												For and on behalf of the <b>(LESSOR)</b>
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+										<div class="ion-padding">
+											<p>by</p>
+										</div>
+										<ion-item>
+											<ion-label class="ion-text-wrap" position="stacked">
+												Who warants his/her authority hereto
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+					<ion-card>
+						<ion-card-content>
+							<ion-grid>
+								<ion-row>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												Thus done and signed at
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												On the following date
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+							<div class="ion-padding">
+								<h5>As witnesses:</h5>
+							</div>
+							<ion-grid>
+								<ion-row>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label  position="stacked">
+												Witness 1
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+										<ion-item>
+											<ion-label  position="stacked">
+												Witness 2
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+									<ion-col size-xs="12" size-md="6">
+										<ion-item>
+											<ion-label class="ion-text-wrap" position="stacked">
+												For and on behalf of the <b>(LESSEE)</b>
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+										<div class="ion-padding">
+											<p>by</p>
+										</div>
+										<ion-item>
+											<ion-label class="ion-text-wrap" position="stacked">
+												Who warants his/her authority hereto
+											</ion-label>
+											<ion-input>
+											</ion-input>
+										</ion-item>
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+				</div>
 			</ion-col>
 			<ion-col size-xs="0" size-lg="2">
 			</ion-col>
