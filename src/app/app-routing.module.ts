@@ -121,6 +121,14 @@ const routes: Routes = [
   {
     path: 'listing-filtering',
     loadChildren: () => import('./modals/listing-filtering/listing-filtering.module').then( m => m.ListingFilteringPageModule)
+  },
+  {
+    path: 'room-status',
+    loadChildren: () => import('./room-status/room-status.module').then( m => m.RoomStatusPageModule)
+  },
+  {
+    path: 'rent-tracking',
+    loadChildren: () => import('./rent-tracking/rent-tracking.module').then( m => m.RentTrackingPageModule)
   }
 ];
 @NgModule({

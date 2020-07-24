@@ -18,37 +18,49 @@
 				  <ion-icon name="analytics-outline"></ion-icon>
 				  <ion-label>40% Occupancy</ion-label>
 				</ion-chip>
+        <ion-button mode="ios" style="margin-bottom: 30px;" [routerLink]="['/upload-listing']" >
+          <ion-icon name="add-outline"></ion-icon>
+          Add More Rooms
+        </ion-button>
 				<ion-card class="ion-text-center">
 					<ion-card-header>
             			<ion-card-title>
-	            			<h2>Add Your Rooms And Keep Track Of Their Status</h2>
+	            			<h1>Keep Track Of Your Room State and Occupancy</h1>
 	            		</ion-card-title>
           			</ion-card-header>
           			<ion-grid>
         				<ion-row>
         					<ion-col>
-        						<ion-card color="light">
+        						<ion-card color="light" [routerLink]="['/room-status']">
             						<ion-item lines="none" color="light" button>
-                    					<ion-label>
-                    						<ion-icon class="my-icon" name="pricetag-outline">
-                    						</ion-icon>
-                      						<h1 class="ion-text-wrap ion-text-center">
-                         						<b>Room 1</b>
-                      						</h1>
-					                    </ion-label>
+                					<ion-label>
+                						<ion-icon class="my-icon" name="pricetag-outline">
+                						</ion-icon>
+                						<h1 class="ion-text-wrap ion-text-center">
+                   						<b>Room 1</b>
+                						</h1>
+                            <ion-chip color="success">
+                              <ion-icon name="analytics-outline"></ion-icon>
+                              <ion-label>fully Occupied</ion-label>
+                            </ion-chip>
+			                    </ion-label>
              						</ion-item>
              					</ion-card>
         					</ion-col>
         					<ion-col>
         						<ion-card>
             						<ion-item lines="none" color="light" button>
-                    					<ion-label>
-                    						<ion-icon class="my-icon" name="pricetag-outline">
-                    						</ion-icon>
-                      						<h1 class="ion-text-wrap ion-text-center">
-                         						<b>Room 2</b>
-                      						</h1>
-					                    </ion-label>
+                					<ion-label>
+                						<ion-icon class="my-icon" name="pricetag-outline">
+                						</ion-icon>
+                  						<h1 class="ion-text-wrap ion-text-center">
+                     						<b>Room 2</b>
+                  						</h1>
+                              <ion-chip color="warning">
+                                <ion-icon name="analytics-outline"></ion-icon>
+                                <ion-label>1 more space</ion-label>
+                              </ion-chip>
+			                    </ion-label>
              						</ion-item>
              					</ion-card>
         					</ion-col>
@@ -56,40 +68,40 @@
         				<ion-row>
         					<ion-col>
         						<ion-card>
-            						<ion-item lines="none" color="light" button>
-                    					<ion-label>
-                    						<ion-icon class="my-icon" name="pricetag-outline">
-                    						</ion-icon>
-                      						<h1 class="ion-text-wrap ion-text-center">
-                         						<b>Room 3</b>
-                      						</h1>
-					                    </ion-label>
-             						</ion-item>
-             					</ion-card>
+          						<ion-item lines="none" color="light" button>
+              					<ion-label>
+              						<ion-icon class="my-icon" name="pricetag-outline">
+              						</ion-icon>
+              						<h1 class="ion-text-wrap ion-text-center">
+                 						<b>Room 3</b>
+              						</h1>
+                          <ion-chip color="danger">
+                            <ion-icon name="analytics-outline"></ion-icon>
+                            <ion-label>Empty</ion-label>
+                          </ion-chip>
+		                    </ion-label>
+           						</ion-item>
+             				</ion-card>
         					</ion-col>
         					<ion-col>
         						<ion-card>
             						<ion-item lines="none" color="light" button>
-                    					<ion-label>
-                    						<ion-icon class="my-icon" name="pricetag-outline">
-                    						</ion-icon>
-                      						<h1 class="ion-text-wrap ion-text-center">
-                         						<b>Room 4</b>
-                      						</h1>
-					                    </ion-label>
+                					<ion-label>
+                						<ion-icon class="my-icon" name="pricetag-outline">
+                						</ion-icon>
+                						<h1 class="ion-text-wrap ion-text-center">
+                   						<b>Room 4</b>
+                						</h1>
+                            <ion-chip color="danger">
+                              <ion-icon name="analytics-outline"></ion-icon>
+                              <ion-label>Empty</ion-label>
+                            </ion-chip>
+			                    </ion-label>
              						</ion-item>
              					</ion-card>
         					</ion-col>
         				</ion-row>
         			</ion-grid>
-        			<ion-button mode="ios" style="margin-bottom: 30px;">
-        				<ion-icon name="add-outline"></ion-icon>
-        				Property
-        			</ion-button>
-        			<ion-button mode="ios" style="margin-bottom: 30px;">
-        				<ion-icon name="add-outline"></ion-icon>
-        				Room
-        			</ion-button>
         			
 				</ion-card>
 			</ion-col>

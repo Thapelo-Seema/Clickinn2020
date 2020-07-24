@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Clickinn</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light">
+	<ion-grid>
+    <ion-row>
+    	<ion-col size-xs="0" size-lg="2">
+        </ion-col>
+      <ion-col size-xs="12" size-lg="8">
+
+        <ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide style="height: 100%" *ngFor="let s of sliderOne.slidesItems">
+            <img src="{{s.id}}" class="slide-img">
+            <!-- <div class="slide-text">Slide id </div> -->
+          </ion-slide>
+        </ion-slides>
+        <ion-grid>
+        	<ion-row>
+        		<ion-col size-xs="12">
+			        <ion-card>
+			        	<ion-card-header>
+			    			<ion-card-title color="tertiary">R3000</ion-card-title>
+			    			<ion-card-title>Single Room (Room 1)</ion-card-title>
+			    			<ion-card-subtitle>73 Caroline Street Brixton, Johannesburg</ion-card-subtitle>
+			  			</ion-card-header>
+			        </ion-card>
+			    </ion-col>
+			</ion-row>
+		</ion-grid>
+        <ion-card>
+        	<ion-card-header>
+    			<ion-card-title><h1>Room State Checklist</h1></ion-card-title>
+  			</ion-card-header>
+        	<ion-card-content>
+			    <ion-item>
+				    <ion-label>Floor Clean (no stains or marks)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Walls Clean (no stains or marks)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Furniture in good condition</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Lights works properly</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Doors in proper working condition</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Windows in good condition</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Blinds or Curtains in good condition</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Ceiling in good condition (no stains and marks)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Shower in good condition (if inside room)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Toilet in good condition (if inside room)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Basin in good condition (if inside room)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Sink in good condition (if inside room)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate chairs (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate tables (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate book-shelves (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate wardrobes (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate beds (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+				    <ion-label>Adequate power outlets (1 per person)</ion-label>
+				    <ion-checkbox slot="start"></ion-checkbox>
+				    <ion-button>add note</ion-button>
+				</ion-item>
+				<ion-item>
+		            <ion-label class="my-label" position="stacked" color="tertiary">
+		            	Any other notes
+		            </ion-label>
+		            <ion-textarea></ion-textarea>
+		        </ion-item>
+			</ion-card-content>
+        </ion-card>
+        <ion-card>
+        	<ion-card-header>
+    			<ion-card-title><h1>Room Placement Status</h1></ion-card-title>
+  			</ion-card-header>
+        	<ion-card-content>
+        		<ion-item>
+					<ion-label class="my-label" position="stacked" color="tertiary">
+						Room Type
+					</ion-label>
+				    <ion-select value="single" okText="Okay" cancelText="Dismiss">
+				      <ion-select-option value="backroom">BackRoom</ion-select-option>
+				      <ion-select-option value="single">Single Room</ion-select-option>
+				      <ion-select-option value="ensuite">Ensuite</ion-select-option>
+				      <ion-select-option value="cottage">Cottage</ion-select-option>
+				      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+				      <ion-select-option value="sharing">Sharing Room</ion-select-option>
+				    </ion-select>
+				</ion-item>
+			    <ion-item>
+					<ion-label class="my-label" position="stacked" color="tertiary">
+						<ion-text>Number Of Tenants (Capacity)</ion-text>
+					</ion-label>
+				  	<ion-input type="number"></ion-input>
+				</ion-item>
+				<ion-card>
+			  		<ion-item>
+			    		<ion-avatar slot="start">
+			      			<img src="../../assets/imgs/logo.png"/>
+			    		</ion-avatar>
+			    		<ion-text>
+			    			<h4>Thapelo Seema</h4>
+			    		</ion-text>
+			    		<ion-icon slot="end" name="close"></ion-icon>
+			  		</ion-item>
+			  	</ion-card>
+				<ion-button>Add Tenant</ion-button>
+			</ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size-xs="0" size-lg="2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

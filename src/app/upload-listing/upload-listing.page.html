@@ -14,10 +14,6 @@
 			<ion-col size-xs="0" size-md="3" size-lg="4">
 			</ion-col>
 			<ion-col size-xs="12" size-md="6" size-lg="4">
-				<ion-item lines="none">
-				    <ion-label>Upload A Whole Building</ion-label>
-				    <ion-toggle color="danger" [(ngModel)]="uploadingProperty"></ion-toggle>
-				</ion-item>
 				<ion-card *ngIf="propertyCaptured && (propertyCaptured != addRoom)">
 					<ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav2
 		          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav2)">
@@ -55,41 +51,47 @@
 				  <ion-label>Agent Mode</ion-label>
 				</ion-chip>
 				
-				<ion-card *ngIf="!uploadingProperty && (propertyCaptured == addRoom)">
-					<ion-card-header>
-						<ion-icon class="my-icon" name="home-outline"></ion-icon>
-						<ion-card-title>
-							Room Details
-						</ion-card-title>
-					</ion-card-header>
-					<ion-item>
-						<ion-label position="stacked" color="tertiary">
-							Room Type
-						</ion-label>
-					    <ion-select okText="Okay" cancelText="Dismiss">
-					    	<ion-select-option value="backroom">Backroom</ion-select-option>
-					      	<ion-select-option value="single">Single Room</ion-select-option>
-					      	<ion-select-option value="ensuite">Ensuite</ion-select-option>
-					      	<ion-select-option value="cottage">Cottage</ion-select-option>
-					      	<ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
-					      	<ion-select-option value="sharing">Sharing Room</ion-select-option>
-					    </ion-select>
+				<ion-card>
+					<ion-item lines="none">
+					    <ion-label>Upload A Whole Building</ion-label>
+					    <ion-toggle color="danger" [(ngModel)]="uploadingProperty"></ion-toggle>
 					</ion-item>
-					<ion-item>
-						<ion-label position="stacked" color="tertiary">
-							<ion-text>Furnished</ion-text>
-						</ion-label>
-					    <ion-select okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="yes">Yes</ion-select-option>
-					      <ion-select-option value="no">No</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item>
-			            <ion-label position="stacked" color="tertiary">
-			            	Description
-			            </ion-label>
-			            <ion-textarea></ion-textarea>
-			        </ion-item>
+					<div *ngIf="!uploadingProperty && (propertyCaptured == addRoom)">
+						<ion-card-header>
+							<ion-icon class="my-icon" name="home-outline"></ion-icon>
+							<ion-card-title>
+								Room Details
+							</ion-card-title>
+						</ion-card-header>
+						<ion-item>
+							<ion-label position="stacked" color="tertiary">
+								Room Type
+							</ion-label>
+						    <ion-select okText="Okay" cancelText="Dismiss">
+						    	<ion-select-option value="backroom">Backroom</ion-select-option>
+						      	<ion-select-option value="single">Single Room</ion-select-option>
+						      	<ion-select-option value="ensuite">Ensuite</ion-select-option>
+						      	<ion-select-option value="cottage">Cottage</ion-select-option>
+						      	<ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+						      	<ion-select-option value="sharing">Sharing Room</ion-select-option>
+						    </ion-select>
+						</ion-item>
+						<ion-item>
+							<ion-label position="stacked" color="tertiary">
+								<ion-text>Furnished</ion-text>
+							</ion-label>
+						    <ion-select okText="Okay" cancelText="Dismiss">
+						      <ion-select-option value="yes">Yes</ion-select-option>
+						      <ion-select-option value="no">No</ion-select-option>
+						    </ion-select>
+						</ion-item>
+						<ion-item>
+				            <ion-label position="stacked" color="tertiary">
+				            	Description
+				            </ion-label>
+				            <ion-textarea></ion-textarea>
+				        </ion-item>
+			    	</div>
 				</ion-card>
 				<ion-card *ngIf="!propertyCaptured">
 					<ion-card-header>

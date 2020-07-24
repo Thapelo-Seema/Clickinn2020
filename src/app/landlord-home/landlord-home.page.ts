@@ -37,4 +37,8 @@ export class LandlordHomePage implements OnInit {
   	this.router.navigate(['/placement-tracking']);
   }
 
+  gotoRentTracking(){
+    this.router.navigate(['/rent-tracking']);
+  }
+
 }
