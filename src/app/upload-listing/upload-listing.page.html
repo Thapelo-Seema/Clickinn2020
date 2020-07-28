@@ -52,8 +52,12 @@
 				</ion-chip>
 				
 				<ion-card>
+					<h1 class="ion-text-center">How Many Rooms Are You Uploading?</h1>
+					<p class="ion-text-center">
+						If you are uploading many rooms at a single property, select "Upload Whole Property" below.
+					</p>
 					<ion-item lines="none">
-					    <ion-label>Upload A Whole Building</ion-label>
+					    <ion-label>Upload Whole Property</ion-label>
 					    <ion-toggle color="danger" [(ngModel)]="uploadingProperty"></ion-toggle>
 					</ion-item>
 					<div *ngIf="!uploadingProperty && (propertyCaptured == addRoom)">
