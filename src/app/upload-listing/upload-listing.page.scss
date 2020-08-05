@@ -1,6 +1,4 @@
-.my-icon{
-  font-size: 1.5em;
-}
+
 
 .content-bg{
   background-color: #fff;
@@ -40,8 +38,12 @@
   }
 }
 
+.my-icon{
+  font-size: 4em;
+}
+
 .my-icons{
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 .slide-text{
@@ -66,3 +68,9 @@ ion-slides {
   --bullet-background: red; 
   --bullet-background-active: rebeccapurple;
 }
+
+ion-item {
+  border-radius: 4px;
+}
+
+  
