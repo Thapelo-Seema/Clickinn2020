@@ -8,6 +8,8 @@ import { ModalController } from '@ionic/angular';
 })
 export class SearchfeedFilteringPage implements OnInit {
   @Input() filterType: string;
+  funding: string = "";
+ 
   constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {

@@ -1,23 +1,21 @@
-<ion-content>
-	<ion-grid class="content-bg">
+<ion-content autofocus>
+	<ion-grid class="content-bg" style="width: 100%; height: 100%;  padding: 0px; overflow-y: scroll;">
 		<ion-row>
-			<ion-col size-xs="0" size-md="3" size-lg="4">
+			<ion-col size-xs="0" size-md="3">
 			</ion-col>
-			<ion-col size-xs="12" size-md="6" size-lg="4">
+			<ion-col size-xs="12" size-md="6">
 				<div class="raisedbox">
 					<div class="ion-text-center">
 						<img src="../../assets/imgs/logo.png" style="height: 6em">
-						<ion-text>
-							<p>
-								Describe the Accommodation You Are Looking For and We Will Find it For You
-							</p>
-						</ion-text>
+						<ion-item lines="none">
+							<ion-icon color="danger" class="my-icon" name="business-outline"></ion-icon>
+							<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding">
+								Describe the Accommodation You Are Looking For and We Will Find it For You 
+							</ion-label>
+						</ion-item>
 					</div>
-					<p class="ion-text-center">
-						<b></b>
-					</p>
-					<ion-item>
-						<ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item lines="none" color="light" class="ion-padding">
+						<ion-label class="my-label" position="stacked">
 							<ion-icon color="danger" name="location-outline" slot="start" ></ion-icon>
 							<ion-text> Institution and Campus</ion-text>
 						</ion-label>
@@ -29,8 +27,8 @@
 					      <ion-select-option value="uj swc">UJ Soweto</ion-select-option>
 					    </ion-select>
 					</ion-item>
-					<ion-item>
-						<ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item lines="none" color="light" class="ion-padding">
+						<ion-label class="my-label" position="stacked">
 							Preffered Room Type
 						</ion-label>
 					    <ion-select value="single" okText="Okay" cancelText="Dismiss">
@@ -42,8 +40,8 @@
 					      <ion-select-option value="sharing">Sharing Room</ion-select-option>
 					    </ion-select>
 					</ion-item>
-					<ion-item>
-						<ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item lines="none" color="light" class="ion-padding">
+						<ion-label class="my-label" position="stacked">
 							Funding Type
 						</ion-label>
 					    <ion-select [(ngModel)]="funding" okText="Okay" cancelText="Dismiss">
@@ -52,14 +50,14 @@
 					      <ion-select-option value="self">Self-Funded</ion-select-option>
 					    </ion-select>
 					</ion-item>
-					<ion-item *ngIf="funding != 'nsfas' " >
-						<ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item *ngIf="funding != 'nsfas' " lines="none" color="light" class="ion-padding">
+						<ion-label class="my-label" position="stacked">
 							<ion-text> Maximum Rent</ion-text>
 						</ion-label>
 					  	<ion-input type="number" placeholder="e.g. R3000"></ion-input>
 					</ion-item>
-					<ion-item>
-						<ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item lines="none" color="light" class="ion-padding">
+						<ion-label class="my-label" position="stacked">
 							<ion-text> Need Parking ?</ion-text>
 						</ion-label>
 					    <ion-select value="no" okText="Okay" cancelText="Dismiss">
@@ -67,22 +65,22 @@
 					      <ion-select-option value="no">No</ion-select-option>
 					    </ion-select>
 					</ion-item>
-					<ion-item>
-			            <ion-label class="my-label" position="stacked" color="tertiary">
+					<ion-item lines="none" color="light" class="ion-padding">
+			            <ion-label class="my-label" position="stacked">
 			            	Any Special Needs
 			            </ion-label>
 			            <ion-textarea></ion-textarea>
 			        </ion-item>
-				</div>
-				<div *ngIf="!agentMode" class="ion-text-center" style="margin-top: 20px">
-					<ion-button (click)="back()">Back</ion-button>
-					<ion-button [routerLink]="['/contact-details']">Next</ion-button>
-				</div>
-				<div *ngIf="agentMode" class="ion-text-center" style="margin-top: 20px">
-					<ion-button [routerLink]="['/results']">Agent Search</ion-button>
+			        <div *ngIf="!agentMode" class="ion-text-center" style="margin-top: 20px">
+						<ion-button (click)="back()">Back</ion-button>
+						<ion-button [routerLink]="['/contact-details']">Next</ion-button>
+					</div>
+					<div *ngIf="agentMode" class="ion-text-center" style="margin-top: 20px">
+						<ion-button [routerLink]="['/results']">Agent Search</ion-button>
+					</div>
 				</div>
 			</ion-col>
-			<ion-col size-xs="0" size-md="3" size-lg="4">
+			<ion-col size-xs="0" size-md="3">
 			</ion-col>
 		</ion-row>
 	</ion-grid>

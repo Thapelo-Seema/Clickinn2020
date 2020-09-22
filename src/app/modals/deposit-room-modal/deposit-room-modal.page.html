@@ -1,0 +1,37 @@
+
+
+<ion-content class="ion-padding" color="light">
+	<div *ngIf="!verified">
+		<ion-progress-bar type="indeterminate"></ion-progress-bar>
+		<h1 class="ion-text-center">
+			Please hang on a bit as we verify the availability of this room...
+		</h1>
+	</div>
+	<div *ngIf="verified" color="light">
+		<h1 class="ion-text-center">
+			<ion-text color="medium"><b>You Can Go Ahead</b></ion-text>
+		</h1>
+		<ion-item color="light" style="margin-bottom: 10px;">
+			<ion-icon color="danger" class="my-icon" name="alarm-outline"></ion-icon>
+			<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding ion-text-center">
+				Pay the deposit amount within 3 hours to secure this room.
+			</ion-label>
+		</ion-item>
+		<ion-button mode="ios" (click)="dismiss()" color="light">Cancel</ion-button>
+		<ion-button mode="ios">Interested but can't pay now</ion-button>
+		<ion-button mode="ios" color="success"  (click)="continue()" >Continue</ion-button>
+	</div>
+	<div *ngIf="declined" color="light">
+		<h1 class="ion-text-center">
+			<ion-text color="medium"><b>Room No Longer Available</b></ion-text>
+		</h1>
+		<ion-item color="light" style="margin-bottom: 10px;">
+			<ion-icon color="danger" class="my-icon" name="alarm-outline"></ion-icon>
+			<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding">
+				Unfortunately the onwer of this room has just indicated that the room is no longer available.
+			</ion-label>
+		</ion-item>
+		<ion-button mode="ios" (click)="dismiss()" color="light">Cancel</ion-button>
+		<ion-button mode="ios">Go back to see more results</ion-button>
+	</div>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-content class="ion-padding">
+	<div *ngIf="!accepted && !declined">
+		<h1 class="ion-text-center">
+			<ion-text color="medium"><b>Room Deposit Request</b></ion-text>
+		</h1>
+		<ion-item color="light" lines="none">
+  			<ion-thumbnail slot="start">
+    			<img src="../../../assets/imgs/logo.png">
+  			</ion-thumbnail>
+  			<ion-label>
+    			<h2>Single Room, R2800</h2>
+    			<p>73 Caroline Street, Brixton</p>
+  			</ion-label>
+		</ion-item>
+		<ion-item lines="none">
+			<ion-thumbnail slot="start">
+    			<img src="../../../assets/imgs/logo.png">
+  			</ion-thumbnail>
+			<ion-label style="font-size: 1.4em" class="ion-text-wrap">
+				<h1>Thapelo</h1> 
+			</ion-label>
+		</ion-item>
+		<ion-item style="margin-bottom: 10px;" lines="none">
+			<p>is interested in depositing this room, please ACCEPT or DECLINE this request</p>
+		</ion-item>
+		<ion-button mode="ios" color="light">Decline</ion-button>
+		<ion-button mode="ios">ACCEPT</ion-button>
+	</div>
+	<div *ngIf="accepted">
+		<h1 class="ion-text-center">
+			<ion-text color="medium"><b>THANK YOU !</b></ion-text>
+		</h1>
+		<ion-item  style="margin-bottom: 10px;">
+			<p>You will be notified once the deposit done, please keep the room for atleast the next 4 hours</p>
+		</ion-item>
+		<ion-button mode="ios" color="light" (click)="decline()">Decline</ion-button>
+		<ion-button mode="ios" (click)="accept()">ACCEPT</ion-button>
+	</div>
+	<div *ngIf="declined">
+		<h1 class="ion-text-center">
+			<ion-text color="medium"><b>THANK YOU !</b></ion-text>
+		</h1>
+		<ion-item  style="margin-bottom: 10px;">
+			<p>The room will be marked as unavailable until you mark it as available again</p>
+		</ion-item>
+		<ion-button mode="ios" color="light" (click)="decline()">OK</ion-button>
+	</div>
+</ion-content>

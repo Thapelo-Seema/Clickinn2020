@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clickinn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+	<ion-fab vertical="top" horizontal="end" slot="fixed">
+	    <ion-fab-button (click)="addIssue()">
+	      <ion-icon name="add"></ion-icon>
+	    </ion-fab-button>
+  	</ion-fab>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-card color="danger">
+					<ion-card-content>
+						<p><b>Property</b></p>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<ion-chip>
+				  			<ion-label>73 Caroline, Brixton</ion-label>
+						</ion-chip>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<ion-chip>
+				  			<ion-label>72 Caroline, Brixton</ion-label>
+						</ion-chip>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<ion-chip>
+				  			<ion-label>74 Caroline, Brixton</ion-label>
+						</ion-chip>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card color="danger">
+					<ion-card-content>
+						<p><b>Issue</b></p>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<p>Geyser burst</p>
+						<ion-buttons>
+							<ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon>
+					        </ion-button>
+					    </ion-buttons>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<p>Geyser burst</p>
+						<ion-buttons>
+							<ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon>
+					        </ion-button>
+					    </ion-buttons>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content>
+						<p>Geyser burst</p>
+						<ion-buttons>
+							<ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+					        </ion-button>
+					        <ion-button fill="clear">
+					            <ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon>
+					        </ion-button>
+					    </ion-buttons>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card color="warning">
+					<ion-card-content>
+						<p><b>In Progress</b></p>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card color="primary">
+					<ion-card-content>
+						<p><b>To Verify</b></p>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card color="success">
+					<ion-card-content>
+						<p><b>Done</b></p>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

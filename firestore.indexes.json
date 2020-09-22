@@ -1,0 +1,283 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "available",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "available",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "complete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "prop_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.address.locality_short",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.address.locality_short",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.laundry",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.laundry",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "property.nsfas",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "property.parking",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "property.wifi",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.nsfas",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.parking",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.user_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "property.wifi",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Apartments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "room_type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "price",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Deposits",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "by.uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Deposits",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "to.uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Properties",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Searches2",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Address.locality_lng",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Viewings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "booker_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Viewings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "host_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

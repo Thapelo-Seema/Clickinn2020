@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clickinn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid class="content-bg" style="height: 100%">
+		<ion-row>
+			<ion-col size-xs="0" size-md="2" size-lg="3">
+			</ion-col>
+			<ion-col size-xs="12" size-md="8" size-lg="6">
+				<div class="ion-text-center">
+					<img src="../../assets/imgs/logo.png" style="height: 6em">
+					<ion-text color="tertiary">
+						<h2><b>Tenant Dash</b></h2>
+					</ion-text>
+				</div>
+				<ion-chip>
+				  <ion-icon name="person-circle-outline"></ion-icon>
+				  <ion-label>Thapelo Seema</ion-label>
+				</ion-chip>
+				<ion-chip color="tertiary">
+				  <ion-label>Notifications</ion-label>
+				</ion-chip>
+				<ion-list>
+					<ion-item button color="secondary" lines="none" class="ion-padding" (click)="gotoProfile()">
+						<ion-label>
+							<ion-text class="label-text"><h2><b>Update Profile</b></h2></ion-text>
+						</ion-label>
+						<ion-icon class="my-icon" slot="end" name="search-outline"></ion-icon>
+					</ion-item>
+					<ion-item button color="primary" lines="none" class="ion-padding" (click)="pay()">
+						<ion-label>
+							<ion-text class="label-text"><h2><b>Pay Rent</b></h2></ion-text>
+						</ion-label>
+						<ion-icon class="my-icon" slot="end" name="cloud-upload-outline"></ion-icon>
+					</ion-item>
+					<ion-item button color="tertiary" lines="none" class="ion-padding" (click)="gotoCheckList()">
+						<ion-label>
+							<ion-text class="label-text"><h2><b>Room Checklist</b></h2></ion-text>
+						</ion-label>
+						<ion-icon class="my-icon" slot="end" name="list-outline"></ion-icon>
+					</ion-item>
+					<ion-item button color="success" lines="none" class="ion-padding" (click)="gotoLeases()">
+						<ion-label>
+							<ion-text class="label-text"><h2><b>LEASE AGREEMENT</b></h2></ion-text>
+						</ion-label>
+						<ion-icon class="my-icon" slot="end" name="reader-outline"></ion-icon>
+					</ion-item>
+					<ion-item button color="warning" lines="none" class="ion-padding" (click)="addIssue()">
+						<ion-label>
+							<ion-text class="label-text"><h2><b>Report Maintenance Issue</b></h2></ion-text>
+						</ion-label>
+						<ion-icon class="my-icon" slot="end" name="trending-up-outline"></ion-icon>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+			<ion-col size-xs="0" size-md="2" size-lg="3">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

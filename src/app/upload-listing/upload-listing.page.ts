@@ -9,6 +9,8 @@ export class UploadListingPage implements OnInit {
   
   agentMode: boolean = false;
   pageActive: number = 1;
+  propertyCaptured: boolean = false;
+  uploadingProperty: boolean = false;
 
   constructor() { 
 

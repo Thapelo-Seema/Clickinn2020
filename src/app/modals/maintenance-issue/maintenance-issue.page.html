@@ -1,0 +1,38 @@
+<ion-content>
+	<div class="ion-padding">
+		<ion-text class="heading-text ion-margin-bottom">
+			<h2 class="ion-text-center">
+				Add A New Issue
+			</h2>
+		</ion-text>
+		<ion-item color="light" lines="none" class="ion-margin-bottom">
+			<ion-label class="my-label" position="stacked">
+				<ion-text>For which property</ion-text>
+			</ion-label>
+		  	<ion-input type="search" placeholder="e.g. 73 Caroline Street, Brixton"></ion-input>
+		</ion-item>
+		<ion-item color="light" lines="none" class="ion-margin-bottom">
+			<ion-label class="my-label" position="stacked">
+				<ion-text>Issue Type</ion-text>
+			</ion-label>
+			<ion-select okText="Okay" cancelText="Dismiss">
+		      <ion-select-option value="other">Maintenance</ion-select-option>
+		      <ion-select-option value="uj apk">Repairs</ion-select-option>
+		      <ion-select-option value="uj apb">Wi-Fi</ion-select-option>
+		      <ion-select-option value="uj apb">Electricity</ion-select-option>
+		      <ion-select-option value="uj dfc">Tenant-specific</ion-select-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item color="light" lines="none" class="ion-margin-bottom">
+			<ion-label class="my-label" position="stacked">
+				Issue Notes
+			</ion-label>
+		    <ion-textarea>
+		    </ion-textarea>
+		</ion-item>
+		<div class="ion-text-center" style="margin-top: 20px; margin-bottom: 30px;">
+			<ion-button color="danger" (click)="dismiss()" >Cancel</ion-button>
+			<ion-button (click)="dismiss()">Submit</ion-button>
+		</div>
+	</div>
+</ion-content>

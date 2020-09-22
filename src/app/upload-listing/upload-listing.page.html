@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content forceOverscroll="true" [scrollEvents]="true">
 	<ion-grid class="content-bg">
 		<ion-row>
 			<ion-col size-xs="0" size-md="3">
@@ -95,9 +95,9 @@
 								<ion-col>
 									<ion-item lines="none" color="light">
 										<ion-label position="stacked">
-											Street and number
+											House Number and Street
 										</ion-label>
-										<ion-input type="text" placeholder="e.g. 73 Caroline"></ion-input>
+										<ion-input type="text" placeholder="e.g. 73 Caroline Street"></ion-input>
 									</ion-item>
 								</ion-col>
 							</ion-row>
@@ -143,7 +143,7 @@
 									</ion-label>
 									<ion-input type="number"></ion-input>
 								</ion-item>
-								<ion-item>
+								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
@@ -157,7 +157,7 @@
 									</ion-label>
 									<ion-input type="number"></ion-input>
 								</ion-item>
-								<ion-item>
+								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
@@ -173,7 +173,7 @@
 									</ion-label>
 									<ion-input type="number"></ion-input>
 								</ion-item>
-								<ion-item>
+								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
@@ -187,7 +187,7 @@
 									</ion-label>
 									<ion-input type="number"></ion-input>
 								</ion-item>
-								<ion-item>
+								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
@@ -374,126 +374,144 @@
 				</ion-card>
 				<ion-card *ngIf="pageActive == 5">
 					<ion-card-content>
-						<ion-icon color="tertiary" class="my-icon" name="images-outline"></ion-icon>
-						<h1>Pictures</h1>
+						<h1 class="ion-text-center"><b>Pictures</b></h1>
+						<ion-item lines="none">
+							<ion-label style="font-size: 1.4em" class="ion-text-wrap">
+								Upload pictures for each type of room in your property 
+							</ion-label>
+						</ion-item>
 						<ion-grid>
 							<ion-row>
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>BackRoom Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>Pictures Of Backroom</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>Single Room Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>Single Room Pictures</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					        </ion-row>
 					        <ion-row>
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>2-Sharing Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>2-Sharing Pictures</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>3-Sharing Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>3-Sharing Pictures</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					        </ion-row>
 					        <ion-row *ngIf="!propertyCaptured">
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>Ensuite Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>Pictures Of Ensuite</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					            <ion-col>
 					            	<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>Apartment Pictures</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					            		<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>Apartment Pictures</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					            </ion-col>
 					        </ion-row>
 					        <ion-row>
 					        	<ion-col>
 					        		<ion-card color="light">
-					            		<div class="ion-text-center">
-					            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
-					            		</div>
-	            						<ion-item lines="none" color="light" button>
-		                					<ion-label>
-		                						<h1 class="ion-text-wrap ion-text-center">
-		                   						<b>Shared Areas</b>
-		                						</h1>
-					                    	</ion-label>
-	             						</ion-item>
+					        			<ion-card-content>
+						            		<div class="ion-text-center">
+						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
+						            		</div>
+		            						<ion-item lines="none" color="light" button>
+			                					<ion-label>
+			                						<h1 class="ion-text-wrap ion-text-center">
+			                   						<b>Shared Areas</b>
+			                						</h1>
+						                    	</ion-label>
+		             						</ion-item>
+		             					</ion-card-content>
 	             					</ion-card>
 					        	</ion-col>
 					        </ion-row>
 						</ion-grid>
+						<div *ngIf="pageActive == 5" class="ion-text-center">
+							<ion-button (click)="prevPage()" style="margin-bottom: 30px;">
+								Back
+							</ion-button>
+							<ion-button (click)="saveAndUpload()" style="margin-bottom: 30px;" *ngIf="!uploadingProperty">
+								Save & Upload <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
+							</ion-button>
+						</div>
 					</ion-card-content>
 				</ion-card>
-				<div *ngIf="pageActive == 5" class="ion-text-center">
-					<ion-button (click)="prevPage()" style="margin-bottom: 30px;">
-						Back
-					</ion-button>
-					<ion-button (click)="saveAndUpload()" style="margin-bottom: 30px;" *ngIf="!uploadingProperty">
-						Save & Upload <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
-					</ion-button>
-				</div>
 			</ion-col>
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, ModalController } from '@ionic/angular';
+import { DepositRoomModalPage } from '../modals/deposit-room-modal/deposit-room-modal.page';
 
 @Component({
   selector: 'app-listing',
@@ -20,7 +21,7 @@ export class ListingPage implements OnInit {
 
   sliderOne: any;
 
-  constructor() {
+  constructor(public modalCtrl: ModalController) {
   	this.sliderOne =
     {
       isBeginningSlide: true,
@@ -47,6 +48,18 @@ export class ListingPage implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  async filters(){
+    const modal = await this.modalCtrl.create({
+      component: DepositRoomModalPage,
+      cssClass: 'modalClass',
+      componentProps: {
+        'filterType': 'all'
+      }
+    });
+
+    return await modal.present();
   }
 
   //Move to Next slide

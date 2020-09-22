@@ -13,8 +13,12 @@ export class ManagementAdminPage implements OnInit {
   ngOnInit() {
   }
 
+  gotoSearch(){
+  	this.router.navigate(['/search']);
+  }
+
   gotoSearchFeed(){
-  	this.router.navigate(['/search-feed']);
+    this.router.navigate(['/search-feed']);
   }
 
   gotoUploadListing(){
@@ -25,12 +29,16 @@ export class ManagementAdminPage implements OnInit {
   	this.router.navigate(['/my-listings']);
   }
 
-  gotoLeases(){
-  	this.router.navigate(['/customize-lease']);
+  gotoMaintenance(){
+  	this.router.navigate(['/maintanence-tasks']);
   }
 
   gotoTracking(){
   	this.router.navigate(['/placement-tracking']);
+  }
+
+  gotoRentTracking(){
+    this.router.navigate(['/rent-tracking']);
   }
 
 }

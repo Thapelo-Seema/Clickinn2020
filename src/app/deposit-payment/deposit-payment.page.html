@@ -1,0 +1,148 @@
+<ion-content forceOverscroll="true" [scrollEvents]="true" color="light">
+	<ion-grid class="content-bg">
+		<ion-row>
+			<ion-col size-xs="0" size-md="3">
+			</ion-col>
+			<ion-col size-xs="12" size-md="6">
+				<ion-chip color="warning" *ngIf="agentMode">
+				  <ion-icon name="person-circle-outline"></ion-icon>
+				  <ion-label>Agent Mode</ion-label>
+				</ion-chip>
+			
+				<ion-card *ngIf="pageActive == 1">
+					<h1 class="ion-text-center"><b>Select Payment Method</b></h1>
+					<ion-item lines="none">
+						<ion-icon color="danger" class="my-icon" name="card-outline"></ion-icon>
+						<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding">
+							Select the method you will be using to do your deposit payment below 
+						</ion-label>
+					</ion-item>
+					<!-- <ion-item lines="none" class="ion-padding">
+						<img src="../../assets/imgs/monitor.jpg" style="height: 100px;" />
+						<ion-label>
+							
+						</ion-label>
+					</ion-item> -->
+					<ion-card-content>
+						<ion-grid>
+							<ion-row>
+								<ion-col>
+									<ion-item lines="none" color="light">
+										<ion-label position="stacked">
+											Payment Method
+										</ion-label>
+									    <ion-select okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="GP">EFT</ion-select-option>
+									      <ion-select-option value="KZN">Card</ion-select-option>
+									      <ion-select-option value="L">
+									      	Bank / ATM Deposit
+									      </ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+						<div class="ion-text-center" style="margin-top: 50px; margin-bottom: 50px;">
+							<ion-button (click)="nextPage()">Next</ion-button>
+						</div>
+					</ion-card-content>
+				</ion-card>
+				<ion-card *ngIf="pageActive == 2">
+					<h1 class="ion-text-center"><b>Deposit Details</b></h1>
+					<ion-item lines="none">
+						<ion-icon color="medium" class="my-icon" name="business-outline"></ion-icon>
+						<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding">
+							You can go ahead with the deposit, using the details below 
+						</ion-label>
+					</ion-item>
+					<ion-grid>
+						<ion-row>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked" color="dark">
+										Bank
+									</ion-label>
+									<h1>Tyme Bank</h1>
+								</ion-item>
+							</ion-col>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Account type
+									</ion-label>
+									<h1>Cheque Acc</h1>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Account holder
+									</ion-label>
+									<h1>Clickinn Student Lifestyle Pty(Ltd)</h1>
+								</ion-item>
+							</ion-col>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Branch Code
+									</ion-label>
+									<h1>30562</h1>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Account Number
+									</ion-label>
+									<h1>1234567890</h1>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Use This <b>REFERENCE</b>
+									</ion-label>
+									<h1>CLK12345</h1>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col>
+								<ion-item lines="none" color="light">
+									<ion-label position="stacked">
+										Deposit Amount
+									</ion-label>
+									<h1>R2800.00</h1>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+					<div class="ion-text-center" style="margin-top: 50px; margin-bottom: 50px;">
+						<ion-button (click)="prevPage()">Back</ion-button>
+						<ion-button (click)="nextPage()">Got it</ion-button>
+					</div>
+				</ion-card>
+				<ion-card *ngIf="pageActive == 3">
+					<h1 class="ion-text-center"><b>Timer</b></h1>
+					<ion-item lines="none" class="ion-text-center">
+						<h1 class="ion-text-center">
+							03:00:00
+						</h1>
+					</ion-item>
+					<div class="ion-text-center" style="margin-top: 50px; margin-bottom: 50px;">
+						<ion-button (click)="prevPage()">Back</ion-button>
+						<ion-button (click)="prevPage()">Cancel Transaction</ion-button>
+					</div>
+				</ion-card>
+			</ion-col>
+			<ion-col size-xs="0" size-md="3">
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

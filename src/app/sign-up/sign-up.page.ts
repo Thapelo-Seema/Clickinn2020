@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-sign-up',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpPage implements OnInit {
 
+  //private actRoute: ActivatedRoute
   constructor() { }
 
   ngOnInit() {

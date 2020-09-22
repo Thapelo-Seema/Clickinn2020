@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { SearchfeedFilteringPage } from '../modals/searchfeed-filtering/searchfeed-filtering.page';
+import { ScannerPopupPage } from '../modals/scanner-popup/scanner-popup.page';
 
 declare var google: any;
 
@@ -17,6 +17,9 @@ export class ResultsScanningPage implements OnInit {
   constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {
+    setTimeout(() =>{
+      this.filters();
+    }, 5000)
   }
 
   ionViewDidEnter(){
@@ -41,7 +44,8 @@ export class ResultsScanningPage implements OnInit {
 
   async filters(){
   	const modal = await this.modalCtrl.create({
-  		component: SearchfeedFilteringPage,
+  		component: ScannerPopupPage,
+      cssClass: 'modalClass',
   		componentProps: {
   			'filterType': 'all'
   		}
