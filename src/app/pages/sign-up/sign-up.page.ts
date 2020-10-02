@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
+import { UsersService } from '../../object-init/users.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,8 +15,9 @@ export class SignUpPage implements OnInit {
   password: string = "";
   tos_accepted: boolean = false;
   //private actRoute: ActivatedRoute
-  constructor(private user_svc: UserService, private auth_svc: AuthService) {
-  	this.user = new User();
+  constructor(private user_svc: UserService, private auth_svc: AuthService,
+   private user_init: UsersService) {
+  	this.user = this.user_init.defaultUser();
   }
 
   ngOnInit() {

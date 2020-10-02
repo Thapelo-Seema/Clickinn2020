@@ -1,3 +1,3 @@
-export class Contract{
+export interface Contract{
 	
 }

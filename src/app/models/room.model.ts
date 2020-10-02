@@ -2,7 +2,7 @@ import { Tenant } from './tenant.model';
 import { Property } from './property.model';
 import { User } from './user.model';
 
-export class Room{
+export interface Room{
 	available: boolean;
 	display_pic_url: string;
 	pictures: string[];
@@ -18,16 +18,4 @@ export class Room{
 	number_of_similar_rooms: number;
 	call_number: string;
 	uploader: User;
-
-	addOccupant(){
-
-	}
-
-	removeOccupant(){
-
-	}
-
-	depositRoom(){
-		
-	}
 }

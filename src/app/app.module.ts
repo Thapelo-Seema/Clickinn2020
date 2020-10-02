@@ -9,10 +9,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { AngularFireModule } from '@angular/fire/angular-fire';
-import { AngularFireAuthModule } from '@angular/fire/auth/angular-fire-auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore/angular-fire-firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage/angular-fire-storage';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
 

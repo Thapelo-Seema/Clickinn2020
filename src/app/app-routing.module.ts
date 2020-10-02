@@ -109,10 +109,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/terms/terms.module').then( m => m.TermsPageModule)
   },
   {
-    path: 'metrics',
-    loadChildren: () => import('./pages/metrics/metrics.module').then( m => m.MetricsPageModule)
-  },
-  {
     path: 'financial-admin',
     loadChildren: () => import('./pages/financial-admin/financial-admin.module').then( m => m.FinancialAdminPageModule)
   },

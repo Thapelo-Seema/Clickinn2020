@@ -1,6 +1,6 @@
 import { Address } from './address.model';
 
-export class Property{
+export interface Property{
 	address: Address;
 	parking: boolean;
 	wifi: boolean;
@@ -23,41 +23,5 @@ export class Property{
 	nearby_landmarks: string[];
 	minutes_from_campus: number;
 	upload_complete: boolean;
-
-	constructor(){
-		this.address = new Address();
-		this.parking = false;
-		this.wifi = false;
-		this.accredited = false;
-		this.pool = false;
-		this.gym = false;
-		this.laundry = false;
-		this.tv_room = false;
-		this.security = false;
-		this.electricity_inclusive_in_rent = false;
-		this.landlord_id = "";
-		this.agents = [];
-		this.property_id = "";
-		this.service_package = "";
-		this.display_pic_url = "";
-		this.pictures = [];
-		this.video_url = "";
-		this.property_type = "";
-		this.property_paid_off = false;
-		this.nearby_landmarks = [];
-		this.minutes_from_campus = 0;
-		this.upload_complete = false;
-	}
-
-	addAgent(){
-
-	}
-
-	removeAgent(){
-
-	}
-
-	addLandLord(){
-
-	}	
+	
 }
