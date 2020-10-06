@@ -16,9 +16,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
 
+//services
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { SearchFeedService } from './services/search-feed.service';
+import { UsersService } from './object-init/users.service';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { SearchFeedService } from './services/search-feed.service';
   imports: [BrowserModule, 
   IonicModule.forRoot(), 
   AppRoutingModule, 
-  AngularFireModule.initializeApp(environment),
+  AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
   AngularFirestoreModule.enablePersistence(),
   AngularFireStorageModule
@@ -38,6 +40,7 @@ import { SearchFeedService } from './services/search-feed.service';
     UserService,
     AuthService,
     SearchFeedService,
+    UsersService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
