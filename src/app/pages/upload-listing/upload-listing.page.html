@@ -8,8 +8,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content forceOverscroll="true" [scrollEvents]="true">
-	<ion-grid class="content-bg">
+<ion-content color="light">
+	<ion-grid>
 		<ion-row>
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>
@@ -35,7 +35,7 @@
 										<ion-label position="stacked">
 											Province
 										</ion-label>
-									    <ion-select okText="Okay" cancelText="Dismiss">
+									    <ion-select [(ngModel)]="property?.address.province" okText="Okay" cancelText="Dismiss">
 									      <ion-select-option value="GP">GP</ion-select-option>
 									      <ion-select-option value="KZN">KZN</ion-select-option>
 									      <ion-select-option value="L">L</ion-select-option>
@@ -53,18 +53,10 @@
 										<ion-label position="stacked">
 											City
 										</ion-label>
-									    <ion-select okText="Okay" cancelText="Dismiss">
-									      <ion-select-option value="single">Tshwane</ion-select-option>
+									    <ion-select [(ngModel)]="property?.address.city" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="single">Pretoria</ion-select-option>
 									      <ion-select-option value="ensuite">Johannesburg</ion-select-option>
-									      <ion-select-option value="bachelor">Akasia</ion-select-option>
-									      <ion-select-option value="sharing">Alberton</ion-select-option>
-									      <ion-select-option value="sharing">Bedfordview</ion-select-option>
-									      <ion-select-option value="sharing">Benoni</ion-select-option>
-									      <ion-select-option value="sharing">Boksburg</ion-select-option>
-									      <ion-select-option value="sharing">Brakpan</ion-select-option>
-									      <ion-select-option value="sharing">Bronkhorspruit</ion-select-option>
-									      <ion-select-option value="cottage">Carletonville</ion-select-option>
-									      <ion-select-option value="sharing">Centurion</ion-select-option>
+									      <ion-select-option value="bachelor">Soweto</ion-select-option>
 									    </ion-select>
 									</ion-item>
 								</ion-col>
@@ -75,7 +67,7 @@
 										<ion-label position="stacked">
 											Neighbourhood
 										</ion-label>
-									    <ion-select okText="Okay" cancelText="Dismiss">
+									    <ion-select [(ngModel)]="property?.address.neighbourhood" okText="Okay" cancelText="Dismiss">
 									      <ion-select-option value="single">Auckland Park</ion-select-option>
 									      <ion-select-option value="ensuite">Melville</ion-select-option>
 									      <ion-select-option value="bachelor">Brixton</ion-select-option>
@@ -91,7 +83,7 @@
 										<ion-label position="stacked">
 											House Number and Street
 										</ion-label>
-										<ion-input type="text" placeholder="e.g. 73 Caroline Street"></ion-input>
+										<ion-input [(ngModel)]="house_number_and_street" type="text" placeholder="e.g. 73 Caroline Street"></ion-input>
 									</ion-item>
 								</ion-col>
 							</ion-row>
@@ -102,7 +94,7 @@
 											<ion-icon class="my-icons" slot="start" name="walk-outline"></ion-icon>
 											Nearby Places (5 min walk)
 										</ion-label>
-									    <ion-select multiple="true" okText="Okay" cancelText="Dismiss">
+									    <ion-select [(ngModel)]="nearbys" multiple="true" okText="Okay" cancelText="Dismiss">
 									      <ion-select-option value="single">UJ Kingsway</ion-select-option>
 									      <ion-select-option value="ensuite">UJ Bunting</ion-select-option>
 									      <ion-select-option value="bachelor">Campus Square</ion-select-option>
@@ -125,7 +117,7 @@
 					<ion-item lines="none">
 						<ion-icon color="medium" class="my-icon" name="business-outline"></ion-icon>
 						<ion-label style="font-size: 1.4em" class="ion-text-wrap ion-padding">
-							Indicate how many rooms of each type you have on your property 
+							Indicate how many rooms of each type you have on your property and whether they're furnished
 						</ion-label>
 					</ion-item>
 					<ion-grid>
@@ -135,13 +127,14 @@
 									<ion-label position="stacked">
 										How Many Backrooms ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_backrooms">
+									</ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="backroom.furnished" slot="start"></ion-checkbox>
 						        </ion-item>
 							</ion-col>
 							<ion-col>
@@ -149,13 +142,14 @@
 									<ion-label position="stacked">
 										How Many Single Rooms ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_singles" ></ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="single.furnished" slot="start">
+						            </ion-checkbox>
 						        </ion-item>
 							</ion-col>
 						</ion-row>
@@ -165,13 +159,14 @@
 									<ion-label position="stacked">
 										How many 2-Sharing Rooms ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_two_sharings" >
+									</ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="two_sharing.furnished" slot="start"></ion-checkbox>
 						        </ion-item>
 							</ion-col>
 							<ion-col>
@@ -179,13 +174,14 @@
 									<ion-label position="stacked">
 										How many 3-Sharing Rooms ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_three_sharings">
+									</ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="three_sharing.furnished" slot="start"></ion-checkbox>
 						        </ion-item>
 							</ion-col>
 						</ion-row>
@@ -195,13 +191,13 @@
 									<ion-label position="stacked">
 										How many Ensuites ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_ensuites" ></ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="ensuite.furnished" slot="start"></ion-checkbox>
 						        </ion-item>
 							</ion-col>
 							<ion-col>
@@ -209,13 +205,14 @@
 									<ion-label position="stacked">
 										How many Apartments ?
 									</ion-label>
-									<ion-input type="number"></ion-input>
+									<ion-input type="number" [(ngModel)]="num_apartments">
+									</ion-input>
 								</ion-item>
 								<ion-item lines="none">
 						            <ion-label>
 						            	Fully Furnished
 						            </ion-label>
-						            <ion-checkbox slot="start"></ion-checkbox>
+						            <ion-checkbox [(ngModel)]="apartment.furnished" slot="start"></ion-checkbox>
 						        </ion-item>
 							</ion-col>
 						</ion-row>
@@ -234,7 +231,8 @@
 					</ion-item>
 					<ion-item lines="none">
 			            <ion-label>NSFAS ACREDITED</ion-label>
-			            <ion-checkbox slot="start"></ion-checkbox>
+			            <ion-checkbox slot="start" [(ngModel)]="property.accredited">
+			            </ion-checkbox>
 			        </ion-item>
 			        <ion-grid>
 			        	<ion-row>
@@ -243,7 +241,8 @@
 									<ion-label position="stacked">
 										<ion-text>BackRoom Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="backroom.rent">
+								  	</ion-input>
 								</ion-item>
 							</ion-col>
 							<ion-col>
@@ -251,7 +250,7 @@
 									<ion-label position="stacked">
 										<ion-text>Single Room Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="single.rent" ></ion-input>
 								</ion-item>
 							</ion-col>
 						</ion-row>
@@ -261,7 +260,7 @@
 									<ion-label position="stacked">
 										<ion-text>2-Sharing Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="two_sharing.rent"></ion-input>
 								</ion-item>
 							</ion-col>
 							<ion-col>
@@ -269,7 +268,8 @@
 									<ion-label position="stacked">
 										<ion-text>3-Sharing Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="three_sharing.rent">
+								  	</ion-input>
 								</ion-item>
 							</ion-col>
 						</ion-row>
@@ -279,7 +279,8 @@
 									<ion-label position="stacked">
 										<ion-text>Ensuite Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="ensuite.rent" >
+								  	</ion-input>
 								</ion-item>
 							</ion-col>
 							<ion-col>
@@ -287,7 +288,8 @@
 									<ion-label position="stacked">
 										<ion-text>Apartment Monthly Rent</ion-text>
 									</ion-label>
-								  	<ion-input type="number" ></ion-input>
+								  	<ion-input type="number" [(ngModel)]="apartment.rent">
+								  	</ion-input>
 								</ion-item>
 							</ion-col>
 						</ion-row>
@@ -297,13 +299,19 @@
 									<ion-label position="stacked">
 										<ion-text>Deposit specifics</ion-text>
 									</ion-label>
-								    <ion-select okText="Okay" cancelText="Dismiss">
-								    	<ion-select-option value="no">No deposit</ion-select-option>
-								      <ion-select-option value="yes">Refundable</ion-select-option>
-								      <ion-select-option value="yes">
-								      	Partly-Refundable
+								    <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="property.deposit_specifics">
+								    	<ion-select-option value="no deposit">
+								    	 	No deposit
+								    	</ion-select-option>
+								      <ion-select-option value="fully refundable deposit">
+								      		Fully-Refundable
 								      </ion-select-option>
-								      <ion-select-option value="yes">Non-Refundable</ion-select-option>
+								      <ion-select-option value="partly-refundable deposit">
+								      		Partly-Refundable
+								      </ion-select-option>
+								      <ion-select-option value="non-refunable deposit">
+								      		Non-Refundable
+								      </ion-select-option>
 								    </ion-select>
 								</ion-item>
 							</ion-col>
@@ -324,38 +332,46 @@
 					<ion-list>
 						<ion-item lines="none">
 				            <ion-label>Wi-Fi</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox [(ngModel)]="property.wifi" slot="start"></ion-checkbox>
+				        </ion-item>
+				        <ion-item lines="none">
+				            <ion-label>Electricity included in rent</ion-label>
+				            <ion-checkbox [(ngModel)]="property.electricity_inclusive_in_rent" slot="start"></ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>Laundry Facilities</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start" [(ngModel)]="property.laundry" ></ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>TV-Room</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start" [(ngModel)]="property.tv_room">
+				            </ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>Swimming Pool</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start" [(ngModel)]="property.pool" ></ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>Gym</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start"  [(ngModel)]="property.gym"></ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>Security</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start" [(ngModel)]="property.security">
+				            </ion-checkbox>
 				        </ion-item>
 				        <ion-item lines="none">
 				            <ion-label>Parking</ion-label>
-				            <ion-checkbox slot="start"></ion-checkbox>
+				            <ion-checkbox slot="start" [(ngModel)]="property.parking">
+				            </ion-checkbox>
 				        </ion-item>
 				        <ion-grid>
 				        	<ion-row>
 				        		<ion-col>
 							        <ion-item color="light" lines="none">
 							            <ion-label position="stacked">Others</ion-label>
-							            <ion-textarea></ion-textarea>
+							            <ion-textarea [(ngModel)]="property.other_amenities">
+							            </ion-textarea>
 							        </ion-item>
 							    </ion-col>
 							</ion-row>
@@ -377,20 +393,48 @@
 						<ion-grid>
 							<ion-row>
 					            <ion-col>
-					            	<ion-card color="light">
+					            	<ion-card color="light"  *ngIf="backroom.pictures.length == 0">
 					            		<ion-card-content>
 						            		<div class="ion-text-center">
 						            			<ion-icon class="my-icon" name="images-outline"></ion-icon>
 						            		</div>
-		            						<ion-item lines="none" color="light" button>
+		            						<ion-item lines="none" color="light" button (click)="selectBackroomPics()">
 			                					<ion-label>
 			                						<h1 class="ion-text-wrap ion-text-center">
 			                   						<b>Pictures Of Backroom</b>
 			                						</h1>
 						                    	</ion-label>
 		             						</ion-item>
+		             						
+		             						<input type="file" hidden="hidden" #backroom_pics accept="image/*" (change)="updateBackroomPics($event)" multiple="true">
 		             					</ion-card-content>
 	             					</ion-card>
+	             					<div *ngIf="backroom.pictures.length > 0">
+	             						<h1>Backroom pictures</h1>
+	             						<ion-button mode="ios" (click)="addMoreBackroomPics()">Add More</ion-button>
+	             						<input type="file" hidden="hidden" #more_backroom_pics accept="image/*" (change)="updateMoreBackroomPics($event)" multiple="true">
+		             					<ion-list>
+		             						<ion-card *ngFor="let pic of backroom.pictures; let i = index">
+		             							<ion-item>
+										        	<ion-avatar slot="start">
+										            	<img src="{{pic?.url}}" (load)="pic.url" [hidden]="!pic.url">
+
+										            	<img src="../../../assets/imgs/genPlaceholder.png" [hidden]="pic.url" >
+										          	</ion-avatar>
+										          	<ion-label>
+										            	<h3>{{pic?.name}}</h3>
+										          	</ion-label>
+										        </ion-item>
+										        <ion-card-content>
+										        	<ion-button mode="ios" color="danger" (click)="deleteBackroomPic(i)">
+										        		delete
+										        	</ion-button>
+										        </ion-card-content>
+									          	<ion-progress-bar value="{{pic?.progress}}">
+									          	</ion-progress-bar>
+									        </ion-card>
+		             					</ion-list>
+		             				</div>
 					            </ion-col>
 					            <ion-col>
 					            	<ion-card color="light">

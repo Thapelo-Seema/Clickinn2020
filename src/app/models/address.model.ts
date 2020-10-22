@@ -5,8 +5,6 @@ export interface Address{
 	province: string;
 	city: string;
 	neighbourhood: string;
-	house_number: number;
+	house_number: string;
 	street: string; 
-
-	
 }

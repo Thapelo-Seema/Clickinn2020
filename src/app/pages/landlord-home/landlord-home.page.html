@@ -11,14 +11,14 @@
 			</ion-col>
 			<ion-col size-xs="12" size-md="8" size-lg="6">
 				<div class="ion-text-center">
-					<img src="../../../assets/imgs/logo.png" style="height: 6em">
+					<img src="{{user?.photoURL}}" style="height: 6em">
 					<ion-text color="tertiary">
 						<h2><b>Business Dash</b></h2>
 					</ion-text>
 				</div>
 				<ion-chip (click)="gotoProfile()">
 				  <ion-icon name="person-circle-outline"></ion-icon>
-				  <ion-label>Thapelo Seema</ion-label>
+				  <ion-label>{{user?.displayName}}</ion-label>
 				</ion-chip>
 				<ion-chip color="tertiary">
 				  <ion-label>Notifications</ion-label>

@@ -1,21 +1,18 @@
 import { Tenant } from './tenant.model';
-import { Property } from './property.model';
-import { User } from './user.model';
+import { FileUpload } from './file-upload.model';
 
 export interface Room{
 	available: boolean;
 	display_pic_url: string;
-	pictures: string[];
+	pictures: FileUpload[];
 	video_url: string;
 	room_id: string;
 	occupants: Tenant[];
-	property: Property;
 	furnished: boolean;
 	room_type: string;
-	search_rating: number;
-	demand_index: number;
+	search_rating: number; //calculated per individual search
+	demand_index: number; //aggregated over all searches
 	rent: number;
-	number_of_similar_rooms: number;
-	call_number: string;
-	uploader: User;
+	deposit: number;
+	room_number: string;
 }

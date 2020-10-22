@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable, NgZone } from '@angular/core';
+import { Router} from '@angular/router';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -7,20 +7,22 @@ import { User } from '../models/user.model';
 })
 export class NavigationService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private ngZone: NgZone) { }
 
   navigateUserToDashboard(user: User){
-  	if(user.role == "student"){
-  		this.router.navigate(['/search', {user: user}]);
-  	}else if(user.role == "caretaker"){
-  		this.router.navigate(['/management-admin', {user: user}]);
-  	}else if(user.role == "agent"){
-  		this.router.navigate(['/agent-admin', {user: user}]);
-  	}else if(user.role == "landlord"){
-  		this.router.navigate(['/landlord-home', {user: user}]);
-  	}else{
-  		this.router.navigate(['/tabs/tab1', {user: user}]);
-  	}
+    this.ngZone.run(() =>{
+       if(user.role == "student"){
+          this.router.navigate(['/search', {user: user}]);
+        }else if(user.role == "caretaker"){
+          this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
+        }else if(user.role == "agent"){
+          this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
+        }else if(user.role == "landlord"){
+          this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
+        }else{
+          this.router.navigate(['/tabs/tab1', {user: user}]);
+        }
+    })
   }
 
 }

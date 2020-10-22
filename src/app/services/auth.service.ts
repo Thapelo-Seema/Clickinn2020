@@ -12,8 +12,8 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth) { }
 
   //Function that returns a logged in Firebase User
-  checkAuthStatus():Promise<any>{
-    return this.afAuth.authState.toPromise();
+  checkAuthStatus(){
+    return this.afAuth.authState
   }
 
   //Function that provides sign up with email and password using firebase auth system
@@ -31,65 +31,27 @@ export class AuthService {
   }
 
   signInWithEmailAndPassword(email: string, password: string):Promise<any>{
-    return new Promise<any>((resolve, reject) =>{
-      this.afAuth.signInWithEmailAndPassword(email, password)
-      .then(data =>{
-        resolve(data.user);
-      })
-      .catch(reason =>{
-        reject(reason.message);
-      })
-    })
+    return this.afAuth.signInWithEmailAndPassword(email, password)
   }
 
   //Function that lets a user sign up anonymously
   signUpAnonymously():Promise<any>{
-    return new Promise<any>((resolve, reject) =>{
-      this.afAuth.signInAnonymously()
-      .then(data =>{
-        resolve(data.user);
-      })
-      .catch(reason =>{
-        reject(reason.message);
-      })
-    })
+    return this.afAuth.signInAnonymously()
   }
 
 
   signInWithFacebook():Promise<any>{
-    return new Promise<any>((resolve, reject) =>{
-      this.afAuth.signInWithPopup(new auth.FacebookAuthProvider())
-      .then(data =>{
-        resolve(data.user);
-      })
-      .catch(reason =>{
-        reject(reason.message);
-      })
-    })
+    return this.afAuth.signInWithPopup(new auth.FacebookAuthProvider())
   }
 
   signInWithTwitter():Promise<any>{
-    return new Promise<any>((resolve, reject) =>{
-      this.afAuth.signInWithPopup(new auth.TwitterAuthProvider())
-      .then(data =>{
-        resolve(data.user);
-      })
-      .catch(reason =>{
-        reject(reason.message);
-      })
-    })
+    return this.afAuth.signInWithPopup(new auth.TwitterAuthProvider())
+
   }
 
   signInWithGoogle():Promise<any>{
-    return new Promise<any>((resolve, reject) =>{
-      this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
-      .then(data =>{
-        resolve(data.user);
-      })
-      .catch(reason =>{
-        reject(reason.message);
-      })
-    })
+    console.log("running auth service google signin");
+    return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
   }
 
 

@@ -1,4 +1,6 @@
 import { Address } from './address.model';
+import { Room } from './room.model';
+import { FileUpload } from './file-upload.model';
 
 export interface Property{
 	address: Address;
@@ -16,12 +18,16 @@ export interface Property{
 	property_id: string;
 	service_package: string;
 	display_pic_url: string;
-	pictures: string[];
+	pictures: FileUpload[];
 	video_url: string;
 	property_type: string;
 	property_paid_off: boolean;
 	nearby_landmarks: string[];
 	minutes_from_campus: number;
-	upload_complete: boolean;
-	
+	upload_complete: number;
+	uploader_id: string;
+	uploader_contact_number: string;
+	deposit_specifics: string;
+	other_amenities: string;
+	rooms: Room[]
 }

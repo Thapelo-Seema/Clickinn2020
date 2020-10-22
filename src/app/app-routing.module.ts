@@ -9,7 +9,7 @@ const routes: Routes = [
     data:{preload: true}
   },
   {
-    path: 'search-feed',
+    path: 'search-feed/:id',
     loadChildren: () => import('./pages/search-feed/search-feed.module').then( m => m.SearchFeedPageModule)
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     data:{preload: true}
   },
   {
-    path: 'listing',
+    path: 'listing/:id',
     loadChildren: () => import('./pages/listing/listing.module').then( m => m.ListingPageModule),
     data:{preload: true}
   },
@@ -73,35 +73,35 @@ const routes: Routes = [
     data:{preload: true}
   },
   {
-    path: 'upload-listing',
+    path: 'upload-listing/:id',
     loadChildren: () => import('./pages/upload-listing/upload-listing.module').then( m => m.UploadListingPageModule)
   },
   {
-    path: 'landlord-home',
+    path: 'landlord-home/:id',
     loadChildren: () => import('./pages/landlord-home/landlord-home.module').then( m => m.LandlordHomePageModule)
   },
   {
-    path: 'my-listings',
+    path: 'my-listings/:id',
     loadChildren: () => import('./pages/my-listings/my-listings.module').then( m => m.MyListingsPageModule)
   },
   {
-    path: 'edit-listing',
+    path: 'edit-listing/:id',
     loadChildren: () => import('./pages/edit-listing/edit-listing.module').then( m => m.EditListingPageModule)
   },
   {
-    path: 'customize-lease',
+    path: 'customize-lease/:id',
     loadChildren: () => import('./pages/customize-lease/customize-lease.module').then( m => m.CustomizeLeasePageModule)
   },
   {
-    path: 'placement-tracking',
+    path: 'placement-tracking/:id',
     loadChildren: () => import('./pages/placement-tracking/placement-tracking.module').then( m => m.PlacementTrackingPageModule)
   },
   {
-    path: 'student-profile',
+    path: 'student-profile/:id',
     loadChildren: () => import('./pages/student-profile/student-profile.module').then( m => m.StudentProfilePageModule)
   },
   {
-    path: 'landlord-profile',
+    path: 'landlord-profile/:id',
     loadChildren: () => import('./pages/landlord-profile/landlord-profile.module').then( m => m.LandlordProfilePageModule)
   },
   {

@@ -41,7 +41,7 @@
             <ion-label class="my-label ion-text-wrap" position="stacked">
               Your role
             </ion-label>
-              <ion-select #roleSelect (ionChange)="continueWithAuthAfterRole()" [(ngModel)]="user.role" okText="Okay" cancelText="Dismiss">
+              <ion-select #roleSelect [(ngModel)]="user.role" okText="Okay" cancelText="Dismiss">
                 <ion-select-option value="student">Student</ion-select-option>
                 <ion-select-option value="agent">Agent</ion-select-option>
                 <ion-select-option value="caretaker">Caretaker</ion-select-option>

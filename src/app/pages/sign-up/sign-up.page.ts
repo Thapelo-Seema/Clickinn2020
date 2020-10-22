@@ -7,6 +7,7 @@ import { UsersService } from '../../object-init/users.service';
 import { NavigationService } from '../../services/navigation.service';
 import { take } from 'rxjs/operators';
 import { Contract } from '../../models/contract.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-sign-up',
@@ -24,7 +25,8 @@ export class SignUpPage implements OnInit {
   constructor(private user_svc: UserService, 
     private auth_svc: AuthService,
    private user_init: UsersService,
-   private nav_svc: NavigationService) {
+   private nav_svc: NavigationService,
+   private afs: AngularFirestore) {
   	
   }
 
@@ -63,6 +65,7 @@ export class SignUpPage implements OnInit {
           agreed_on: new Date(),
           parties: [this.user, clickinn]
         }
+        //Contract must be uploaded to contracts collection on db and doc id captured
         this.user.contracts.push(tos);
       }
       this.user_svc.createUser(this.user)
@@ -72,7 +75,6 @@ export class SignUpPage implements OnInit {
         .subscribe(user_object =>{
           //navigate user to the appropriate page/dashboard
           //pass the user object as a parameter to the page being navigated to
-          console.log(user_object);
           this.nav_svc.navigateUserToDashboard(user_object);
         },
         err =>{
@@ -107,7 +109,6 @@ export class SignUpPage implements OnInit {
     }else{
       this.continueWithAuthAfterRole();
     }
-
   }
 
   //This function allows sign in with Google account
@@ -116,8 +117,24 @@ export class SignUpPage implements OnInit {
     //need to prompt user to select role before moving forward
     if(this.user.role == ""){
       this.roleSelect.open() //selects role and continues with authentication
+      this.roleSelect.ionChange.pipe(take(1))
+      .subscribe(() =>{
+        this.auth_svc.signInWithGoogle()
+        .then(firebase_use_obj =>{
+          this.createUserAndNavigate(firebase_use_obj);
+        })
+        .catch(err =>{
+          console.log(err);
+        })
+      })
     }else{
-      this.continueWithAuthAfterRole();
+      this.auth_svc.signInWithGoogle()
+      .then(firebase_use_obj =>{
+        this.createUserAndNavigate(firebase_use_obj);
+      })
+      .catch(err =>{
+        console.log(err);
+      })
     }
   }
 
@@ -126,27 +143,21 @@ export class SignUpPage implements OnInit {
   //updates the user fields using the FirebaseUser object, then commits the user object
   //to the database and navigates the user to the relevant dashboard (with nav params)
   createUserAndNavigate(firebase_use_obj: any){
-    this.user.displayName = firebase_use_obj.displayName;
+    this.user.displayName = firebase_use_obj.additionalUserInfo.profile.name;
     this.updateNames(this.user.displayName);
-    this.user.email = firebase_use_obj.email;
-    this.user.phoneNumber = firebase_use_obj.phoneNumber;
-    this.user.photoURL = firebase_use_obj.photoURL;
-    this.user.uid = firebase_use_obj.uid;
+    this.user.email = firebase_use_obj.user.email;
+    this.user.phoneNumber = firebase_use_obj.user.phoneNumber;
+    this.user.photoURL = firebase_use_obj.user.photoURL;
+    this.user.uid = firebase_use_obj.user.uid;
     if(this.tos_accepted){ //create and add a tos contract to this users contracts
-      let clickinn: User = this.user_init.defaultUser();
-      clickinn.firstname = "Clickinn";
-      clickinn.lastname = "Student Lifestyle";
-      clickinn.role = "Master";
-      clickinn.uid = "I_love_Clickinn"
-      let tos : Contract = {
-        type: "Clickinn Student Lifestyle Terms Of Service",
-        agreed_on: new Date(),
-        parties: [this.user, clickinn]
-      }
-      this.user.contracts.push(tos);
+      this.generateTermsContract();
     }
-    this.user_svc.createUser(this.user)
+    console.log(this.user);
+    console.log(firebase_use_obj);
+    this.nav_svc.navigateUserToDashboard(this.user);
+    /*this.afs.collection("Users").doc(firebase_use_obj.user.uid).set(this.user)
     .then(() =>{
+      console.log("User created !")
       this.user_svc.getUser(this.user.uid)
       .pipe(take(1))
       .subscribe(user_object =>{
@@ -160,14 +171,31 @@ export class SignUpPage implements OnInit {
         console.log(err.message);
       })
     })
+    .catch(err =>{
+      console.log(err);
+    })*/
+  }
+
+  generateTermsContract(){
+    let clickinn: User = this.user_init.defaultUser();
+    clickinn.firstname = "Clickinn";
+    clickinn.lastname = "StudentLifestyle";
+    clickinn.role = "Master";
+    clickinn.uid = "I_love_Clickinn"
+    let tos : Contract = {
+      type: "Clickinn Student Lifestyle Terms Of Service",
+      agreed_on: new Date(),
+      parties: [this.user, clickinn]
+    }
+    this.user.contracts.push(tos);
   }
 
   //This function is called everytime the role is changed
   //based where the change is initiated, it will run the appropriate
   //authentication method and call createUserAndNavigate()
   continueWithAuthAfterRole(){
+    console.log("continueWithAuthAfterRole")
     if(this.social_sign_in == ""){
-
     }else if(this.social_sign_in == "google"){
       this.auth_svc.signInWithGoogle()
       .then(firebase_use_obj =>{

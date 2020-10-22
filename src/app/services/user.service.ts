@@ -22,7 +22,8 @@ export class UserService {
     //Function that updates the details of a particular user
     //Takes a user object as a parameter and returns a void promise on completion
   	updateUser(user: User):Promise<void>{
-  		return this.afs.collection('Users').doc(user.uid).set(user);
+      return this.afs.collection('Users').doc(user.uid).update(user);
+  		//return this.afs.collection('Users').doc(user.uid).set(user);
   	}
 
     //Function for retrieving a user object
