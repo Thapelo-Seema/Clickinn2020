@@ -1,5 +1,6 @@
 import { Tenant } from './tenant.model';
 import { FileUpload } from './file-upload.model';
+import { PropertyPreview } from './property-preview.model';
 
 export interface Room{
 	available: boolean;
@@ -15,4 +16,5 @@ export interface Room{
 	rent: number;
 	deposit: number;
 	room_number: string;
+	property: PropertyPreview;
 }

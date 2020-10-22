@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Property } from '../models/property.model';
+import { PropertyPreview } from '../models/property-preview.model';
 import { Address } from '../models/address.model';
 import { Room } from '../models/room.model';
 
@@ -9,6 +10,27 @@ import { Room } from '../models/room.model';
 export class PropertiesService {
 
   constructor() { }
+
+  defaultPropertyPreview(){
+  	let property: PropertyPreview = {
+  		address: this.defaultAddress(),
+		parking: false,
+		wifi: false,
+		accredited: false,
+		pool: false,
+		gym: false,
+		laundry: false,
+		tv_room: false,
+		security: false,
+		electricity_inclusive_in_rent: false,
+		property_id: "",
+		property_type: "",
+		nearby_landmarks: [],
+		deposit_specifics: "",
+		other_amenities: ""
+	}
+  	return property;
+  }
 
   defaultAddress(): Address{
   	let address: Address ={
@@ -38,7 +60,8 @@ export class PropertiesService {
 		demand_index: 0,   
 		rent: 0,
 		deposit: 0,
-		room_number: ""
+		room_number: "",
+		property: this.defaultPropertyPreview();
   	}
   	return room;
   }
@@ -57,7 +80,8 @@ export class PropertiesService {
 		demand_index: 0,   
 		rent: 0,
 		deposit: 0,
-		room_number: rm_number
+		room_number: rm_number,
+		property: this.defaultPropertyPreview()
   	}
   	return room;
   }

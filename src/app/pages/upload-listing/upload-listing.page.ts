@@ -11,6 +11,12 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { FileUpload } from '../../models/file-upload.model';
 import { AuthService } from '../../services/auth.service';
 
+/**
+@Todo finish picture uploads for all types of rooms, add cottage to room types,
+implement the property and apartment uploads, make the apartment upload a minimalistic
+data structure
+*/
+
 @Component({
   selector: 'app-upload-listing',
   templateUrl: './upload-listing.page.html',

@@ -2,11 +2,15 @@ import { Address } from './address.model';
 import { Room } from './room.model';
 import { FileUpload } from './file-upload.model';
 
+/**
+@Todo change the accredited property to: payment method so that the property 
+can be queried in a meaningful way
+*/
 export interface Property{
 	address: Address;
 	parking: boolean;
 	wifi: boolean;
-	accredited: boolean;
+	accredited: boolean;  
 	pool: boolean;
 	gym: boolean;
 	laundry: boolean;
