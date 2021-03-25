@@ -29,6 +29,10 @@ main.inner-scroll.scroll-y{
 	--background: transparent;
 }
 
+.alert-radio-label.sc-ion-alert-md {
+  white-space: normal !important;
+}
+
 @media only screen and (max-width: 600px) {
 	
 	.raisedbox {

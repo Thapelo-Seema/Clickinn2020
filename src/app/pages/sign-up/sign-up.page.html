@@ -8,9 +8,38 @@
           <div class="ion-text-center">
             <img src="../../../assets/imgs/logo.png" style="height: 6em">
             <ion-text>
-              <h1>Sign Up and Join The Accommodation Revolution</h1>
+              <h1>Sign Up</h1>
             </ion-text>
           </div>
+          <ion-item lines="none" color="light" class="ion-padding ion-text-wrap">
+            <ion-label class="ion-text-wrap">I accept the <a [routerLink]="['/terms']" >Terms of Service</a></ion-label>
+            <ion-checkbox slot="start"  [(ngModel)]="tos_accepted"></ion-checkbox>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-button class="ion-padding" mode="ios" fill="clear"
+                 [routerLink]="['/sign-in']" >
+                  Login
+                </ion-button>
+              </ion-col>
+             <!--  <ion-col size="4">
+                <ion-button expand="block" mode="ios" [disabled]="!tos_accepted" (click)="signInWithFacebook()" >
+                  <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button expand="block" mode="ios" [disabled]="!tos_accepted" color="secondary">
+                  <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+                </ion-button>
+              </ion-col> -->
+              <ion-col size="4">
+                <ion-button expand="block" mode="ios" color="danger" [disabled]="!tos_accepted" (click)="signInWithGoogle()" >
+                  <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
           <ion-item lines="none" color="light" class="ion-padding">
             <ion-label class="my-label ion-text-wrap" position="stacked">
               <ion-icon name="person" slot="start"></ion-icon>
@@ -55,10 +84,7 @@
             </ion-label>
             <ion-input type="password" [(ngModel)]="password" ></ion-input>
           </ion-item>
-          <ion-item lines="none" color="light" class="ion-padding ion-text-wrap">
-            <ion-label class="ion-text-wrap">I accept the <a [routerLink]="['/terms']" >Terms of Service</a></ion-label>
-            <ion-checkbox slot="start"  [(ngModel)]="tos_accepted"></ion-checkbox>
-          </ion-item>
+          
           <div class="ion-text-center" style="margin-top: 20px;">
             <ion-grid>
               <ion-row>
@@ -68,34 +94,10 @@
                     Register
                   </ion-button>
                 </ion-col>
-                <ion-col>
-                  <ion-button class="ion-padding" mode="ios" fill="clear"
-                   [routerLink]="['/sign-in']" >
-                    Login
-                  </ion-button>
-                </ion-col>
+                
               </ion-row>
             </ion-grid>
           </div>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="4">
-              <ion-button expand="block" mode="ios" [disabled]="!tos_accepted" (click)="signInWithFacebook()" >
-                <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
-              </ion-button>
-            </ion-col>
-            <ion-col size="4">
-              <ion-button expand="block" mode="ios" [disabled]="!tos_accepted" color="secondary">
-                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
-              </ion-button>
-            </ion-col>
-            <ion-col size="4">
-              <ion-button expand="block" mode="ios" color="danger" [disabled]="!tos_accepted" (click)="signInWithGoogle()" >
-                <ion-icon slot="icon-only" name="logo-google"></ion-icon>
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
         </div>
       </ion-col>
       <ion-col size-xs="0" size-md="3">

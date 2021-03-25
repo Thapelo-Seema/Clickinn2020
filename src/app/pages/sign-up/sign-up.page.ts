@@ -75,6 +75,7 @@ export class SignUpPage implements OnInit {
         .subscribe(user_object =>{
           //navigate user to the appropriate page/dashboard
           //pass the user object as a parameter to the page being navigated to
+          localStorage.setItem('uid', user_object.uid);
           this.nav_svc.navigateUserToDashboard(user_object);
         },
         err =>{
@@ -154,6 +155,7 @@ export class SignUpPage implements OnInit {
     }
     console.log(this.user);
     console.log(firebase_use_obj);
+    localStorage.setItem('uid', this.user.uid);
     this.nav_svc.navigateUserToDashboard(this.user);
     /*this.afs.collection("Users").doc(firebase_use_obj.user.uid).set(this.user)
     .then(() =>{

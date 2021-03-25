@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SimpleLoadingStrategy } from './simplePreloadStrategy';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'search-feed/:id',
-    loadChildren: () => import('./pages/search-feed/search-feed.module').then( m => m.SearchFeedPageModule)
+    loadChildren: () => import('./pages/search-feed/search-feed.module').then( m => m.SearchFeedPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'search',
@@ -28,24 +30,25 @@ const routes: Routes = [
     data:{preload: true}
   },
   {
-    path: 'contact-details',
+    path: 'contact-details/:id',
     loadChildren: () => import('./pages/contact-details/contact-details.module').then( m => m.ContactDetailsPageModule),
     data:{preload: true}
   },
   {
-    path: 'results-scanning',
+    path: 'results-scanning/:id',
     loadChildren: () => import('./pages/results-scanning/results-scanning.module').then( m => m.ResultsScanningPageModule),
     data:{preload: true}
   },
   {
-    path: 'results',
+    path: 'results/:id',
     loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule),
     data:{preload: true}
   },
   {
     path: 'listing/:id',
     loadChildren: () => import('./pages/listing/listing.module').then( m => m.ListingPageModule),
-    data:{preload: true}
+    data:{preload: true},
+    canActivate: [AuthGuardService]
   },
   {
     path: 'bursary-request',
@@ -74,35 +77,43 @@ const routes: Routes = [
   },
   {
     path: 'upload-listing/:id',
-    loadChildren: () => import('./pages/upload-listing/upload-listing.module').then( m => m.UploadListingPageModule)
+    loadChildren: () => import('./pages/upload-listing/upload-listing.module').then( m => m.UploadListingPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'landlord-home/:id',
-    loadChildren: () => import('./pages/landlord-home/landlord-home.module').then( m => m.LandlordHomePageModule)
+    loadChildren: () => import('./pages/landlord-home/landlord-home.module').then( m => m.LandlordHomePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'my-listings/:id',
-    loadChildren: () => import('./pages/my-listings/my-listings.module').then( m => m.MyListingsPageModule)
+    loadChildren: () => import('./pages/my-listings/my-listings.module').then( m => m.MyListingsPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'edit-listing/:id',
-    loadChildren: () => import('./pages/edit-listing/edit-listing.module').then( m => m.EditListingPageModule)
+    loadChildren: () => import('./pages/edit-listing/edit-listing.module').then( m => m.EditListingPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'customize-lease/:id',
-    loadChildren: () => import('./pages/customize-lease/customize-lease.module').then( m => m.CustomizeLeasePageModule)
+    loadChildren: () => import('./pages/customize-lease/customize-lease.module').then( m => m.CustomizeLeasePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'placement-tracking/:id',
-    loadChildren: () => import('./pages/placement-tracking/placement-tracking.module').then( m => m.PlacementTrackingPageModule)
+    loadChildren: () => import('./pages/placement-tracking/placement-tracking.module').then( m => m.PlacementTrackingPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'student-profile/:id',
-    loadChildren: () => import('./pages/student-profile/student-profile.module').then( m => m.StudentProfilePageModule)
+    loadChildren: () => import('./pages/student-profile/student-profile.module').then( m => m.StudentProfilePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'landlord-profile/:id',
-    loadChildren: () => import('./pages/landlord-profile/landlord-profile.module').then( m => m.LandlordProfilePageModule)
+    loadChildren: () => import('./pages/landlord-profile/landlord-profile.module').then( m => m.LandlordProfilePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'terms',
@@ -110,23 +121,28 @@ const routes: Routes = [
   },
   {
     path: 'financial-admin',
-    loadChildren: () => import('./pages/financial-admin/financial-admin.module').then( m => m.FinancialAdminPageModule)
+    loadChildren: () => import('./pages/financial-admin/financial-admin.module').then( m => m.FinancialAdminPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'agent-admin',
-    loadChildren: () => import('./pages/agent-admin/agent-admin.module').then( m => m.AgentAdminPageModule)
+    loadChildren: () => import('./pages/agent-admin/agent-admin.module').then( m => m.AgentAdminPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'management-admin',
-    loadChildren: () => import('./pages/management-admin/management-admin.module').then( m => m.ManagementAdminPageModule)
+    loadChildren: () => import('./pages/management-admin/management-admin.module').then( m => m.ManagementAdminPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'searchfeed-filtering',
-    loadChildren: () => import('./modals/searchfeed-filtering/searchfeed-filtering.module').then( m => m.SearchfeedFilteringPageModule)
+    loadChildren: () => import('./modals/searchfeed-filtering/searchfeed-filtering.module').then( m => m.SearchfeedFilteringPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'listing-filtering',
-    loadChildren: () => import('./modals/listing-filtering/listing-filtering.module').then( m => m.ListingFilteringPageModule)
+    loadChildren: () => import('./modals/listing-filtering/listing-filtering.module').then( m => m.ListingFilteringPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'room-status',
@@ -171,6 +187,19 @@ const routes: Routes = [
   {
     path: 'reciept',
     loadChildren: () => import('./pages/reciept/reciept.module').then( m => m.RecieptPageModule)
+  },
+  {
+    path: 'upload-success',
+    loadChildren: () => import('./modals/upload-success/upload-success.module').then( m => m.UploadSuccessPageModule)
+
+  },
+  {
+    path: 'landing',
+    loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
+  },
+  {
+    path: 'result/:id',
+    loadChildren: () => import('./pages/result/result.module').then( m => m.ResultPageModule)
   }
 ];
 @NgModule({

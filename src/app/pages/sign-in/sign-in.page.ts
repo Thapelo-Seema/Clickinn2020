@@ -22,14 +22,18 @@ export class SignInPage implements OnInit {
    private nav_svc: NavigationService) { }
 
   ngOnInit() {
- 
+  }
+
+  signUp(){
+    this.nav_svc.gotoSignUp();
   }
 
   signInWithEmailAndPassword(){
   	this.social_sign_in = "";
   	this.auth_svc.signInWithEmailAndPassword(this.email, this.password)
-  	.then(firebase_user =>{
-  		this.getUserAndNavigate(firebase_user);
+  	.then(message =>{
+      //Display email verification message
+  		//this.getUserAndNavigate(firebase_user);
   	})
   	.catch(err =>{
   		console.log(err);
@@ -67,16 +71,17 @@ export class SignInPage implements OnInit {
   }
 
   getUserAndNavigate(firebase_user: any){
-  	this.user_svc.getUser(firebase_user.uid)
-	.pipe(take(1))
-	.subscribe(user_object =>{
-		//navigate user to the appropriate page/dashboard
-		//pass the user object as a parameter to the page being navigated to
-		this.nav_svc.navigateUserToDashboard(user_object);
-		},
-		err =>{
-			console.log(err);
-	})
+  	this.user_svc.getUser(firebase_user.user.uid)
+	  .pipe(take(1))
+  	.subscribe(user_object =>{
+      console.log(user_object);
+  		//navigate user to the appropriate page/dashboard
+  		//pass the user object as a parameter to the page being navigated to
+  		this.nav_svc.navigateUserToDashboard(user_object);
+  		},
+  		err =>{
+  			console.log(err);
+  	})
   }
 
 }

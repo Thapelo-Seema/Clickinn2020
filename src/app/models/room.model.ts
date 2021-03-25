@@ -1,10 +1,13 @@
 import { Tenant } from './tenant.model';
 import { FileUpload } from './file-upload.model';
-import { PropertyPreview } from './property-preview.model';
+import { Property } from './property.model';
 
 export interface Room{
 	available: boolean;
+	accredited: boolean;
 	display_pic_url: string;
+	description?: string;
+	dp_loaded?: boolean;
 	pictures: FileUpload[];
 	video_url: string;
 	room_id: string;
@@ -16,5 +19,6 @@ export interface Room{
 	rent: number;
 	deposit: number;
 	room_number: string;
-	property: PropertyPreview;
+	sub_rooms: number;
+	property: Property;
 }

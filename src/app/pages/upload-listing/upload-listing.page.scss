@@ -67,4 +67,8 @@ ion-item {
   border-radius: 4px;
 }
 
+ion-select::part(icon) {
+  display: none !important;
+ }
+
   

@@ -29,7 +29,8 @@ export class UsersService {
   		rating: 0,
   		online: false,
   		role: "",
-  		uid: ""
+  		uid: "",
+      hometown: ""
   	}
   	return user;
   }
@@ -56,7 +57,8 @@ export class UsersService {
   		rating: originalUser.rating || 0,
   		online: originalUser.online || false,
   		role: originalUser.role || "",
-  		uid: originalUser.uid || ""
+  		uid: originalUser.uid || "",
+      hometown: originalUser.hometown || ""
   	}
   	return user;
   }

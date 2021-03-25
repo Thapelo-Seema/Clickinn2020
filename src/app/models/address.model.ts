@@ -7,4 +7,5 @@ export interface Address{
 	neighbourhood: string;
 	house_number: string;
 	street: string; 
+	place_name?: string;
 }

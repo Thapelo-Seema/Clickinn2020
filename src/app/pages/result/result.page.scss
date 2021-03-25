@@ -1,0 +1,58 @@
+// Slider Style START 
+.custon-nav{
+  height: 48px;
+  width: 20px;
+  cursor: pointer;
+  background: rgba(0,0,0, 0.5);
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.prev-icon-custom{
+  
+}
+.prev-icon-custom.disabled{
+  opacity: 0.4;
+  cursor: default;
+}
+.next-icon-custom{
+  
+}
+.next-icon-custom.disabled{
+  opacity: 0.4;
+  cursor: default;
+}
+.slider-nav{
+  ion-icon{
+    height: 100%;
+    
+  }
+}
+
+.my-icons{
+  font-size: 2.5em;
+}
+
+.slide-text{
+  position: absolute;
+  color: white;
+  bottom: 30px;
+  width: 100%;
+  background: rgba(0,0,0, 0.5);
+}
+
+.slide-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+ion-slides { 
+  background: lightgray;
+  height: 300px;
+  --bullet-background: red; 
+  --bullet-background-active: rebeccapurple;
+}

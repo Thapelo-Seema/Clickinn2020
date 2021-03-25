@@ -4,7 +4,7 @@
       <ion-back-button>
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Clickinn</ion-title>
+    <ion-title>My Property</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">
@@ -16,9 +16,9 @@
 
         <ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav
           (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
-          <ion-slide style="height: 100%" *ngFor="let s of sliderOne.slidesItems">
-            <img src="{{s.id}}" class="slide-img">
-            <!-- <div class="slide-text">Slide id </div> -->
+          <ion-slide style="height: 100%" *ngFor="let s of property.shared_area_pics">
+            <img src="{{s.url}}" class="slide-img">
+            <!-- ,<div class="slide-text">Slide id </div> -->
           </ion-slide>
         </ion-slides>
         <ion-grid>
@@ -26,9 +26,8 @@
         		<ion-col size-xs="12" size-lg="8">
 			        <ion-card>
 			        	<ion-card-header>
-			    			<ion-card-title color="tertiary">R3000</ion-card-title>
-			    			<ion-card-title>Single Room to Rent in Brixton</ion-card-title>
-			    			<ion-card-subtitle>Brixton, Johannesburg</ion-card-subtitle>
+			    			<ion-card-title>{{property?.address.house_number}} {{property?.address.street}}</ion-card-title>
+			    			<ion-card-subtitle>{{property?.address.neighbourhood}}, {{property?.address.city}}</ion-card-subtitle>
 			  			</ion-card-header>
 			  			<ion-grid>
 			  				<ion-row>
@@ -36,13 +35,33 @@
 						  			<ion-grid>
 						  				<ion-row>
 						  					<ion-col class="ion-text-center">
-							  					<ion-icon class="my-icons" name="wifi-outline"></ion-icon>
+							  					<ion-icon *ngIf="property?.wifi" class="my-icons" name="wifi-outline" color="tertiary">
+							  					</ion-icon>
+							  					<ion-icon *ngIf="!property?.wifi" class="my-icons" name="wifi-outline" color="light">
+							  					</ion-icon>
 							  				</ion-col>
 							  				<ion-col class="ion-text-center">
-							    				<ion-icon class="my-icons" name="barbell-outline"></ion-icon>
+							    				<ion-icon *ngIf="property?.gym" class="my-icons" name="barbell-outline"  color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!property?.gym" class="my-icons" name="barbell-outline" color="light"></ion-icon>
 							    			</ion-col>
 							    			<ion-col class="ion-text-center">
-							    				<ion-icon class="my-icons" name="car-sport-outline"></ion-icon>
+							    				<ion-icon *ngIf="property?.parking" class="my-icons" name="car-sport-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!property?.parking" class="my-icons" name="car-sport-outline" color="light"></ion-icon>
+							    			</ion-col>
+							    		</ion-row>
+							    		<ion-row>
+						  					<ion-col class="ion-text-center">
+							  					<ion-icon *ngIf="property?.laundry" class="my-icons" name="basket-outline" color="tertiary"></ion-icon>
+							  					<ion-icon *ngIf="!property?.laundry" class="my-icons" name="basket-outline" color="light"></ion-icon>
+							  				</ion-col>
+							  				<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="property?.tv_room" class="my-icons" name="tv-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf=" !property?.tv_room" class="my-icons" name="tv-outline" color="light"></ion-icon>
+							    			</ion-col>
+							    			<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="property?.security" class="my-icons" name="shield-checkmark-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!property?.security" class="my-icons" name="shield-checkmark-outline" color="light">
+							    				</ion-icon>
 							    			</ion-col>
 							    		</ion-row>
 						  			</ion-grid>
@@ -57,7 +76,7 @@
 						  </ion-grid>
 			        </ion-card>
 			    </ion-col>
-			    <ion-col size-xs="12" size-lg="2">
+			    <!-- <ion-col size-xs="12" size-lg="2">
 			    	<ion-button mode="ios">
 			    		<ion-icon name="call-outline"></ion-icon>
 			    		 Call
@@ -68,28 +87,47 @@
 			    	</ion-button>
 			    	<ion-button mode="ios">Map</ion-button>
 			    	<ion-button mode="ios" (click)="filters()">Pre-Book Now</ion-button>
-			    </ion-col>
+			    </ion-col> -->
 			</ion-row>
 		</ion-grid>
-        <ion-card>
+		<ion-card>
+			<ion-card-header>
+        		<ion-card-title>
+        			Nearby Places Of Interest
+        		</ion-card-title>
+        	</ion-card-header>
         	<ion-card-content>
-			    <ion-text>
-			    	<p>
-			    	This will contain the written description of the room and property
-					</p>
-				</ion-text>
+			    <ion-item *ngFor="let ldmk of property?.nearby_landmarks" >
+		        	<ion-avatar slot="start">
+		            	<ion-icon color="danger" class="my-icons" name="location-outline"></ion-icon>
+		          	</ion-avatar>
+		          	<ion-label>
+		            	<h3>{{ldmk}}</h3>
+		          	</ion-label>
+		        </ion-item>
 			</ion-card-content>
         </ion-card>
         <ion-card>
+        	<ion-card-header>
+        		<ion-card-title>
+        			Property Rooms & Apartments
+        		</ion-card-title>
+        	</ion-card-header>
         	<ion-card-content>
-			    <ion-text>
-			    	<p>
-			    	This will contain a list of all the amenities and property facts
-					</p>
-				</ion-text>
-			</ion-card-content>
-        </ion-card>
+			    <ion-item *ngFor="let room of rooms | async" >
+		        	<ion-thumbnail slot="start">
+		            	<img src="{{room.display_pic_url}}" 
+		            	(load)="room.display_pic_url" [hidden]="!room.display_pic_url">
 
+		            	<img src="../../../assets/imgs/genPlaceholder.png" [hidden]="room?.display_pic_url">
+		          	</ion-thumbnail>
+		          	<ion-label>
+		            	<h3>{{room?.room_type}}</h3>
+		            	<h3>{{room?.room_number}}</h3>
+		          	</ion-label>
+		        </ion-item>
+			</ion-card-content>
+        </ion-card>
       </ion-col>
       <ion-col size-xs="0" size-lg="2">
       </ion-col>

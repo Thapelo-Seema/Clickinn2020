@@ -5,6 +5,7 @@
 
 ion-item {
   border-radius: 4px;
+  white-space: normal !important;
 }
 
 .my-icon{
@@ -13,4 +14,10 @@ ion-item {
 
 .my-icons{
   font-size: 1.5em;
+}
+
+
+
+.alert-radio-label.sc-ion-alert-md {
+  white-space: normal !important;
 }

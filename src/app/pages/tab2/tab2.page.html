@@ -23,82 +23,73 @@
         <ion-col size-xs="12" size-lg="6" class="ion-text-center">
           <ion-card color="light">
             <h1 style="font-size: 2.5em; color: #000070;">
-              <b>Optimize Your Accommodation Business</b>
+              <b>Get The Best Team Behind Your Business!</b>
             </h1>
-            <ion-item color="warning">
-              <ion-text>
-                <p style="margin-bottom: 3em">
-                  <b>
-                     Use Clickinn to Create a More Optimized Accommodation Business.
-                  </b>
-                </p>
-              </ion-text>
-            </ion-item> 
+            <div color="warning" class="ion-text-center">
+              <b>
+                 Use Clickinn to Create a More Optimized Accommodation Business.
+              </b>
+            </div> 
             <ion-grid>
               <ion-row>
                 <ion-col size-xs="12" size-sm="12">
-                  <ion-card>
-                    <ion-item lines="none" button [routerLink]="['/free-sign-up']">
-                      <ion-icon color="danger" class="my-icon" name="pricetag-outline"></ion-icon>
-                      <ion-label>
-                        <h1 class="ion-text-wrap ion-text-center">
-                           <b>List Your Rooms For Free On Clickinn</b>
-                        </h1>
-                        <h1 class="ion-text-wrap ion-text-center">
-                           Upload once on Clickinn and your ad also goes live on <ion-text color="medium"><b>OLX</b></ion-text> and <ion-text color="medium"><b>GumTree</b></ion-text>
-                        </h1>
-                      </ion-label>
-                      <div>
-                        <ion-chip slot="end" color="danger">
-                          <ion-label>Free</ion-label>
-                        </ion-chip>
-                      </div>
-                    </ion-item>
+                  <ion-card [routerLink]="['/free-sign-up']">
+                    <ion-item lines="none">
+                      <ion-icon color="danger" class="my-icon" name="pricetag-outline">
+                      </ion-icon>  
+                      <h1 class="ion-text-wrap ion-text-center">
+                        <b>List Your Rooms For Free On Clickinn</b>
+                      </h1>
+                    </ion-item>  
+                    <h4 class="ion-text-wrap ion-text-center" color="dark">
+                       Upload once on Clickinn and your ad also goes live on <ion-text color="medium"><b>OLX</b></ion-text> and <ion-text color="medium"><b>GumTree</b></ion-text>
+                    </h4>
+                    <div>
+                      <ion-chip slot="end" color="danger">
+                        <ion-label>Free</ion-label>
+                      </ion-chip>
+                    </div>
                   </ion-card>
                 </ion-col>
                 <ion-col size-xs="12" size-sm="12">
-                  <ion-card>
-                    <ion-item lines="none" button [routerLink]="['/placement-sign-up']">
+                  <ion-card [routerLink]="['/placement-sign-up']">
+                    <ion-item lines="none">
                       <ion-icon color="success" class="my-icon" name="search-outline"></ion-icon>
-                      <ion-label>
-                        <h1 class="ion-text-wrap ion-text-center">
-                          <b>Let us Find You Tenants</b>
-                        </h1>
-                        <h1 class="ion-text-wrap ion-text-center">
-                          We will bring you students, for a <b>once-off</b> referral fee
-                        </h1>
-                      </ion-label>
-                      <div>
-                        <ion-chip slot="end" color="success">
-                          <ion-label>Referal Fee</ion-label>
-                        </ion-chip>
-                      </div>
+                      <h1 class="ion-text-wrap ion-text-center">
+                        <b>Let us Find You Tenants</b>
+                      </h1>
                     </ion-item>
+                    <h4 class="ion-text-wrap ion-text-center">
+                      We will bring you students, for a <b>once-off</b> referral fee
+                    </h4>
+                    <div>
+                      <ion-chip slot="end" color="success">
+                        <ion-label>Referal Fee</ion-label>
+                      </ion-chip>
+                    </div>
                   </ion-card>
                 </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col size-xs="12" size-sm="12">
-                  <ion-card>
-                    <ion-item lines="none" button [routerLink]="['/tools-sign-up']">
+                  <ion-card [routerLink]="['/tools-sign-up']">
+                    <ion-item lines="none">
                       <ion-icon color="warning" class="my-icon" name="documents-outline"></ion-icon>
-                      <ion-label>
-                        <h1 class="ion-text-wrap ion-text-center">
-                          <b>Organize Your Business With Our Digital Tools</b>
-                        </h1>
-                        <h1 class="ion-text-wrap ion-text-center">
-                          Avoid paper clutter, use our <ion-text color="medium"><b>Digital Leases</b></ion-text>, <ion-text color="medium"><b>Rent-Tracking</b></ion-text> and <ion-text color="medium"><b>Placement-Tracking</b></ion-text> features
-                        </h1>
-                      </ion-label>
-                      <div>
-                        <ion-chip slot="end" color="primary">
-                          <ion-label>Subscription</ion-label>
-                        </ion-chip>
-                      </div>
+                      <h1 class="ion-text-wrap ion-text-center">
+                        <b>Organize Your Business With Our Digital Tools</b>
+                      </h1>
                     </ion-item>
+                    <h4 class="ion-text-wrap ion-text-center">
+                      Avoid paper clutter, use our <ion-text color="medium"><b>Digital Leases</b></ion-text>, <ion-text color="medium"><b>Rent-Tracking</b></ion-text> and <ion-text color="medium"><b>Placement-Tracking</b></ion-text> features
+                    </h4>
+                    <div>
+                      <ion-chip slot="end" color="primary">
+                        <ion-label>Subscription</ion-label>
+                      </ion-chip>
+                    </div>
                   </ion-card>
                 </ion-col>
-                <ion-col size-xs="12" size-sm="12">
+                <!-- <ion-col size-xs="12" size-sm="12">
                   <ion-card>
                     <ion-item lines="none" button [routerLink]="['/management-sign-up']">
                       <ion-icon color="primary" class="my-icon" name="boat-outline"></ion-icon>
@@ -117,7 +108,7 @@
                       </div>
                     </ion-item>
                   </ion-card>
-                </ion-col>
+                </ion-col> -->
               </ion-row>
             </ion-grid>
             <ion-button color="tertiary" [routerLink]="['/sign-up']" style="margin-top: 20px; margin-bottom: 30px" size="large" mode="ios"> 

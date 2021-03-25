@@ -27,12 +27,22 @@
           <div class="ion-text-right" style="margin-top: 20px;">
             <ion-button fill="clear">Forgot password</ion-button>
           </div>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block" mode="ios" (click)="signInWithEmailAndPassWord()">Sign In</ion-button>
+                </ion-col>
+                <ion-col>
+                  <ion-button expand="block" mode="ios" (click)="signUp()">Sign Up</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           <div class="ion-text-center" style="margin-top: 20px;">
-            <ion-button expand="block" (click)="signInWithEmailAndPassWord()">Sign In</ion-button>
+            
           </div>
           <ion-grid>
             <ion-row>
-              <ion-col size="4">
+             <!--  <ion-col size="4">
                 <ion-button expand="block" mode="ios">
                   <ion-icon slot="icon-only" name="logo-facebook" (click)="signInWithFacebook()"></ion-icon>
                 </ion-button>
@@ -41,8 +51,8 @@
                 <ion-button expand="block" mode="ios" color="secondary" (click)="signInWithTwitter()">
                   <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
                 </ion-button>
-              </ion-col>
-              <ion-col size="4">
+              </ion-col> -->
+              <ion-col size="12">
                 <ion-button expand="block" mode="ios" color="danger" (click)="signInWithGoogle()">
                   <ion-icon slot="icon-only" name="logo-google"></ion-icon>
                 </ion-button>

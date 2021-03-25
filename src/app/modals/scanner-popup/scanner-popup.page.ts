@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+//import { RoomSearch } from '../../models/room-search.model';
 
 @Component({
   selector: 'app-scanner-popup',
@@ -8,6 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./scanner-popup.page.scss'],
 })
 export class ScannerPopupPage implements OnInit {
+  @Input() search_institution: string;
+  @Input() results_scanned: number;
+  @Input() results_matched: number;
+  @Input() search_id: string;
 
   constructor(public modalCtrl: ModalController, public router: Router) { }
 
@@ -24,7 +29,7 @@ export class ScannerPopupPage implements OnInit {
 
   continue(){
   	this.dismiss();
-  	this.router.navigate(['/results']);
+  	this.router.navigate(['/results' + '/' + this.search_id]);
   }
 
 }

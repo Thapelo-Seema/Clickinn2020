@@ -21,6 +21,7 @@ export interface User{
 	photoURL: string;
 	rating: number;
 	online: boolean;
+	hometown?: string;
 	//user_type: string;
 	role: string;
 	//threads?: any; no longer in use

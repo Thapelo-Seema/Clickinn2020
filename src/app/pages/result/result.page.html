@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light">
+	<ion-grid>
+    <ion-row>
+    	<ion-col size-xs="0" size-lg="2">
+        </ion-col>
+      <ion-col size-xs="12" size-lg="8">
+
+        <ion-slides loop="false" pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide style="height: 100%" *ngFor="let s of room.pictures">
+            <img src="{{s.url}}" class="slide-img">
+            <!-- ,<div class="slide-text">Slide id </div> -->
+          </ion-slide>
+        </ion-slides>
+        <ion-grid>
+        	<ion-row>
+        		<ion-col size-xs="12" size-lg="8">
+			        <ion-card>
+			        	<ion-card-header>
+			    			<ion-card-title>{{room?.property.address.house_number}} {{room?.property.address.street}}</ion-card-title>
+			    			<ion-card-subtitle>{{room?.property.address.neighbourhood}}, {{room?.property.address.city}}</ion-card-subtitle>
+			  			</ion-card-header>
+			  			<ion-grid>
+			  				<ion-row>
+			  					<ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+						  			<ion-grid>
+						  				<ion-row>
+						  					<ion-col class="ion-text-center">
+							  					<ion-icon *ngIf="room?.property.wifi" class="my-icons" name="wifi-outline" color="tertiary">
+							  					</ion-icon>
+							  					<ion-icon *ngIf="!room?.property.wifi" class="my-icons" name="wifi-outline" color="light">
+							  					</ion-icon>
+							  				</ion-col>
+							  				<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="room?.property.gym" class="my-icons" name="barbell-outline"  color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!room?.property?.gym" class="my-icons" name="barbell-outline" color="light"></ion-icon>
+							    			</ion-col>
+							    			<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="room?.property.parking" class="my-icons" name="car-sport-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!room?.property.parking" class="my-icons" name="car-sport-outline" color="light"></ion-icon>
+							    			</ion-col>
+							    		</ion-row>
+							    		<ion-row>
+						  					<ion-col class="ion-text-center">
+							  					<ion-icon *ngIf="room?.property.laundry" class="my-icons" name="basket-outline" color="tertiary"></ion-icon>
+							  					<ion-icon *ngIf="!room?.property.laundry" class="my-icons" name="basket-outline" color="light"></ion-icon>
+							  				</ion-col>
+							  				<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="room?.property.tv_room" class="my-icons" name="tv-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf=" !room?.property.tv_room" class="my-icons" name="tv-outline" color="light"></ion-icon>
+							    			</ion-col>
+							    			<ion-col class="ion-text-center">
+							    				<ion-icon *ngIf="room?.property.security" class="my-icons" name="shield-checkmark-outline" color="tertiary"></ion-icon>
+							    				<ion-icon *ngIf="!room?.property.security" class="my-icons" name="shield-checkmark-outline" color="light">
+							    				</ion-icon>
+							    			</ion-col>
+							    		</ion-row>
+						  			</ion-grid>
+						  		</ion-col>
+						  		<ion-col size-xs="0" size-sm="0" size-md="6" size-lg="8">
+						  			<ion-button [routerLink]="['/edit-listing']">
+						  				Edit
+						  				<ion-icon slot="end" name="pencil-outline"></ion-icon>
+						  			</ion-button>
+						  		</ion-col>
+						  	</ion-row>
+						  </ion-grid>
+			        </ion-card>
+			    </ion-col>
+			    <!-- <ion-col size-xs="12" size-lg="2">
+			    	<ion-button mode="ios">
+			    		<ion-icon name="call-outline"></ion-icon>
+			    		 Call
+			    	</ion-button>
+			    	<ion-button mode="ios">
+			    		<ion-icon name="logo-whatsapp"></ion-icon>
+			    		 WhatsApp
+			    	</ion-button>
+			    	<ion-button mode="ios">Map</ion-button>
+			    	<ion-button mode="ios" (click)="filters()">Pre-Book Now</ion-button>
+			    </ion-col> -->
+			</ion-row>
+		</ion-grid>
+		<ion-card>
+			<ion-card-header>
+        		<ion-card-title>
+        			Nearby Places Of Interest
+        		</ion-card-title>
+        	</ion-card-header>
+        	<ion-card-content>
+			    <ion-item *ngFor="let ldmk of room?.property.nearby_landmarks" >
+		        	<ion-avatar slot="start">
+		            	<ion-icon color="danger" class="my-icons" name="location-outline"></ion-icon>
+		          	</ion-avatar>
+		          	<ion-label>
+		            	<h3>{{ldmk}}</h3>
+		          	</ion-label>
+		        </ion-item>
+			</ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="0" size-lg="2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

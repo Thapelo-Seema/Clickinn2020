@@ -7,7 +7,7 @@
     <ion-title>Clickinn</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content color="light">
   <ion-grid>
     <ion-row>
       <ion-col size-xs="0" size-lg="2">
@@ -15,118 +15,29 @@
       <ion-col size-xs="12" size-lg="8">
       	<ion-grid>
       		<ion-row>
-      			<ion-col size-xs="12" size-sm="6" size-md="4">
-      				<ion-card [routerLink]="['/listing']">
-              			<img src="../../../assets/imgs/SA_Landlords.jpg" 
-              			style="max-height: 200px; position: relative; 
-              			top: 0; left: 50%; transform: translateX(-50%);" />
-              			<ion-card-header>
-                				<ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                				<ion-card-title>Melville, Jhb</ion-card-title>
-              			</ion-card-header>
-              			<ion-card-content>
-                				Fully furnished Single Room, 5 min walk from UJ Kingsway
-              			</ion-card-content>
-            			</ion-card>
+      			<ion-col *ngFor="let r of rooms ; let i = index" size-xs="12" size-sm="6" size-md="4">
+      				<ion-card (click)="gotoResult(r.room_id)" class="ion-padding-bottom">
+              	<img src="{{r?.display_pic_url}}" (load)="updateDp(i)" 
+                [hidden]="!r.dp_loaded" style="max-height: 200px; position: relative; 
+                top: 0; left: 50%; transform: translateX(-50%);">
+                <img src="../../../assets/imgs/genPlaceholder.png" [hidden]="r.dp_loaded" style="max-height: 200px; position: relative; 
+                top: 0; left: 50%; transform: translateX(-50%);">
+              	<ion-card-header>
+                	<ion-card-subtitle>{{r?.room_type}}, R{{r?.rent}}</ion-card-subtitle>
+                	<ion-card-title>{{r?.property.address.neighbourhood}}, {{r?.property.address.city}}
+                  </ion-card-title>
+              	</ion-card-header>
+              	<ion-card-content class="ion-text-wrap">
+                	<p>{{r?.description}}</p>
+              	</ion-card-content>
+                <ion-chip color="success" *ngIf="r?.deposit == 0 || r?.deposit == null">
+                  <ion-label>No Deposit</ion-label>
+                </ion-chip>
+                <ion-chip color="success" *ngIf="r?.accredited">
+                  <ion-label>NSFAS Accredited</ion-label>
+                </ion-chip>
+            	</ion-card>
       			</ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-      			<ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-            <ion-col size-xs="12" size-sm="6" size-md="4">
-              <ion-card [routerLink]="['/listing']">
-                    <img src="../../../assets/imgs/SA_Landlords.jpg" 
-                    style="max-height: 200px; position: relative; 
-                    top: 0; left: 50%; transform: translateX(-50%);" />
-                    <ion-card-header>
-                        <ion-card-subtitle>Single room, R3000</ion-card-subtitle>
-                        <ion-card-title>Melville, Jhb</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Fully furnished Single Room, 5 min walk from UJ Kingsway
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
       		</ion-row>
       	</ion-grid>
       </ion-col>

@@ -4,4 +4,5 @@ export interface FileUpload{
 	url: string;
 	name: string;
 	progress: number;
+	loaded?: boolean;
 }

@@ -9,19 +9,25 @@ export class NavigationService {
 
   constructor(private router: Router, private ngZone: NgZone) { }
 
-  navigateUserToDashboard(user: User){
+  navigateUserToDashboard(user: any){
     this.ngZone.run(() =>{
-       if(user.role == "student"){
+       if(user.role == "student" || user?.user_type == "student"){
           this.router.navigate(['/search', {user: user}]);
-        }else if(user.role == "caretaker"){
+        }else if(user.role == "caretaker" || user?.user_type == "caretaker"){
           this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
-        }else if(user.role == "agent"){
+        }else if(user.role == "agent"  || user?.user_type == "agent"){
           this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
-        }else if(user.role == "landlord"){
+        }else if(user.role == "landlord" || user?.user_type == "landlord"){
           this.router.navigate(['/landlord-home' + '/' + `${user.uid}`]);
         }else{
           this.router.navigate(['/tabs/tab1', {user: user}]);
         }
+    })
+  }
+
+  gotoSignUp(){
+    this.ngZone.run(() =>{
+      this.router.navigate(['/sign-up']);  
     })
   }
 

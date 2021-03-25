@@ -3,6 +3,10 @@ import { Property } from '../models/property.model';
 import { PropertyPreview } from '../models/property-preview.model';
 import { Address } from '../models/address.model';
 import { Room } from '../models/room.model';
+import { RoomPreview } from '../models/room-preview.model';
+import { RoomCount } from '../models/room.count.interface';
+import { FileUpload } from '../models/file-upload.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +15,25 @@ export class PropertiesService {
 
   constructor() { }
 
+  defaultRoomCount(){
+  	let room_count: RoomCount = {
+  		singles: null,
+  		two_sharings: null,
+  		three_sharings: null,
+  		cottages: null,
+  		apartments: null,
+  		backrooms: null,
+  		ensuites: null
+  	}
+  	return room_count;
+  }
+
   defaultPropertyPreview(){
   	let property: PropertyPreview = {
   		address: this.defaultAddress(),
 		parking: false,
 		wifi: false,
-		accredited: false,
+		payment_methods: "",
 		pool: false,
 		gym: false,
 		laundry: false,
@@ -26,8 +43,9 @@ export class PropertiesService {
 		property_id: "",
 		property_type: "",
 		nearby_landmarks: [],
-		deposit_specifics: "",
-		other_amenities: ""
+		deposit_specifics: [],
+		other_amenities: "",
+		genders_housed: ""
 	}
   	return property;
   }
@@ -41,15 +59,19 @@ export class PropertiesService {
   		city: "",
   		neighbourhood: "",
   		street: "",
-  		house_number: ""
+  		house_number: "",
+  		place_name: ""
   	}
   	return address
   }
 
   defaultRoom(): Room{
   	let room: Room = {
-  		available: false,
+  		available: true,
+  		accredited: false,
 		display_pic_url: "",
+		dp_loaded: false,
+		description: "",
 		pictures: [],
 		video_url: "",
 		room_id: "",
@@ -58,10 +80,26 @@ export class PropertiesService {
 		room_type: "",
 		search_rating: 0,  
 		demand_index: 0,   
+		rent: null,
+		deposit: null,
+		room_number: "",
+		sub_rooms: 0,
+		property: this.defaultProperty()
+  	}
+  	return room;
+  }
+
+  defaultRoomPreview(){
+  	let room: RoomPreview = {
+	  	available: true,
+		room_id: "",
+		furnished: false,
+		room_type: "",
+		search_rating: 0, //calculated per individual search
+		demand_index: 0, //aggregated over all searches
 		rent: 0,
 		deposit: 0,
-		room_number: "",
-		property: this.defaultPropertyPreview();
+		property: this.defaultPropertyPreview()
   	}
   	return room;
   }
@@ -69,7 +107,10 @@ export class PropertiesService {
   initializedRoom(type: string,  rm_number: string, is_furnished?: boolean){
   	let room: Room = {
   		available: true,
+  		accredited: false,
 		display_pic_url: "",
+		dp_loaded: false,
+		description: "",
 		pictures: [],
 		video_url: "",
 		room_id: "",
@@ -78,10 +119,11 @@ export class PropertiesService {
 		room_type: type,
 		search_rating: 0,  
 		demand_index: 0,   
-		rent: 0,
-		deposit: 0,
+		rent: null,
+		deposit: null,
 		room_number: rm_number,
-		property: this.defaultPropertyPreview()
+		sub_rooms: 0,
+		property: this.defaultProperty()
   	}
   	return room;
   }
@@ -89,9 +131,10 @@ export class PropertiesService {
   defaultProperty():Property{
   	let property: Property = {
   		address: this.defaultAddress(),
+  		accredited: false,
 		parking: false,
 		wifi: false,
-		accredited: false,
+		payment_methods: "",
 		pool: false,
 		gym: false,
 		laundry: false,
@@ -103,19 +146,35 @@ export class PropertiesService {
 		property_id: "",
 		service_package: "",
 		display_pic_url: "",
+		dp_loaded: false,
 		pictures: [],
+		shared_area_pics: [],
 		video_url: "",
 		property_type: "",
 		property_paid_off: false,
 		nearby_landmarks: [],
-		minutes_from_campus: 0,
+		minutes_from_campus: null,
 		upload_complete: 0,
 		uploader_id: "",
 		deposit_specifics: "",
 		uploader_contact_number: "",
 		other_amenities: "",
-		rooms: []
+		genders_housed: "",
+		rooms: this.defaultRoomCount()
   	}
   	return property;
   }
+
+  defaultFileUpload(){
+  	let fl: FileUpload = {
+  		file: null,
+		path: "",
+		url: "",
+		name: "",
+		progress: 0,
+		loaded: false
+	}
+	return fl;
+  }
+  
 }

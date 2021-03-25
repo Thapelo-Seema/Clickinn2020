@@ -15,6 +15,7 @@ export class UserService {
     //Function that creates a new user in the User collection
     //usually called after a sign up
     //takes a user object as a parameter and returns a void promise on completion 
+    //Uses the uid generated during user registration
   	createUser(user: User):Promise<void>{
   		return this.afs.collection('Users').doc(user.uid).set(user);
   	}
@@ -31,4 +32,6 @@ export class UserService {
   	getUser(uid: string):Observable<User>{
   		return this.afs.collection('Users').doc<User>(uid).valueChanges();
   	}
+
+    
 }

@@ -1,5 +1,5 @@
 import { Address } from './address.model';
-import { Room } from './room.model';
+import { RoomCount } from './room.count.interface';
 import { FileUpload } from './file-upload.model';
 
 /**
@@ -10,7 +10,8 @@ export interface Property{
 	address: Address;
 	parking: boolean;
 	wifi: boolean;
-	accredited: boolean;  
+	accredited: boolean;
+	payment_methods: string; 
 	pool: boolean;
 	gym: boolean;
 	laundry: boolean;
@@ -22,9 +23,12 @@ export interface Property{
 	property_id: string;
 	service_package: string;
 	display_pic_url: string;
+	dp_loaded?: boolean;
 	pictures: FileUpload[];
+	shared_area_pics: FileUpload[];
 	video_url: string;
-	property_type: string;
+	property_type: string; //flats and apartment style, house and commune style
+	genders_housed: string; //male only, female only, mixed
 	property_paid_off: boolean;
 	nearby_landmarks: string[];
 	minutes_from_campus: number;
@@ -33,5 +37,11 @@ export interface Property{
 	uploader_contact_number: string;
 	deposit_specifics: string;
 	other_amenities: string;
-	rooms: Room[]
+	rooms: RoomCount /** The rooms will be removed from inside the property in exchange to 
+	putting the property inside every room. This will help with searching such that, 
+	when a collection of rooms are checked for compatibility with the search, each room
+	can present present those attributes that belong to the property model and are 
+	necessarry for result-matching. Also, when results are returned, they should present 
+	the room in question before presenting the rest of the property. 
+	*/
 }

@@ -13,7 +13,17 @@ export class AuthService {
 
   //Function that returns a logged in Firebase User
   checkAuthStatus(){
-    return this.afAuth.authState
+    return this.afAuth.user
+  }
+
+  getToken(){
+    return !!localStorage.getItem('uid');
+  }
+
+  monitorAuthStatus(){
+    this.afAuth.onAuthStateChanged(user =>{
+       
+    })
   }
 
   //Function that provides sign up with email and password using firebase auth system
@@ -22,7 +32,13 @@ export class AuthService {
   	return new Promise<any>((resolve, reject) =>{
   		this.afAuth.createUserWithEmailAndPassword(email, password)
 	  	.then(data =>{
-	  		resolve(data.user);
+        data.user.sendEmailVerification()
+        .then(() =>{
+          resolve("Congratulations!, you are almost there, please verify your email before proceeding");
+        })
+	  		.catch(err =>{
+          reject(err);
+        })
 	  	})
       .catch(reason =>{
         reject(reason.message);

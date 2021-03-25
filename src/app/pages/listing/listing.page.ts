@@ -1,6 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, ModalController } from '@ionic/angular';
 import { DepositRoomModalPage } from '../../modals/deposit-room-modal/deposit-room-modal.page';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Property } from '../../models/property.model';
+import { PropertiesService } from '../../object-init/properties.service';
+import { PropertyService } from '../../services/property.service';
+import { RoomService } from '../../services/room.service';
+import { Room } from '../../models/room.model';
+import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listing',
@@ -10,6 +18,8 @@ import { DepositRoomModalPage } from '../../modals/deposit-room-modal/deposit-ro
 export class ListingPage implements OnInit {
 	
   @ViewChild('slideWithNav', { static: false }) slideWithNav: IonSlides;
+  property: Property;
+  rooms: Observable<Room[]>
 
    slideOptsOne = {
     initialSlide: 0,
@@ -21,35 +31,38 @@ export class ListingPage implements OnInit {
 
   sliderOne: any;
 
-  constructor(public modalCtrl: ModalController) {
+  constructor(
+    public modalCtrl: ModalController,
+    private property_init_svc: PropertiesService,
+    private actRoute: ActivatedRoute,
+    private ppty_svc: PropertyService,
+    private room_svc: RoomService,
+    private router: Router) {
+    this.property = this.property_init_svc.defaultProperty();
   	this.sliderOne =
     {
       isBeginningSlide: true,
       isEndSlide: false,
-      slidesItems: [
-        {
-          id: "../../../assets/imgs/SA_Landlords.jpg"
-        },
-        {
-          id: "../../../assets/imgs/SA_Landlords.jpg"
-        },
-        {
-          id: "../../../assets/imgs/SA_Landlords.jpg"
-        },
-        {
-          id: "../../../assets/imgs/SA_Landlords.jpg"
-        },
-        {
-          id: "../../../assets/imgs/SA_Landlords.jpg"
-        }
-      ]
+      slidesItems: this.property.pictures
     };
 
    }
 
   ngOnInit() {
+    if(this.actRoute.snapshot.params.id){
+      this.property.property_id = this.actRoute.snapshot.params.id;
+      this.ppty_svc.getProperty(this.property.property_id)
+      .pipe(take(1))
+      .subscribe(data =>{
+        console.log(data);
+        this.property = data;
+      })
+
+      this.rooms = this.room_svc.getPropertyRooms(this.property.property_id);
+    }
   }
 
+//show filters
   async filters(){
     const modal = await this.modalCtrl.create({
       component: DepositRoomModalPage,

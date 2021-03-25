@@ -11,7 +11,7 @@
 			</ion-col>
 			<ion-col size-xs="12" size-md="8" size-lg="6">
 				<div class="ion-text-center">
-					<img src="{{user?.photoURL}}" style="height: 6em">
+					<!--<img src="{{user?.photoURL}}" style="height: 6em">-->
 					<ion-text color="tertiary">
 						<h2><b>Business Dash</b></h2>
 					</ion-text>
@@ -23,7 +23,7 @@
 				<ion-chip color="tertiary">
 				  <ion-label>Notifications</ion-label>
 				</ion-chip>
-				<ion-list>
+				<ion-list style="background: transparent;">
 					<ion-item button color="secondary" class="ion-padding" lines="none" (click)="gotoSearchFeed()">
 						<ion-label>
 							<ion-text class="label-text"><h2><b>SEE RELEVANT SEARCHES</b></h2></ion-text>
@@ -32,7 +32,7 @@
 					</ion-item>
 					<ion-item button color="primary" class="ion-padding" lines="none" (click)="gotoUploadListing()">
 						<ion-label>
-							<ion-text class="label-text"><h2><b>UPLOAD A ROOM ADVERT</b></h2></ion-text>
+							<ion-text class="label-text"><h2><b>UPLOAD A PROPERTY ADVERTS</b></h2></ion-text>
 						</ion-label>
 						<ion-icon class="my-icon" slot="end" name="cloud-upload-outline"></ion-icon>
 					</ion-item>
