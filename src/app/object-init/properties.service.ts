@@ -149,6 +149,8 @@ export class PropertiesService {
 		dp_loaded: false,
 		pictures: [],
 		shared_area_pics: [],
+		num_pics_downloaded: 0,
+		num_pics_uploaded: 0,
 		video_url: "",
 		property_type: "",
 		property_paid_off: false,

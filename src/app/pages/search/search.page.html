@@ -5,7 +5,7 @@
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>
 			<ion-col size-xs="12" size-md="6">
-				<div class="raisedbox">
+				<ion-card>
 					<div class="ion-text-center">
 						<img src="../../../assets/imgs/logo.png" style="height: 6em">
 						<ion-item lines="none">
@@ -15,89 +15,150 @@
 							</ion-label>
 						</ion-item>
 					</div>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-icon color="danger" name="location-outline" slot="start" >
-							</ion-icon>
-							<ion-text>Institution</ion-text>
-						</ion-label>
-						<ion-select [(ngModel)]="search.institution_and_campus"  okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="university of johannesburg apk">UJ Kingsway</ion-select-option>
-					      <ion-select-option value="university of johannesburg apb">UJ Bunting</ion-select-option>
-					      <ion-select-option value="university of johannesburg dfc">UJ Doornfontein</ion-select-option>
-					      <ion-select-option value="university of johannesburg swc">UJ Soweto</ion-select-option>
-					      <ion-select-option value="academy of sound engineering auckland park">
-					      		Academy of Sound Engineernig
-					      </ion-select-option>
-					      <ion-select-option value="south african broadcasting corporation">SABC</ion-select-option>
-					      <ion-select-option value="helen joseph hospital">Helen Joseph Hospital</ion-select-option>
-					      <ion-select-option value="netcare training academy auckland park">
-					      	Netcare Nursing College Auckland Park
-					      </ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							Preffered Room Type
-						</ion-label>
-					    <ion-select [(ngModel)]="search.room_type" value="single" okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="backroom">Back Room</ion-select-option>
-					      <ion-select-option value="single">Single Room</ion-select-option>
-					      <ion-select-option value="ensuite">Ensuite</ion-select-option>
-					      <ion-select-option value="cottage">Cottage</ion-select-option>
-					      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
-					      <ion-select-option value="sharing">Sharing Room</ion-select-option>
-					      <ion-select-option value="apartment">Apartment</ion-select-option>
-					      <ion-select-option value="any">Any</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							Funding Type
-						</ion-label>
-					    <ion-select [(ngModel)]="search.funding_type" okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="nsfas">NSFAS</ion-select-option>
-					      <ion-select-option value="nsfas_top_up">
-					      	NSFAS - Top Up
-					      </ion-select-option>
-					      <ion-select-option value="bursary_accreditation_required">
-					      	Fundi Bursary 
-					      </ion-select-option>
-					      <ion-select-option value="bursary">
-					      	Private Bursary 
-					      </ion-select-option>
-					      <ion-select-option value="cash">Self-Funded</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item *ngIf="search.funding_type != 'nsfas' " lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-text> Maximum Rent</ion-text>
-						</ion-label>
-					  	<ion-input [(ngModel)]="search.max_price" type="number" placeholder="e.g. R3000"></ion-input>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-text> Need Parking ?</ion-text>
-						</ion-label>
-					    <ion-select [ngModel]="search.parking_needed" value="no" okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="true">Yes</ion-select-option>
-					      <ion-select-option value="false">No</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-			            <ion-label class="my-label" position="stacked">
-			            	Any Special Needs
-			            </ion-label>
-			            <ion-textarea [(ngModel)]="search.special_needs" ></ion-textarea>
-			        </ion-item>
-			        <div *ngIf="!agentMode" class="ion-text-center" style="margin-top: 20px">
-						<ion-button (click)="back()">Back</ion-button>
-						<ion-button (click)="nextStep()" >Next</ion-button>
-					</div>
-					<div *ngIf="agentMode" class="ion-text-center" style="margin-top: 20px">
-						<ion-button [routerLink]="['/results']">Agent Search</ion-button>
-					</div>
-				</div>
+					<ion-card-content>
+						<ion-grid>
+							<ion-row>
+								<ion-col>
+									<h2>
+										<ion-icon color="danger" name="location-outline" slot="start" >
+										</ion-icon>
+										<ion-text>Institution *</ion-text>
+									</h2>
+									<ion-item lines="none" color="light">
+										<ion-select [(ngModel)]="search.institution_and_campus"  okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="university of johannesburg apk">UJ Kingsway</ion-select-option>
+									      <ion-select-option value="university of johannesburg apb">UJ Bunting</ion-select-option>
+									      <ion-select-option value="university of johannesburg dfc">UJ Doornfontein</ion-select-option>
+									      <ion-select-option value="university of johannesburg swc">UJ Soweto</ion-select-option>
+									      <ion-select-option value="academy of sound engineering auckland park">
+									      		Academy of Sound Engineernig
+									      </ion-select-option>
+									      <ion-select-option value="south african broadcasting corporation">SABC</ion-select-option>
+									      <ion-select-option value="helen joseph hospital">Helen Joseph Hospital</ion-select-option>
+									      <ion-select-option value="netcare training academy auckland park">
+									      	Netcare Nursing College Auckland Park
+									      </ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Preffered Room Type *
+									</h2>
+									<ion-item lines="none" color="light">
+										
+									    <ion-select [(ngModel)]="search.room_type" value="single" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="backroom">Back Room</ion-select-option>
+									      <ion-select-option value="single">Single Room</ion-select-option>
+									      <ion-select-option value="ensuite">Ensuite</ion-select-option>
+									      <ion-select-option value="cottage">Cottage</ion-select-option>
+									      <ion-select-option value="bachelor">Bachelor Pad</ion-select-option>
+									      <ion-select-option value="sharing">Sharing Room</ion-select-option>
+									      <ion-select-option value="apartment">Apartment</ion-select-option>
+									      <ion-select-option value="any">Any</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Preffered Dwelling Type
+									</h2>
+									<ion-item lines="none" color="light">
+										
+									    <ion-select [(ngModel)]="search.preffered_property_type" value="house" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="house">House</ion-select-option>
+									      <ion-select-option value="flats">Flats</ion-select-option>
+									      <ion-select-option value="complex">Complex</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Preffered Gender Mix
+									</h2>
+									<ion-item lines="none" color="light">
+										
+									    <ion-select [(ngModel)]="search.gender_prefference" value="house" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="female">Female</ion-select-option>
+									      <ion-select-option value="male">Male</ion-select-option>
+									      <ion-select-option value="mixed">Mixed</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Funding Type *
+									</h2>
+									<ion-item lines="none" color="light">
+										
+									    <ion-select [(ngModel)]="search.funding_type" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="nsfas">NSFAS</ion-select-option>
+									      <ion-select-option value="nsfas_top_up">
+									      	NSFAS - Top Up
+									      </ion-select-option>
+									      <ion-select-option value="bursary_accreditation_required">
+									      	Fundi Bursary 
+									      </ion-select-option>
+									      <ion-select-option value="bursary">
+									      	Private Bursary 
+									      </ion-select-option>
+									      <ion-select-option value="cash">Self-Funded</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+									  Maximum Rent *
+									</h2>
+									<ion-item *ngIf="search.funding_type != 'nsfas' " lines="none" color="light">
+									  	<ion-input [(ngModel)]="search.max_price" type="number" placeholder="e.g. R3000"></ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Need Parking ?
+									</h2>
+									<ion-item lines="none" color="light">
+									    <ion-select [ngModel]="search.parking_needed" value="no" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="true">Yes</ion-select-option>
+									      <ion-select-option value="false">No</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+						            	Any Special Needs
+						            </h2>
+									<ion-item lines="none" color="light" class="ion-padding">
+							            <ion-textarea [(ngModel)]="search.special_needs" ></ion-textarea>
+							        </ion-item>
+							    </ion-col>
+							</ion-row>
+						</ion-grid>
+						<div *ngIf="!agentMode" class="ion-text-center" style="margin-top: 20px">
+							<ion-button (click)="back()">Back</ion-button>
+							<ion-button (click)="nextStep()" >Next</ion-button>
+						</div>
+						<div *ngIf="agentMode" class="ion-text-center" style="margin-top: 20px">
+							<ion-button [routerLink]="['/results']">Agent Search</ion-button>
+						</div>
+					</ion-card-content>
+			        
+				</ion-card>
 			</ion-col>
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>

@@ -4,7 +4,7 @@
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>
 			<ion-col size-xs="12" size-md="6">
-				<div class="raisedbox">
+				<ion-card>
 					<div class="ion-text-center">
 						<img src="../../../assets/imgs/logo.png" style="height: 6em">
 						<ion-item lines="none">
@@ -14,58 +14,85 @@
 							</ion-label>
 						</ion-item>
 					</div>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-icon name="person" slot="start" ></ion-icon>
-							<ion-text>Name and Surname</ion-text>
-						</ion-label>
-						<ion-input [(ngModel)]="names" type="text"></ion-input>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label ion-text-wrap" position="stacked">
-							Gender
-						</ion-label>
-					    <ion-select [(ngModel)]="user.gender" okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="male">Male</ion-select-option>
-					      <ion-select-option value="female">Female</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-icon name="mail" slot="start" ></ion-icon> Email
-						</ion-label>
-					  	<ion-input [(ngModel)]="user.email" type="mail"></ion-input>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-icon name="call" slot="start" ></ion-icon> 
-							Contact Number
-						</ion-label>
-					  	<ion-input [(ngModel)]="user.phoneNumber" type="tel"></ion-input>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label ion-text-wrap" position="stacked">
-							Is This Number On WhatsApp ?
-						</ion-label>
-					    <ion-select [(ngModel)]="user.is_on_WhatsApp" okText="Okay" cancelText="Dismiss">
-					      <ion-select-option value="true">Yes</ion-select-option>
-					      <ion-select-option value="false">No</ion-select-option>
-					    </ion-select>
-					</ion-item>
-					<ion-item lines="none" color="light" class="ion-padding">
-						<ion-label class="my-label" position="stacked">
-							<ion-icon name="home" slot="start" ></ion-icon>
-							Your Hometown
-						</ion-label>
-						<ion-input [(ngModel)]="user.hometown" type="text"></ion-input>
-					</ion-item>
-					<div class="ion-text-center" style="margin-top: 20px;">
-						<ion-button (click)="back()">Back</ion-button>
-						<ion-button color="success" (click)="continueToResults()">
-							Submit
-						</ion-button>
-					</div>
-				</div>
+					<ion-card-content>
+						<ion-grid>
+							<ion-row>
+								<ion-col>
+									<h2>
+										<ion-icon name="person" slot="start" ></ion-icon>
+										Name and Surname
+									</h2>
+									<ion-item lines="none" color="light">
+										<ion-input [(ngModel)]="names" type="text"></ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>Gender</h2>
+									<ion-item lines="none" color="light">
+									    <ion-select [(ngModel)]="user.gender" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="male">Male</ion-select-option>
+									      <ion-select-option value="female">Female</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										<ion-icon name="mail" slot="start" ></ion-icon> Email
+									</h2>
+									<ion-item lines="none" color="light">
+									  	<ion-input [(ngModel)]="user.email" type="mail"></ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										<ion-icon name="call" slot="start" ></ion-icon> 
+										Contact Number
+									</h2>
+									<ion-item lines="none" color="light">
+									  	<ion-input [(ngModel)]="user.phoneNumber" type="tel"></ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										Is This Number On WhatsApp ?
+									</h2>
+									<ion-item lines="none" color="light">
+									    <ion-select [(ngModel)]="user.is_on_WhatsApp" okText="Okay" cancelText="Dismiss">
+									      <ion-select-option value="true">Yes</ion-select-option>
+									      <ion-select-option value="false">No</ion-select-option>
+									    </ion-select>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<h2>
+										<ion-icon name="home" slot="start" ></ion-icon>
+										Your Hometown
+									</h2>
+									<ion-item lines="none" color="light">
+										<ion-input [(ngModel)]="user.hometown" type="text">
+										</ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+						<div class="ion-text-center" style="margin-top: 20px;">
+							<ion-button (click)="back()">Back</ion-button>
+							<ion-button color="success" (click)="continueToResults()">
+								Submit
+							</ion-button>
+						</div>
+					</ion-card-content>
+				</ion-card>
 			</ion-col>
 			<ion-col size-xs="0" size-md="3">
 			</ion-col>

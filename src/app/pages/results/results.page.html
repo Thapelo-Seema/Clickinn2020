@@ -16,19 +16,25 @@
       	<ion-grid>
       		<ion-row>
       			<ion-col *ngFor="let r of rooms ; let i = index" size-xs="12" size-sm="6" size-md="4">
-      				<ion-card (click)="gotoResult(r.room_id)" class="ion-padding-bottom">
+      				<ion-card (click)="gotoResult(r.room_id)" class="ion-padding-bottom" mode="ios">
               	<img src="{{r?.display_pic_url}}" (load)="updateDp(i)" 
                 [hidden]="!r.dp_loaded" style="max-height: 200px; position: relative; 
                 top: 0; left: 50%; transform: translateX(-50%);">
                 <img src="../../../assets/imgs/genPlaceholder.png" [hidden]="r.dp_loaded" style="max-height: 200px; position: relative; 
                 top: 0; left: 50%; transform: translateX(-50%);">
               	<ion-card-header>
-                	<ion-card-subtitle>{{r?.room_type}}, R{{r?.rent}}</ion-card-subtitle>
-                	<ion-card-title>{{r?.property.address.neighbourhood}}, {{r?.property.address.city}}
+                	<ion-card-subtitle>
+                    {{r?.room_type}}, R{{r?.rent}}
+                    <ion-chip *ngIf="i == 0" color="warning" mode="ios">
+                      <ion-icon name="golf-outline"></ion-icon>
+                      &nbsp;best match
+                    </ion-chip>
+                  </ion-card-subtitle>
+                	<ion-card-title>{{r?.property.address.neighbourhood}}
                   </ion-card-title>
               	</ion-card-header>
               	<ion-card-content class="ion-text-wrap">
-                	<p>{{r?.description}}</p>
+                	{{r?.description}}
               	</ion-card-content>
                 <ion-chip color="success" *ngIf="r?.deposit == 0 || r?.deposit == null">
                   <ion-label>No Deposit</ion-label>

@@ -39,6 +39,10 @@ export class LandlordHomePage implements OnInit {
     this.router.navigate(['/landlord-profile']);
   }
 
+  gotoSearch(){
+    this.router.navigate(['/search']);
+  }
+
   gotoSearchFeed(){
   	this.router.navigate(['/search-feed']);
   }

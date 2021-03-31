@@ -573,7 +573,7 @@
 		            						<ion-item lines="none" color="light" button (click)="selectSingleRoomPics()">
 			                					<ion-label>
 			                						<h1 class="ion-text-wrap ion-text-center">
-			                   						<b>Pictures Of Single Rooms</b>
+			                   						<b>Add Pictures Of Single Room</b>
 			                						</h1>
 						                    	</ion-label>
 		             						</ion-item>
@@ -592,7 +592,6 @@
 		             							<ion-item>
 										        	<ion-avatar slot="start">
 										            	<img src="{{pic?.url}}" (load)="updateSinglePicsLoaded(i)" [hidden]="!pic.loaded">
-
 										            	<img src="../../../assets/imgs/genPlaceholder.png" [hidden]="pic.loaded" >
 										          	</ion-avatar>
 										            <h3>{{pic?.name}}</h3>
@@ -828,7 +827,11 @@
 							<ion-button (click)="prevPage()" style="margin-bottom: 30px;">
 								Back
 							</ion-button>
-							<ion-button (click)="saveAndUpload()" style="margin-bottom: 30px;" *ngIf="!uploadingProperty">
+							<ion-item *ngIf="property.num_pics_downloaded < property.num_pics_uploaded">
+					          <ion-label>Loading Pictures</ion-label>
+					          <ion-spinner></ion-spinner>
+					        </ion-item>
+							<ion-button (click)="saveAndUpload()" style="margin-bottom: 30px;" *ngIf="!uploadingProperty && !(property.num_pics_downloaded < property.num_pics_uploaded)">
 								Save & Upload 
 								<ion-icon slot="end" name="paper-plane-outline">
 								</ion-icon>

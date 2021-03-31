@@ -181,14 +181,17 @@ export class UploadListingPage implements OnInit {
 
   updateBackroomPicsLoaded(i: number){
     this.backroom.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updateSinglePicsLoaded(i: number){
     this.single.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updateTwoSharingPicsLoaded(i: number){
     this.two_sharing.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updateThreeSharingPicsLoaded(i: number){
@@ -197,18 +200,22 @@ export class UploadListingPage implements OnInit {
 
   updateEnsuitePicsLoaded(i: number){
     this.ensuite.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updateApartmentPicsLoaded(i: number){
     this.apartment.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updateSharedAreaPicsLoaded(i: number){
     this.property.shared_area_pics[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   updatePropertyPicsLoaded(i: number){
     this.property.pictures[i].loaded = true;
+    this.property.num_pics_downloaded++;
   }
 
   //show filters
@@ -285,14 +292,16 @@ export class UploadListingPage implements OnInit {
    })
  }
 
+ //Generates a description of the room
  generateRoomDescription(room: Room):string{
    let description: string = "";
-   description += room.furnished ? "Fully furnished " : "" + room.room_type;
+   description += room.furnished ? "Fully furnished " : "";
+   description += room.room_type;
 
    if(room.property.nearby_landmarks.length > 0) description += " near ";
    for(let i = 0; i < room.property.nearby_landmarks.length; i++){
-      description += room.property.nearby_landmarks[i] + 
-      (i == room.property.nearby_landmarks.length - 1) ? "." : ", "
+      description += room.property.nearby_landmarks[i]; 
+      description += (i == room.property.nearby_landmarks.length - 1) ? "." : ", "
    }
    return description;
  }
@@ -342,6 +351,7 @@ async saveAndUpload(){
    let pic = this.property.shared_area_pics.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
    storageRef.delete()
+   this.property.num_pics_uploaded--;
  }
 
  /**Handles updating the backroom object when more pictures are added and uploading
@@ -426,6 +436,7 @@ async saveAndUpload(){
    let pic = this.backroom.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
    storageRef.delete()
+   this.property.num_pics_uploaded--;
  }
 
  /**Handles updating the backroom object when more pictures are added and uploading
@@ -512,6 +523,7 @@ async saveAndUpload(){
    let pic = this.single.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
    storageRef.delete()
+   this.property.num_pics_uploaded--;
  }
 
 selectSingleRoomPics(){
@@ -584,7 +596,8 @@ updateSingleRoomPics(event){
  deleteTwoSharingRoomPic(i: number){
    let pic = this.two_sharing.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
-   storageRef.delete()
+   storageRef.delete();
+   this.property.num_pics_uploaded--;
  }
 
 selectTwoSharingRoomPics(){
@@ -658,7 +671,8 @@ updateTwoSharingRoomPics(event){
  deleteThreeSharingRoomPic(i: number){
    let pic = this.three_sharing.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
-   storageRef.delete()
+   storageRef.delete();
+   this.property.num_pics_uploaded--;
  }
 
 selectThreeSharingRoomPics(){
@@ -732,7 +746,8 @@ updateThreeSharingRoomPics(event){
  deleteEnsuitePic(i: number){
    let pic = this.ensuite.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
-   storageRef.delete()
+   storageRef.delete();
+   this.property.num_pics_uploaded--;
  }
 
 selectEnsuitePics(){
@@ -807,6 +822,7 @@ updateEnsuitePics(event){
    let pic = this.apartment.pictures.splice(i, 1);
    const storageRef = this.afstorage.ref(`${pic[0].path}/${pic[0].name}`);
    storageRef.delete()
+   this.property.num_pics_uploaded--;
  }
 
 selectApartmentPics(){
@@ -981,6 +997,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1005,6 +1022,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1028,6 +1046,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1051,6 +1070,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1074,6 +1094,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1097,6 +1118,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{
@@ -1121,6 +1143,7 @@ updateApartmentPics(event){
       err =>{
       },
       () =>{
+        this.property.num_pics_uploaded++;
         storageRef.getDownloadURL()
         .pipe(take(1))
         .subscribe(url =>{

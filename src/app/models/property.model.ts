@@ -26,6 +26,8 @@ export interface Property{
 	dp_loaded?: boolean;
 	pictures: FileUpload[];
 	shared_area_pics: FileUpload[];
+	num_pics_uploaded?: number;
+	num_pics_downloaded?: number;
 	video_url: string;
 	property_type: string; //flats and apartment style, house and commune style
 	genders_housed: string; //male only, female only, mixed

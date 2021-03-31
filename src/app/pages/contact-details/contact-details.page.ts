@@ -39,6 +39,7 @@ export class ContactDetailsPage implements OnInit {
   			this.search = sch;
   			this.search.id = this.actRoute.snapshot.params.id;
   			this.user = sch.searcher;
+        this.names = this.user.firstname + " " + this.user.lastname;
   			console.log(this.search);
   			console.log(this.user)
   		})
