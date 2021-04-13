@@ -56,6 +56,7 @@ export class ContactDetailsPage implements OnInit {
   	this.user.lastname = fullnames[1] || "";
   	this.search.searcher = this.user;
   	console.log(this.search);
+    this.user_svc.updateUser(this.user);
   	this.sf_svc.updateSearch(this.search)
   	.then(() =>{
   		this.router.navigate(['/results-scanning' + "/" + this.search.id]);

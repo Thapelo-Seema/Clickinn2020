@@ -24,6 +24,8 @@ import { AuthService } from './services/auth.service';
 import { SearchFeedService } from './services/search-feed.service';
 import { UsersService } from './object-init/users.service';
 
+import { DepositRoomModalPageModule } from './modals/deposit-room-modal/deposit-room-modal.module'
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +37,8 @@ import { UsersService } from './object-init/users.service';
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
   AngularFirestoreModule.enablePersistence(),
-  AngularFireStorageModule
+  AngularFireStorageModule,
+  DepositRoomModalPageModule
   ],
   providers: [
     StatusBar,

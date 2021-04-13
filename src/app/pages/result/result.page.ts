@@ -10,6 +10,7 @@ import { Room } from '../../models/room.model';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-result',
   templateUrl: './result.page.html',
@@ -65,7 +66,6 @@ export class ResultPage implements OnInit {
         'filterType': 'all'
       }
     });
-
     return await modal.present();
   }
 

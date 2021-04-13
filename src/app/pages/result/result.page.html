@@ -26,12 +26,22 @@
         		<ion-col size-xs="12" size-lg="8">
 			        <ion-card>
 			        	<ion-card-header>
-			    			<ion-card-title>{{room?.property.address.house_number}} {{room?.property.address.street}}</ion-card-title>
-			    			<ion-card-subtitle>{{room?.property.address.neighbourhood}}, {{room?.property.address.city}}</ion-card-subtitle>
+			        		<ion-card-subtitle>
+			    				<ion-button fill="clear" expand="block" mode="ios">
+			    					<ion-icon color="danger" class="my-icon" name="location-outline"></ion-icon>
+			    					 {{room?.property.address.street}}, {{room?.property.address.neighbourhood}}
+				    			</ion-button>
+				    		</ion-card-subtitle>
+			        		<ion-card-title>
+				        		{{room?.furnished ? "Fully-furnished " : ""}} {{room?.room_type}} for R{{room?.rent}}
+				        	</ion-card-title>
+			    			<ion-card-subtitle>
+			    				<b>Deposit</b> R{{room?.deposit}}
+			    			</ion-card-subtitle>
 			  			</ion-card-header>
 			  			<ion-grid>
 			  				<ion-row>
-			  					<ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+			  					<ion-col size-xs="12" size-sm="12" size-md="6" size-lg="8">
 						  			<ion-grid>
 						  				<ion-row>
 						  					<ion-col class="ion-text-center">
@@ -72,10 +82,22 @@
 							    		</ion-row>
 						  			</ion-grid>
 						  		</ion-col>
-						  		<ion-col size-xs="0" size-sm="0" size-md="6" size-lg="8">
-						  			<ion-button [routerLink]="['/edit-listing']">
+						  		<ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+						  			<ion-button mode="ios" expand="full" class="ion-text-wrap" 
+						  			(click)="filters()">
+						  				Secure Now
+						  			</ion-button>
+						  			<ion-button mode="ios" expand="full" class="ion-text-wrap" [routerLink]="['/edit-listing']">
+						  				Set Appointment
+						  			</ion-button>
+						  			<ion-button mode="ios" expand="full" class="ion-text-wrap" [routerLink]="['/edit-listing']">
+						  				Send WhatsApp
+						  			</ion-button>
+						  			<ion-button mode="ios" expand="full" [routerLink]="['/edit-listing']">
+						  				Call
+						  			</ion-button>
+						  			<ion-button mode="ios" expand="full" [routerLink]="['/edit-listing']">
 						  				Edit
-						  				<ion-icon slot="end" name="pencil-outline"></ion-icon>
 						  			</ion-button>
 						  		</ion-col>
 						  	</ion-row>
